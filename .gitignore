@@ -1,0 +1,24 @@
+# === Node/Next.js ===
+node_modules/
+.next/
+out/
+dist/
+build/
+.turbo/
+coverage/
+*.tsbuildinfo
+
+# === Environment files (do NOT push) ===
+.env
+.env*.local
+
+# === Logs & caches ===
+*.log
+.cache/
+
+# === Deployment and editor stuff ===
+.vercel/
+.vscode/
+.idea/
+.DS_Store
+node_modules

@@ -1,0 +1,18 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+.container {
+  @apply mx-auto px-4 sm:px-6 lg:px-8;
+}
+
+@keyframes mm-float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-6px); }
+  100% { transform: translateY(0px); }
+}
+
+.mm-float {
+  animation: mm-float 4s ease-in-out infinite;
+}

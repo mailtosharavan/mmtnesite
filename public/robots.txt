@@ -1,0 +1,13 @@
+# *
+User-agent: *
+Allow: /
+
+# *
+User-agent: *
+Disallow: /admin
+
+# Host
+Host: https://www.mindsmiratus.com
+
+# Sitemaps
+Sitemap: https://www.mindsmiratus.com/sitemap.xml
