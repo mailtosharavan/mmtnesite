@@ -22,14 +22,9 @@ export default function Header() {
             />
           
          <div className="leading-[1.15] flex flex-col">
-              <span className="text-[1.35rem] md:text-[1.55rem] font-semibold text-[#0b2c67]">
+              <span className="text-[1.35rem] md:text-[1.55rem] font-bold text-[#0b2c67]">
                 Mindsmiratus
               </span>
-
-              <span className="text-[0.92rem] md:text-[1.05rem] font-medium text-[#0b2c67]">
-                Technologies Pvt. Ltd.
-              </span>
-
               <span className="text-[0.72rem] md:text-[0.82rem] text-gray-600">
                 Your Partner in Digital Transformation
               </span>
