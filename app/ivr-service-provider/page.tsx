@@ -1,3 +1,4 @@
+
 import Link from "next/link";
 import Image from "next/image";
 import {
@@ -11,6 +12,7 @@ import {
   FaBuilding,
   FaUserTie,
 } from "react-icons/fa";
+export const dynamic = "force-dynamic";
 
 export const metadata = {
   title: "IVR Service Provider | Call Automation, Routing & Customer Support Systems",
