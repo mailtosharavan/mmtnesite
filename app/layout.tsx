@@ -7,6 +7,8 @@ import { Metadata } from "next";
 import Script from "next/script";
 
 export const dynamic = "force-dynamic";
+export const fetchCache = "default-no-store";
+export const revalidate = 0;
 
 export const metadata: Metadata = {
   title: "Mindsmiratus Technologies Pvt ltd — Digital Transformation",
