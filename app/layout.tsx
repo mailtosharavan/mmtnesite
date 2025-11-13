@@ -6,6 +6,8 @@ import Footer from "../components/Footer";
 import { Metadata } from "next";
 import Script from "next/script";
 
+export const dynamic = "force-dynamic";
+
 export const metadata: Metadata = {
   title: "Mindsmiratus Technologies Pvt ltd — Digital Transformation",
   description:
