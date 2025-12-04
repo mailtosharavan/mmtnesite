@@ -16,3 +16,12 @@
 .mm-float {
   animation: mm-float 4s ease-in-out infinite;
 }
+
+.modern{
+  padding: 0px !important;
+}
+
+.ready-to, .web-h1{
+   font-size: 44px;
+    line-height: 64px ;
+}
