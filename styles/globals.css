@@ -25,3 +25,6 @@
    font-size: 44px;
     line-height: 64px ;
 }
+.letbox{
+  height: fit-content;
+}
