@@ -12,7 +12,7 @@ import {
 } from "react-icons/fa";
 
 export const metadata: Metadata = {
-  title: "About |Us Mindsmiratus Technologies Pvt. Ltd.",
+  title: "About Us Mindsmiratus Technologies Pvt. Ltd.",
   description:
     "Mindsmiratus Technologies is a full-stack digital transformation partner delivering custom applications, integrated solutions, cloud hosting, and growth-driven marketing.",
   alternates: { canonical: "https://www.mindsmiratus.com/about" },
