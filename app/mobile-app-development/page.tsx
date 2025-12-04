@@ -22,7 +22,7 @@ import {
 export const metadata = {
   title: "Mobile App Development Company | Android & iOS App Development",
   description:
-    "We build high-performance, scalable Android & iOS apps using Flutter and React Native. From UI/UX design to backend APIs and deployment — full end-to-end delivery.",
+    "We offer custom Android and iOS app development services with intuitive interfaces, smooth navigation, advanced features, seamless integrations for business with end-to-end delivery.",
   alternates: { canonical: "https://www.mindsmiratus.com/mobile-app-development" },
 };
 
