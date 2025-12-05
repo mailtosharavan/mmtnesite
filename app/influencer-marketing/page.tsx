@@ -119,6 +119,10 @@ export default function InfluencerMarketingPage() {
 
   const faqs = [
     {
+      q: "What is Influencer Marketing, and how can it help my business grow?",
+      a: "Influencer Marketing means collaborating with content creators who can influence your target audience. Their recommendations feel more trustworthy than traditional ads, helping your brand gain real awareness, engagement, and conversions.",
+    },
+    {
       q: "How do you choose influencers?",
       a: "We evaluate authenticity, audience relevance, engagement quality, tone fit, and past brand collaborations.",
     },
@@ -145,7 +149,9 @@ export default function InfluencerMarketingPage() {
         Influencer Marketing Services
       </h1>
 
-      <p className="mt-6 text-lg text-slate-600 leading-relaxed max-w-md">
+      <p className="mt-6 text-lg text-slate-600 leading-relaxed ">
+        <strong>Your Brand + The Right Influencers = Unstoppable Reach</strong><br></br>
+Reach real people through trusted voices. We help you collaborate with authentic influencers who actually connect with your target audience—driving awareness, engagement, and measurable business growth. <br></br>
         Partner with creators your audience already trusts — to build credibility, reach, and real engagement.
       </p>
 
