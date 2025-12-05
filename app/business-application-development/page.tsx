@@ -12,14 +12,15 @@ import {
   FaIndustry,
   FaRegLightbulb,
   FaHandsHelping,
+  FaCheckDouble,
   FaClock,
 } from "react-icons/fa";
 
 export const metadata = {
   title:
-    "Business Application Development | ERP, CRM, HRMS & Workflow Systems",
+    "Business Application Development | ERP, CRM, & Workflow Systems",
   description:
-    "Design and build secure, scalable business applications—ERP, CRM, HRMS, portals, and workflow systems. Faster operations, real-time insights, airtight security.",
+    "We provide Next-Gen Business Applications Development, ERP, CRM, HRMS, and workflow systems that automate tasks, connect data, and provide cloud-ready solutions",
   keywords:
     "business application development, ERP development, CRM development, HRMS development, workflow automation, SaaS development, portals, dashboards",
   alternates: {
@@ -119,6 +120,15 @@ export default function BusinessApplicationDevelopmentPage() {
     },
   ];
 
+  const whatweoffer = [
+    { title: "Custom Enterprise Software", desc: "Tailor-made software solutions designed specifically around your company’s processes, requirements, and growth plans." },
+    { title: "Internal Tools & Dashboards", desc: "Manage teams, projects, inventory, clients — everything from one central dashboard that gives you complete control." },
+    { title: "CRM & ERP Systems", desc: "From customer relationships to resource planning and business analytics — integrated systems to streamline your operations." },
+    { title: "Automation & Workflow Management", desc: "Automate repetitive tasks, approvals, notifications, and reports — save time and reduce errors for better efficiency." },
+    { title: "Reporting & Data Analytics Modules", desc: "Track performance, generate insights, and make data-driven decisions with real-time dashboards and reports." },
+    { title: "Integration with 3rd-Party APIs & Services", desc: "Sync with payment gateways, email platforms, cloud services, payment providers, and other tools you already use." },
+  ];
+
   const benefits = [
     { title: "Single Source of Truth", desc: "Unify data across ERP/CRM/HR to eliminate silos." },
     { title: "Fewer Clicks, More Flow", desc: "Task-driven UI that speeds up daily operations." },
@@ -203,8 +213,12 @@ export default function BusinessApplicationDevelopmentPage() {
 
   const faqs = [
     {
-      q: "Can you modernize an existing legacy system?",
-      a: "Yes. We audit the current stack, preserve critical logic, and rebuild modules with a modern, API-first approach—without disrupting operations.",
+      q: "What exactly is a business application?",
+      a: "A business application is software designed to manage, automate, and streamline company operations — from HR and sales to inventory, reporting, and customer interactions.",
+    },
+    {
+      q: "Can you integrate the application with existing tools, payment gateways or APIs?",
+      a: "Yes — we specialize in integrating third-party APIs, payment gateways, email systems, cloud tools, and other services to make your application fully functional and connected.",
     },
     {
       q: "How do you handle security and compliance?",
@@ -213,6 +227,10 @@ export default function BusinessApplicationDevelopmentPage() {
     {
       q: "Do you support on-prem as well as cloud?",
       a: "Absolutely. We deploy to AWS/Azure/GCP or on-prem with containerized builds and CI/CD.",
+    },
+    {
+      q: "Why should I invest in a custom application instead of using off-the-shelf software?",
+      a: "Off-the-shelf tools often force you to fit your processes around them. A custom application adapts to your existing workflows and scales as your business grows."
     },
   ];
 
@@ -223,15 +241,15 @@ export default function BusinessApplicationDevelopmentPage() {
         <div className="container mx-auto px-6 lg:px-16 flex flex-col lg:flex-row items-center gap-12">
           {/* Text */}
           <div className="flex-1 max-w-xl text-center lg:text-left">
-            <h1 className="text-4xl sm:text-5xl font-extrabold text-slate-900 leading-tight">
-              Business Application{" "}
+            <h1 className="text-4xl font-extrabold text-slate-900 leading-tight web-h1">
+              Transform Your Operations with{" "}
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-600 to-blue-500">
-                Development
+                Powerful Business Applications
               </span>
             </h1>
             <p className="mt-5 text-lg text-slate-600 leading-relaxed">
               Build ERP, CRM, HRMS, portals and workflow systems that streamline
-              operations, strengthen security, and deliver measurable ROI.
+              operations, strengthen security, and deliver measurable ROI. <br></br> From internal tools to full-scale enterprise systems — we build business applications that automate workflows, boost productivity, and help you scale confidently.
             </p>
 
             {/* Trust metrics with icons */}
@@ -283,8 +301,9 @@ export default function BusinessApplicationDevelopmentPage() {
             Built for Business Outcomes
           </h2>
           <p className="text-slate-600 text-center max-w-3xl mx-auto mb-12">
-            Business Focus A: reduce operational drag, increase speed to decision,
-            and harden security—without compromising usability.
+            In today’s fast-paced business world, efficiency is key to reduce operational drag, and harden security—without compromising usability.
+             We design custom business applications that simplify everyday workflows, centralize operations, and give you tools to manage 
+             your business more smartly. No compromises — just powerful, reliable software tailored to your unique needs.
           </p>
 
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -298,6 +317,30 @@ export default function BusinessApplicationDevelopmentPage() {
                   {v.title}
                 </h3>
                 <p className="text-slate-600 text-sm mt-1">{v.desc}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* New Heading with content added */}
+
+      <section className="relative overflow-hidden py-24 bg-gradient-to-br from-white via-slate-50 to-cyan-50">
+        <div className="container mx-auto px-6 lg:px-16">
+          <h2 className="text-3xl font-bold text-center text-slate-900 mb-12">
+            What We Offer – Business Application Solutions
+          </h2>
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            {whatweoffer.map((b, i) => (
+              <div
+                key={i}
+                className="p-6 rounded-3xl bg-white/60 backdrop-blur-xl border border-slate-200 shadow-[0_8px_30px_rgba(0,0,0,0.06)] hover:shadow-[0_12px_40px_rgba(0,0,0,0.12)] transition"
+              >
+                <div className="flex items-center gap-2 text-cyan-700 font-semibold">
+                  <FaCheckDouble />
+                  {b.title}
+                </div>
+                <p className="text-slate-600 text-sm mt-2">{b.desc}</p>
               </div>
             ))}
           </div>
@@ -328,8 +371,8 @@ export default function BusinessApplicationDevelopmentPage() {
       </section>
 
       {/* OUR PROCESS */}
-      <section className="py-20 bg-white">
-        <div className="container mx-auto px-6 lg:px-16 max-w-6xl">
+      <section className="container mx-auto px-6 lg:px-16 py-20 bg-white">
+        <div className=" mx-auto ">
           <h2 className="text-3xl font-bold text-center text-slate-900 mb-6">
             Our Process
           </h2>
