@@ -80,7 +80,7 @@ export default function GoogleAdsServicesPage() {
       <section className="py-24 bg-gradient-to-br from-cyan-50 via-white to-blue-50">
         <div className="container mx-auto px-6 lg:px-16 grid lg:grid-cols-2 gap-12 items-center">
           <div>
-            <h1 className="text-4xl sm:text-5xl font-extrabold text-slate-900 leading-tight">
+            <h1 className="text-4xl font-extrabold text-slate-900 leading-tight web-h1">
               Get Instant Leads & Sales with Smart Google Ads Services{" "}
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-600 to-blue-500">
                 (SEM)
@@ -120,9 +120,9 @@ export default function GoogleAdsServicesPage() {
       Smarter Campaigns. Faster Growth. Performance You Can Measure.
     </h2>
 
-    <p className="text-slate-600 text-center max-w-3xl mx-auto mb-14 text-lg">
-      Your audience is searching for products or services you offer right now. With Google Ads, you can appear at the top of search results instantly, connect with potential customers, and generate measurable ROI. Google Ads turns active search demand into immediate conversions. We ensure every click,
-      keyword, and audience is optimized to maximize ROI with precise targeting and continuous improvements. <br></br> At Mindsmiratus Technologies, we design data-driven, results-oriented Google Ads campaigns that reach the right audience at the right time. Whether you want more website traffic, leads, or sales, we have a solution tailored to your business goals.
+    <p className="text-slate-600 text-center mx-auto mb-14 text-lg">
+      Your audience is searching for products or services you offer right now. With Google Ads, you can appear at the <br></br> top of search results instantly, connect with potential customers, and generate measurable ROI. <br></br> Google Ads turns active search demand into immediate conversions. We ensure every click,
+      keyword, <br></br> and audience is optimized to maximize ROI with precise targeting and continuous improvements. <br></br><br></br> At Mindsmiratus Technologies, we design data-driven, results-oriented Google Ads campaigns that reach the right audience at the right time. Whether you want more website traffic, leads, or sales, we have a solution tailored to your business goals.
     </p>
 
     <div className="grid lg:grid-cols-2 gap-14">

@@ -154,7 +154,7 @@ export default function SocialMediaMarketingPage() {
   <div className="container mx-auto px-6 lg:px-16 grid lg:grid-cols-2 gap-12 items-center">
     
     <div>
-      <h1 className="text-4xl sm:text-5xl font-extrabold text-slate-900 leading-tight tracking-tight">
+      <h1 className="text-4xl font-extrabold text-slate-900 leading-tight tracking-tight web-h1">
         Grow Your Brand Presence with{" "}
         <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-600 to-blue-500">
           Social Media Marketing
