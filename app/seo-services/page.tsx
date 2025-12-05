@@ -8,12 +8,13 @@ import {
   FaMapMarkerAlt,
   FaGlobe,
   FaChartLine,
+  FaCheckSquare,
 } from "react-icons/fa";
 
 export const metadata = {
   title: "SEO Services Company | Boost Rankings, Traffic & Lead Growth",
   description:
-    "Professional SEO services to improve search ranking, increase organic traffic, and generate qualified leads. We handle on-page SEO, technical SEO, backlinks, local SEO, and performance optimization.",
+    "Boost your online visibility with expert SEO services — keyword research, on-page & off-page SEO, technical audits, by Mindsmiratus to grow organic traffic.",
   keywords:
     "seo services company, seo agency, seo expert services, search engine optimization services, local seo, link building services",
   alternates: {
@@ -126,18 +127,28 @@ export default function SeoServicesCompanyPage() {
   ];
 
   const faqs = [
+   {
+      q: "What is the difference between SEO and Google Ads?",
+      a: "SEO brings long-term, organic traffic without paying per click. Google Ads brings fast results but requires a constant budget. Most businesses get the best results by combining both — SEO for stability, ads for immediate reach."
+    },
+    {
+      q: "What is included in your SEO services?",
+      a: "Our SEO services include on-page SEO, off-page SEO, technical SEO, keyword research, content optimization, link building, local SEO, and monthly reporting.",
+    },
+   {
+      q: "Why is SEO important for my business or Webiste?",
+      a: "SEO helps your website rank higher on Google, attract organic traffic, build trust, and generate consistent leads without paid advertising."
+    },
     {
       q: "How long does SEO take?",
-      a: "Initial improvements appear in 4–8 weeks. Strong ranking movement typically takes 3–6 months depending on competition.",
+      a: "Initial improvements appear in 8-12 weeks. Strong ranking movement typically takes 3–6 months depending on competition.",
     },
     {
       q: "Do I need SEO if I run ads?",
       a: "Yes. SEO builds long-term, free, recurring traffic. Ads stop when the budget stops. The best growth is SEO + Paid together.",
     },
-    {
-      q: "Do you provide monthly reporting?",
-      a: "Yes. Transparent ranking, traffic, and action plan reports are included every month.",
-    },
+    
+    
   ];
 
   return (
@@ -157,7 +168,9 @@ export default function SeoServicesCompanyPage() {
 
       <p className="mt-6 text-lg text-slate-600 leading-relaxed">
         Get discovered where your customers are searching. Improve rankings, increase
-        traffic, and convert more leads with ethical & data-driven SEO.
+        traffic, and convert more leads with ethical & data-driven SEO. <br></br> Your customers are searching for businesses every day.
+ If your website doesn't appear on the first page of Google, you’re losing potential leads and revenue.
+
       </p>
 
       <div className="mt-8 flex gap-4">
@@ -195,7 +208,7 @@ export default function SeoServicesCompanyPage() {
     <p className="text-slate-600 text-center max-w-3xl mx-auto mb-14 text-lg">
       SEO is more than ranking — it ensures your brand is discovered at the exact moment
       customers are searching. We follow a proven approach to build visibility, trust,
-      and sustainable growth.
+      and sustainable growth. <br></br> At Mindsmiratus Technologies, we offer professional Search Engine Optimization (SEO) services that help your brand appear exactly where your audience is looking. Our approach focuses on long-term growth, clean SEO practices, and a strategy tailored to your business goals
     </p>
 
     <div className="grid lg:grid-cols-2 gap-14">
@@ -207,13 +220,16 @@ export default function SeoServicesCompanyPage() {
         </h3>
         <ul className="space-y-3 text-slate-700 text-base">
           {[
-            "Improves search visibility & positions your brand above competitors",
-            "Drives high-intent organic traffic that converts better than ads",
+            "Improves search visibility & positions your brand above competitors.",
+            "Drives high-intent organic traffic that converts better than ads.",
             "Builds trust, credibility, and long-term brand recognition",
-            "Reduces dependency on paid advertising & lowers acquisition costs",
+            "Reduces dependency on paid advertising.",
+            "Sustainable results built on white-hat strategies not shortcuts.",
+            "SEO brings quality leads & conversions, not just traffic numbers.",
+            "Long-Term Business Growth.",
           ].map((item, i) => (
             <li key={i} className="flex gap-2 items-start">
-              <FaCheckCircle className="text-cyan-600 mt-1" /> {item}
+              <FaCheckSquare className="text-cyan-600 mt-1" /> {item}
             </li>
           ))}
         </ul>
