@@ -11,9 +11,9 @@ import {
 } from "react-icons/fa";
 
 export const metadata = {
-  title: "Voice Call Services | Voice Broadcasting & Auto Dialer Provider",
+  title: "Best Voice Call Service Provider to Boost Customer Engagement",
   description:
-    "Reliable voice call services including large-scale voice broadcasting campaigns and auto dialer systems with live agent connect. Ideal for promotions, alerts, surveys, lead engagement, and ongoing support.",
+    "Get best voice call services by Mindsmiratus with high-quality audio, voice broadcasting campaigns, and auto dialer systems for support, sales, and promotions.",
   keywords:
     "voice call services, voice broadcasting provider, bulk voice calls, auto dialer system, predictive dialing, agent connect dialer, call automation",
   alternates: {
@@ -43,7 +43,15 @@ export default function VoiceCallServicesPage() {
   ];
 
   const faqs = [
-    { q: "Can we upload our own audio message?", a: "Yes, upload MP3/WAV or use our text-to-speech studio." },
+    { q: "What are voice call services, and how do they work?",
+      a: "Voice call services allow businesses to send pre-recorded messages to multiple customers at the same time. These calls can be promotional, transactional, or informational, depending on your needs."
+     },
+     { q: "Can I integrate voice calls with my CRM or website?",
+      a: "Yes. Our platform supports API integration, making it easy to automate voice calls from your CRM, website, or mobile app",
+     },
+    { q: "Can we upload our own audio message?",
+      a: "Yes, upload MP3/WAV or use our text-to-speech studio."
+     },
     { q: "Can campaigns be scheduled?", a: "Yes, schedule campaigns for any date/time or run instantly." },
     { q: "Does the Auto Dialer support multiple agents?", a: "Yes, supports multi-agent call routing and queueing." },
     { q: "Can we target specific regions or customer groups?", a: "Yes, campaigns can be segmented by list or filters." },
@@ -59,7 +67,9 @@ export default function VoiceCallServicesPage() {
               Voice Call Services
             </h1>
             <p className="mt-5 text-lg text-slate-600">
-              Run mass voice broadcasting campaigns or automate dialing with live agent connect — all on a secure, cloud-based call infrastructure.
+              Customers respond better when communication is simple and direct. With our Voice Call Services, you can deliver personalized messages, alerts, 
+              reminders, and campaigns to thousands of users in seconds—without manual calling or large teams. Run mass voice broadcasting 
+              campaigns or automate dialing with live agent connect — all on a secure, cloud-based call infrastructure.
             </p>
             <div className="mt-8 flex gap-4">
               <Link href="/contact-mindsmiratus-technologies" className="px-6 py-3 rounded-full bg-blue-600 text-white font-semibold hover:bg-blue-700">
