@@ -7,9 +7,9 @@ import { FaSms, FaWhatsapp, FaPhoneAlt,FaQuestionCircle,FaRocket,FaChartLine, Fa
 
 
 export const metadata = {
-  title: "Customer Communication Services | Mindsmiratus Technologies Pvt. Ltd.",
+  title: "Customer Communication Services | Mindsmiratus Technologies",
   description:
-    "Mindsmiratus Technologies provides professional SMS, RCS messaging, WhatsApp API, IVR, and voice broadcasting services to improve customer communication.",
+    "Enhance customer satisfaction with professional customer communication services. We offer omnichannel support, tools & smart automation for real-time  response",
   keywords:
     "SMS, RCS, WhatsApp API, IVR, Voice Broadcasting, Customer Communication, Mindsmiratus Technologies",
   alternates: {
@@ -29,24 +29,28 @@ export const metadata = {
 export default function CustomerCommunicationServicesPage() {
   const faqs = [
     {
-      question: "What is RCS messaging?",
+      question: "What are Customer Communication Services?",
       answer:
-        "RCS (Rich Communication Services) is an advanced messaging platform that allows sending media, read receipts, and interactive messages.",
+        "Customer Communication Services allow businesses to connect with customers through SMS, WhatsApp, IVR, voice calls, and email. It helps improve engagement, support, and customer satisfaction.",
     },
     {
-      question: "How can WhatsApp API help my business?",
-      answer:
-        "WhatsApp Business API enables automated customer notifications, chatbots, and personalized campaigns to improve engagement.",
+      question: "How can Customer Communication Services help my business?",
+      answer: "They ensure faster responses, automated workflows, and multi-channel reach—leading to better conversions and stronger customer trust.",
     },
     {
-      question: "What is IVR and voice broadcasting?",
+      question: "Do you provide WhatsApp API and SMS services?",
       answer:
-        "IVR automates phone interactions while voice broadcasting sends pre-recorded messages to multiple recipients efficiently.",
+        "Yes. We offer official WhatsApp Business API, SMS, RCS, voice calling, and IVR solutions for all types of businesses.",
     },
     {
-      question: "Do you provide integration support?",
+      question: "Can these services be integrated with my CRM or website?",
       answer:
         "Yes, our experts help integrate SMS, WhatsApp, and IVR systems with your CRM or existing platforms for smooth operations.",
+    },
+    {
+      question: "Which channels are included in Customer Communication Services?",
+      answer:
+        "The main communication channels include: SMS messaging, WhatsApp Business API, RCS messaging, Voice call broadcasting, Email campaigns, and Chatbots & AI automation",
     },
   ];
 
@@ -55,8 +59,8 @@ export default function CustomerCommunicationServicesPage() {
       {/* HERO */}
       <section className="relative overflow-hidden bg-gradient-to-br from-cyan-50 via-white to-blue-50 py-20">
         <div className="container mx-auto px-6 lg:px-16 flex flex-col lg:flex-row items-center gap-10">
-          <div className="flex-1 max-w-xl text-center lg:text-left">
-            <h1 className="text-4xl sm:text-5xl font-extrabold text-slate-900 leading-tight">
+          <div className="flex-1 text-center lg:text-left headingwidth">
+            <h1 className="text-4xl sm:text-5xl font-extrabold text-slate-900 leading-tight web-h1">
               Reliable{" "}
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-600 to-blue-500">
                 Customer Communication
@@ -64,8 +68,8 @@ export default function CustomerCommunicationServicesPage() {
               Services
             </h1>
             <p className="mt-5 text-lg text-slate-600 leading-relaxed">
-              Enhance engagement with SMS, RCS messaging, WhatsApp Business API, IVR, and voice broadcasting solutions.
-            </p>
+              Enhance engagement with SMS, RCS messaging, WhatsApp Business API, IVR, and voice broadcasting solutions. <br></br> <strong>Connect With Customers the Way They Prefer.</strong><br></br>
+              Today, customers expect quick, convenient, and meaningful interactions. We help businesses deliver smooth and consistent communication across multiple channels.            </p>
             <div className="mt-8 flex flex-wrap justify-center lg:justify-start gap-4">
               <Link
                 href="/contact-mindsmiratus-technologies"
@@ -92,7 +96,8 @@ export default function CustomerCommunicationServicesPage() {
       Our Communication Solutions
     </h2>
     <p className="text-slate-600 max-w-2xl mx-auto mb-12">
-      Streamline your customer interactions with our SMS, WhatsApp, and IVR services.
+      Streamline your customer interactions with our SMS, WhatsApp, and IVR services - whether it’s updates, reminders, support, promotions, or two-way conversations. <br></br>
+      With our advanced communication solutions, your brand stays responsive, approachable, and always one step ahead.
     </p>
 
     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10">

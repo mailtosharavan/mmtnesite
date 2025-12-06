@@ -28,3 +28,6 @@
 .letbox{
   height: fit-content;
 }
+.headingwidth{
+  max-width: 43rem;
+}
