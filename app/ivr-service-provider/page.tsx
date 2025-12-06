@@ -109,6 +109,10 @@ export default function IvrServiceProviderPage() {
 
   const faqs = [
     {
+      q: "What is an IVR service, and how can it help my business?",
+      a: "IVR (Interactive Voice Response) is an automated phone system that allows callers to interact through voice or keypad inputs. It helps businesses reduce wait time, route calls efficiently, and offer 24/7 customer support."
+    },
+    {
       q: "Can IVR handle multiple languages?",
       a: "Yes. We support multi-language voice menus and region-specific prompts.",
     },
@@ -123,6 +127,11 @@ export default function IvrServiceProviderPage() {
     {
       q: "Can calls be recorded?",
       a: "Yes. Call recording and secure storage options are available.",
+    },
+    {
+      q: "Do you provide cloud-based IVR for call centers?",
+      a: "Yes. We offer a cloud-based IVR system for call centers that supports high call volumes, multi-level IVR menus, and advanced call routing."
+
     },
     {
       q: "What about support and onboarding?",
