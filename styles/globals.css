@@ -31,3 +31,8 @@
 .headingwidth{
   max-width: 43rem;
 }
+
+  .hosticon svg{
+    display: inline;
+    margin-bottom: 5px;
+  }

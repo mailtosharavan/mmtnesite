@@ -14,9 +14,9 @@ import {
 } from "react-icons/fa";
 
 export const metadata = {
-  title: "Hosting & IT Support Services | Reliable Servers, Security & Maintenance",
+  title: "Hosting & IT Support Services | Reliable Servers and Security",
   description:
-    "Managed hosting, cloud migration, email setup, SSL, backups, performance tuning, and 24/7 IT support for websites and business applications.",
+    "Mindsmiratus provides web hosting services, cloud migration, email setup, SSL, backups, performance tuning and IT support for websites and business applications",
   alternates: {
     canonical: "https://www.mindsmiratus.com/hosting-and-it-support",
   },
@@ -112,8 +112,16 @@ export default function HostingAndITSupportPage() {
 
   const faqs = [
     {
+      q: "What exactly is web hosting?",
+      a: "Web hosting is the service that stores your website’s files on a secure server so visitors can access it online. Without hosting, your website cannot be viewed on the internet.",
+    },
+    {
       q: "Can you migrate without downtime?",
       a: "Yes. We schedule staged cutover, syncing data in real-time to ensure no interruption.",
+    },
+    {
+      q: "Do you offer different hosting types?",
+      a: "Yes. We provide Shared Hosting, VPS Hosting, Cloud Hosting, and Dedicated Hosting — based on your business needs and website size.",
     },
     {
       q: "Do you support custom application hosting?",
@@ -139,18 +147,22 @@ export default function HostingAndITSupportPage() {
             </h1>
 
             <p className="mt-5 text-lg text-slate-600 leading-relaxed">
+              Your website deserves a stable, secure, and high-performing environment. Slow hosting, frequent downtime,
+              or security gaps can damage your brand’s credibility.
+              That’s where our Managed Web Hosting & Dedicated IT Support services help your business run smoothly.
               Reliable infrastructure, proactive monitoring, and dedicated support to
               keep your business online and secure 24/7.
             </p>
 
-            <div className="mt-7 grid grid-cols-3 gap-4 max-w-md">
+            <div className="mt-7 grid grid-cols-3 gap-4 ">
               {[
                 { icon: <FaClock />, label: "Support", value: "24/7" },
                 { icon: <FaLock />, label: "Security", value: "Enterprise-grade" },
                 { icon: <FaChartLine />, label: "Uptime", value: "99.9%" },
               ].map((t, i) => (
                 <div key={i} className="rounded-2xl bg-white/70 p-4 border border-slate-200 text-center shadow-sm">
-                  <div className="text-cyan-600 text-xl mx-auto">{t.icon}</div>
+                  <div className="text-cyan-600 text-xl mx-auto hosticon
+                  ">{t.icon}</div>
                   <p className="text-xl font-bold text-slate-900">{t.value}</p>
                   <p className="text-xs text-slate-600">{t.label}</p>
                 </div>
@@ -184,6 +196,8 @@ export default function HostingAndITSupportPage() {
         <div className="container mx-auto px-6 lg:px-16 max-w-6xl">
           <h2 className="text-3xl font-bold text-center text-slate-900 mb-4">Why Choose Us</h2>
           <p className="text-slate-600 text-center max-w-3xl mx-auto mb-12">
+            We handle everything — server setup, maintenance, backups, security, performance monitoring,
+            and support — so you can focus on growth while we take care of the technology.
             Managed hosting designed for performance, security, and long-term stability.
           </p>
 
