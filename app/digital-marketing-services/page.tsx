@@ -4,8 +4,8 @@ import Link from "next/link";
 import { FaGoogle, FaSearch } from "react-icons/fa";
 
 export const metadata = {
-  title: "Digital Marketing & Online Promotion Services | Mindsmiratus Technologies Pvt. Ltd.",
-  description: "Mindsmiratus Technologies provides professional digital marketing services including SEO, SEM, social media marketing, SMO, and full-service campaigns to grow your business online.",
+  title: "Digital Marketing & Online Promotion Services | Mindsmiratus",
+  description: "Mindsmiratus provides professional digital marketing services, including performance marketing, SEO, social media marketing, and SMO, to grow businesses online",
   keywords: "digital marketing, SEO, SEM, Google Ads, social media marketing, SMO, online promotion, Mindsmiratus Technologies",
   alternates: {
     canonical: "https://www.mindsmiratus.com/digital-marketing-services",
@@ -15,9 +15,13 @@ export const metadata = {
 export default function DigitalMarketingPage() {
   const faqs = [
     {
-      question: "What is SEO and why is it important?",
+      question: "What is digital marketing and why is it important?",
       answer:
-        "SEO (Search Engine Optimization) improves your website's visibility on search engines, helping drive organic traffic and increase brand credibility.",
+        "Digital marketing is the promotion of your business through online channels like search engines, social media, and paid ads. It helps you reach your audience faster, generate leads, and grow revenue effectively.",
+    },
+    {
+      question: "Which digital marketing services are best for fast business growth?",
+      answer: "For fast growth, a combination of Google Ads, Social Media Marketing, and Lead Generation campaigns works best. For long-term success, SEO and Content Marketing are essential. We create a balanced strategy based on your business goals.",
     },
     {
       question: "Do you manage paid advertising campaigns?",
