@@ -26,7 +26,7 @@ export const metadata = {
   keywords:
     "website designing, website development, web application development, mobile app development, custom business applications, eCommerce website,",
   alternates: {
-    canonical: "https://www.mindsmiratus.com/custom-website-designing-services",
+    canonical: "https://www.mindsmiratus.com/custom-website-design",
   },
 };
 
