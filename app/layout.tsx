@@ -26,7 +26,7 @@ export const metadata: Metadata = {
         url: "https://www.mindsmiratus.com/og-default.jpg",
         width: 1200,
         height: 630,
-        alt: "Mindsmiratus Technologies Pvt ltd — Digital Transformation",
+        alt: "Mindsmiratus Technologies Pvt ltd",
       },
     ],
     type: "website",
@@ -37,7 +37,7 @@ export const metadata: Metadata = {
     description:
       "We accelerate digital transformation: custom apps, marketing, and IT.",
     images: ["https://www.mindsmiratus.com/og-default.jpg"],
-    creator: "@yourhandle",
+    creator: "@mindsmiratus",
   },
   robots: {
     index: true,
@@ -63,15 +63,15 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             __html: JSON.stringify({
               "@context": "https://schema.org",
               "@type": "Organization",
-              name: "Digital Transformation Pvt. Ltd.",
-              url: "https://www.digitaltransformation.com",
+              name: "Mindsmiratus Technologies Pvt. Ltd.",
+              url: "https://www.mindsmiratus.com/",
               logo: "https://www.digitaltransformation.com/logo.png",
               description:
                 "We accelerate digital transformation through custom web & mobile apps, cloud solutions, and marketing services.",
               contactPoint: [
                 {
                   "@type": "ContactPoint",
-                  telephone: "+91 98765 43210",
+                  telephone: "+91-9625306474",
                   contactType: "customer service",
                   email: "support@digitaltransformation.com",
                   areaServed: "IN",
@@ -79,9 +79,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
                 },
               ],
               sameAs: [
-                "https://www.linkedin.com/company/digitaltransformation",
-                "https://twitter.com/digitaltransformation",
-                "https://facebook.com/digitaltransformation",
+                "https://www.linkedin.com/company/mindsmiratus/",
+                "https://x.com/mindsmiratus",
+                "https://www.facebook.com/mindsmiratus.tech/",
               ],
             }),
           }}
