@@ -20,13 +20,13 @@ import {
 
 export const metadata = {
   title:
-    "Website Designing & Web Application Development Company | Mindsmiratus Technologies Pvt. Ltd.",
+    "Custom Website Designing Services Company | Mindsmiratus",
   description:
-    "Mindsmiratus Technologies is a professional website designing and application development company that builds stunning, SEO-optimized websites, powerful web apps, and mobile applications to grow your business.",
+    "Mindsmiratus is a professional custom website design and application development company that builds stunning, SEO-optimized websites and powerful web apps.",
   keywords:
-    "website designing, website development, web application development, mobile app development, custom business applications, eCommerce website, Mindsmiratus Technologies",
+    "website designing, website development, web application development, mobile app development, custom business applications, eCommerce website,",
   alternates: {
-    canonical: "https://www.mindsmiratus.com/website-designing-and-development",
+    canonical: "https://www.mindsmiratus.com/custom-website-design",
   },
 };
 

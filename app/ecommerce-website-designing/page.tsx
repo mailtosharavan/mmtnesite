@@ -20,13 +20,13 @@ import {
 // ------------------ SEO ------------------
 export const metadata = {
   title:
-    "Mobile App Development Company | Cross-Platform iOS & Android Apps",
+    "Ecommerce Website Designing Services for Your Online Stores",
   description:
-    "We design and build high-performance iOS & Android apps using Flutter/React Native. Secure APIs, offline sync, analytics, CI/CD, and store deployment included.",
+    "We deliver modern Ecommerce website design services with elegant layouts, and seamless shopping flow with optimized product cataloging, and checkout experiences",
   keywords:
-    "mobile app development, android app, ios app, flutter, react native, cross platform app, app design company, app developers",
+    "ecommerce website designing, ecommerce app development, ecommerce website integration",
   alternates: {
-    canonical: "https://www.mindsmiratus.com/mobile-app-development",
+    canonical: "https://www.mindsmiratus.com/ecommerce-website-designing",
   },
 };
 
@@ -72,37 +72,37 @@ const benefitsA = [
 const capabilities = [
   {
     icon: "📱",
-    title: "Cross-Platform Apps",
+    title: "Custom Online Store Design",
     desc: "React Native / Flutter for faster delivery and shared code.",
     points: ["Native modules", "Adaptive UI", "Over-the-air updates"],
   },
   {
     icon: "🧩",
-    title: "API & Integrations",
+    title: "WooCommerce / Shopify / Magento Setups",
     desc: "Secure REST/GraphQL, payment, maps, chat, notifications.",
     points: ["Auth & SSO", "Payment gateways", "3rd-party SDKs"],
   },
   {
     icon: "🗂️",
-    title: "Admin & CMS",
+    title: "Product & Category Page Optimization",
     desc: "Dashboards to manage content, users, and operations.",
     points: ["Headless CMS", "Role based access", "Audit logs"],
   },
   {
     icon: "🛡️",
-    title: "Security & Compliance",
+    title: "Payment Gateway Integration",
     desc: "Best practices for data protection and privacy.",
     points: ["OWASP MASVS", "PII protection", "Secure storage"],
   },
   {
     icon: "⚙️",
-    title: "DevOps & CI/CD",
+    title: "Cart & Checkout Customization",
     desc: "Automated build/test/release across environments.",
     points: ["Fastlane/GitHub Actions", "Test suites", "Release gates"],
   },
   {
     icon: "📊",
-    title: "Analytics & Growth",
+    title: "E-commerce Maintenance & Support",
     desc: "Events, funnels, and experiments to scale adoption.",
     points: ["Mixpanel/GA4", "A/B testing", "Cohort insights"],
   },
@@ -146,17 +146,25 @@ const caseStudies = [
 
 const faqs = [
   {
-    q: "Which tech stack do you use?",
-    a: "React Native and Flutter for cross-platform, plus native modules where needed. Backends on .NET/Node with REST/GraphQL.",
+    q: "What is included in your e-commerce website design service?",
+    a: "Our E-commerce Website Designing service includes everything from store layout design, product setup, payment gateway integration, mobile optimization, SEO structure, and a user-friendly dashboard to manage your store easily.",
   },
   {
     q: "Can you publish to stores?",
     a: "Yes. We prepare assets, handle review feedback, and set rollout strategies for App Store & Play Store.",
   },
   {
-    q: "How long does it take?",
-    a: "MVPs typically 4–8 weeks depending on scope, integrations, and compliance needs.",
+    q: "How long does it take to build an e-commerce website?",
+    a: "A basic e-commerce website usually takes 7–14 days, while feature-rich custom stores may take 3–5 weeks, depending on product count and complexity.",
   },
+   {
+    q: "Can you add custom features to my online store?",
+    a: "Yes! Whether you need filters, product variants, coupons, membership features, or custom checkout functions — we can develop almost anything you need in your e-commerce store.",
+  },
+  {
+    q: "Will my e-commerce website be SEO-friendly?",
+    a: "Yes, every e-commerce store we build includes SEO-ready structure, optimized images, clean URLs, meta setup, and fast-loading performance — giving you a strong start for Google ranking."
+  }
 ];
 
 const faqSchema = {
@@ -187,14 +195,14 @@ export default function MobileAppDevelopmentPage() {
               <FaLayerGroup /> Cross-Platform iOS & Android
             </div>
             <h1 className="text-4xl sm:text-5xl font-extrabold text-slate-900 leading-tight">
-              Mobile App Development{" "}
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-sky-600 to-cyan-500">
-                that Scales from MVP to Millions
+              Build an Online Store {" "}
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-sky-600 to-cyan-500"><br></br>
+                That Sells — From First Visit to Checkout
               </span>
             </h1>
             <p className="mt-6 text-lg text-slate-600 leading-relaxed">
-              Design-driven apps with robust architecture, secure APIs, and analytics baked in.
-              Launch faster, release confidently, and keep users delighted.
+              Your online store should do more than just look good — it should convert visitors into loyal customers.
+              We build fast, user-friendly, and secure e-commerce websites that help your business sell smarter and scale faster.
             </p>
 
             <div className="mt-8 flex flex-wrap gap-4">
@@ -224,28 +232,28 @@ export default function MobileAppDevelopmentPage() {
           </div>
 
           <svg width="620" height="460" viewBox="0 0 620 460" fill="none" xmlns="http://www.w3.org/2000/svg">
-  <defs>
-    <linearGradient id="gradC" x1="0" x2="1" y1="0" y2="1">
-      <stop offset="0%" stop-color="#06b6d4"/>
-      <stop offset="100%" stop-color="#3b82f6"/>
-    </linearGradient>
-  </defs>
+            <defs>
+              <linearGradient id="gradC" x1="0" x2="1" y1="0" y2="1">
+                <stop offset="0%" stop-color="#06b6d4" />
+                <stop offset="100%" stop-color="#3b82f6" />
+              </linearGradient>
+            </defs>
 
-  <rect width="620" height="460" rx="24" fill="#f9fafb"/>
+            <rect width="620" height="460" rx="24" fill="#f9fafb" />
 
-  <rect x="90" y="90" width="440" height="270" rx="18" fill="#fff" stroke="#dce3ef" stroke-width="2"/>
+            <rect x="90" y="90" width="440" height="270" rx="18" fill="#fff" stroke="#dce3ef" stroke-width="2" />
 
-  <rect x="120" y="120" width="120" height="140" rx="12" fill="#f2f6fb"/>
-  <rect x="260" y="120" width="120" height="140" rx="12" fill="#f2f6fb"/>
-  <rect x="400" y="120" width="120" height="140" rx="12" fill="url(#gradC)" opacity="0.18"/>
+            <rect x="120" y="120" width="120" height="140" rx="12" fill="#f2f6fb" />
+            <rect x="260" y="120" width="120" height="140" rx="12" fill="#f2f6fb" />
+            <rect x="400" y="120" width="120" height="140" rx="12" fill="url(#gradC)" opacity="0.18" />
 
-  <rect x="120" y="270" width="120" height="20" rx="6" fill="url(#gradC)" opacity="0.9"/>
-  <rect x="260" y="270" width="120" height="20" rx="6" fill="url(#gradC)" opacity="0.9"/>
-  <rect x="400" y="270" width="120" height="20" rx="6" fill="url(#gradC)" opacity="0.9"/>
+            <rect x="120" y="270" width="120" height="20" rx="6" fill="url(#gradC)" opacity="0.9" />
+            <rect x="260" y="270" width="120" height="20" rx="6" fill="url(#gradC)" opacity="0.9" />
+            <rect x="400" y="270" width="120" height="20" rx="6" fill="url(#gradC)" opacity="0.9" />
 
-  <circle cx="500" cy="90" r="45" fill="url(#gradC)" opacity="0.25"/>
-  <path d="M505 78h-15l-3 12h17l-2 6h-15" stroke="#0284c7" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
-</svg>
+            <circle cx="500" cy="90" r="45" fill="url(#gradC)" opacity="0.25" />
+            <path d="M505 78h-15l-3 12h17l-2 6h-15" stroke="#0284c7" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" />
+          </svg>
 
 
 
@@ -261,8 +269,10 @@ export default function MobileAppDevelopmentPage() {
             Value Proposition
           </h2>
           <p className="text-slate-600 text-center max-w-3xl mx-auto mb-12">
-            We combine product thinking with engineering rigor—so you get a beautiful
-            app that’s reliable, secure, and ready to grow.
+            Creating an e-commerce website is more than adding products and a checkout button.
+            It’s about building a seamless shopping journey — from the first click to the final purchase. <br></br>
+            We design e-commerce websites that load fast, feel modern, and are built around your customers’ buying behavior.
+            Whether you’re launching your first store or upgrading an existing one, we craft a shopping experience your customers will love.
           </p>
 
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -335,7 +345,7 @@ export default function MobileAppDevelopmentPage() {
       <section id="capabilities" className="relative overflow-hidden py-24 bg-gradient-to-br from-sky-50 via-white to-cyan-50">
         <div className="container mx-auto px-6 lg:px-16">
           <h2 className="text-3xl font-bold text-center text-slate-900 mb-4">
-            Mobile App Development Capabilities
+            Our E-commerce Development Services
           </h2>
           <p className="text-slate-600 text-center max-w-2xl mx-auto mb-14">
             Everything you need—from strategy and design to APIs, security, and growth.

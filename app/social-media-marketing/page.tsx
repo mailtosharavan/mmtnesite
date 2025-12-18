@@ -12,9 +12,9 @@ import {
 } from "react-icons/fa";
 
 export const metadata = {
-  title: "Social Media Marketing Company | Increase Engagement & Brand Presence",
+  title: "Social Media Marketing Services Company | Grow Brand Online",
   description:
-    "Professional Social Media Marketing services to grow brand visibility, boost engagement, and generate leads. We manage Facebook, Instagram, LinkedIn, YouTube, and multi-channel campaigns.",
+    "Professional Social Media Marketing services to grow brand visibility and generate leads. We manage Facebook, Instagram, LinkedIn, and many other platforms.",
   keywords:
     "social media marketing company, smm services, social media management agency, facebook ads, instagram marketing, linkedin branding",
   alternates: {
@@ -127,6 +127,11 @@ export default function SocialMediaMarketingPage() {
   ];
 
   const faqs = [
+    
+    {
+      q: "What is included in your Social Media Marketing services?",
+      a: "Our SMM service includes content creation, page management, paid ads, strategy development, audience engagement, and monthly performance reports — everything a brand needs to grow on social media.",
+    },
     {
       q: "How fast can I see results?",
       a: "Brand visibility improves in 2–4 weeks. Engagement and lead conversions typically grow within 1–3 months.",
@@ -136,8 +141,8 @@ export default function SocialMediaMarketingPage() {
       a: "We manage Instagram, Facebook, LinkedIn, YouTube, Twitter (X), Pinterest, and Threads depending on brand audience.",
     },
     {
-      q: "Do you provide content?",
-      a: "Yes. We create visuals, copywriting, posting, scheduling, and performance analysis.",
+      q: "Do you run paid social media ads?",
+      a: "Yes. As part of our social media marketing services, we run performance-driven ads on Facebook, Instagram, LinkedIn, and YouTube to generate leads, sales, and brand visibility.",
     },
   ];
 
@@ -149,7 +154,7 @@ export default function SocialMediaMarketingPage() {
   <div className="container mx-auto px-6 lg:px-16 grid lg:grid-cols-2 gap-12 items-center">
     
     <div>
-      <h1 className="text-4xl sm:text-5xl font-extrabold text-slate-900 leading-tight tracking-tight">
+      <h1 className="text-4xl font-extrabold text-slate-900 leading-tight tracking-tight web-h1">
         Grow Your Brand Presence with{" "}
         <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-600 to-blue-500">
           Social Media Marketing
@@ -157,7 +162,9 @@ export default function SocialMediaMarketingPage() {
       </h1>
 
       <p className="mt-6 text-lg text-slate-600 leading-relaxed">
-        Build trust, engage your audience, and increase conversions with powerful and consistent social media strategies tailored for your brand.
+        Create impact. Grow your audience. Turn attention into loyal customers. <br></br>
+We craft performance-driven social media strategies that help your brand stand out and stay remembered.
+Build trust, engage your audience, and increase conversions with powerful and consistent social media strategies tailored for your brand.
       </p>
 
       <div className="mt-8 flex gap-4">
@@ -204,7 +211,10 @@ export default function SocialMediaMarketingPage() {
     </h2>
 
     <p className="text-slate-600 text-center max-w-3xl mx-auto mb-14 text-lg">
-      Social media is where your customers spend most of their time. We help you build a presence that inspires trust, engagement, and conversions.
+      
+Social media is where your customers spend their time and where brand trust is built. <br></br>
+ We help you connect with your audience through content that feels real, relevant, and worth engaging with.
+<br></br>Social media is where your customers spend most of their time. We help you build a presence that inspires trust, engagement, and conversions.
     </p>
 
     <div className="grid lg:grid-cols-2 gap-14">
@@ -218,6 +228,8 @@ export default function SocialMediaMarketingPage() {
             "Strengthens audience trust and loyalty",
             "Drives traffic, leads, and conversions",
             "Creates community and repeat engagement",
+            "Earn customer trust through consistent content",
+            "Achieve better conversions from social platforms",
           ].map((item, i) => (
             <li key={i} className="flex gap-2 items-start">
               <FaCheckCircle className="text-cyan-600 mt-1" /> {item}

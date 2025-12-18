@@ -22,7 +22,7 @@ import {
 export const metadata = {
   title: "Mobile App Development Company | Android & iOS App Development",
   description:
-    "We build high-performance, scalable Android & iOS apps using Flutter and React Native. From UI/UX design to backend APIs and deployment — full end-to-end delivery.",
+    "We offer custom Android and iOS app development services with intuitive interfaces, smooth navigation, advanced features, seamless integrations for business with end-to-end delivery.",
   alternates: { canonical: "https://www.mindsmiratus.com/mobile-app-development" },
 };
 
@@ -98,8 +98,8 @@ export default function MobileAppDevelopmentPage() {
 
   const faqs = [
     {
-      q: "Which frameworks do you use for app development?",
-      a: "We build apps using Flutter and React Native, depending on performance needs and UI complexity.",
+      q: "What is mobile app development?",
+      a: "Mobile app development involves creating applications for iOS, Android, or cross-platform devices. We provide custom mobile app development that fits your business needs and user expectations.",
     },
     {
       q: "Can you connect the app to my existing website system?",
@@ -109,6 +109,18 @@ export default function MobileAppDevelopmentPage() {
       q: "Do you offer post-launch updates?",
       a: "Yes — we provide maintenance, monitoring, and new feature rollout support.",
     },
+    {
+      q: "Which frameworks do you use for app development?",
+      a: "We build apps using Flutter and React Native, depending on performance needs and UI complexity.",
+    },
+    {
+      q: "Do you provide app store deployment?",
+      a: "Yes, we handle submission to Google Play Store and Apple App Store, including compliance checks and optimization.",
+    },
+    {
+      q: "Can my mobile app integrate with other tools?",
+      a: "Absolutely. Our mobile apps can integrate with CRMs, payment gateways, analytics platforms, and custom APIs for smooth workflows."
+        },
   ];
 
   return (
@@ -127,8 +139,7 @@ export default function MobileAppDevelopmentPage() {
             </h1>
 
             <p className="mt-6 text-lg text-slate-600 leading-relaxed">
-              We design and develop mobile apps that are fast, intuitive, and engineered for scale —
-              ensuring your users stay engaged and your business grows.
+              We design and develop high-performance mobile applications for iOS, Android, and cross-platform solutions. Whether it’s a native app, hybrid app, or progressive web app, we deliver seamless experiences that engage users and boost business performance.
             </p>
 
             {/* Trust Stats */}
@@ -207,6 +218,19 @@ export default function MobileAppDevelopmentPage() {
               <p className="text-sm text-slate-600">{item.desc}</p>
             </div>
           ))}
+        </div>
+      </section>
+
+      {/* new heading and content added */}
+
+      <section className="py-20 bg-white ">
+        <div className="container mx-auto px-6 lg:px-16 text-center max-w-4xl modern">
+          <h2 className="text-3xl font-bold text-slate-900">Custom Mobile App Development for Modern Businesses
+          </h2>
+          <p className="mt-5 text-slate-600 text-lg leading-relaxed">
+            A mobile app is no longer just an accessory — it’s a direct channel to your customers.<br></br>
+            At MindsMiratus, we build custom mobile applications that combine beautiful design, <br></br> smooth navigation, robust functionality, and scalable architecture. <br></br><br></br>From startups to enterprises, we ensure your app is fast, secure, and future-ready, <br></br>creating real value for your business.
+          </p>
         </div>
       </section>
 
@@ -357,9 +381,9 @@ export default function MobileAppDevelopmentPage() {
         <div className="container mx-auto px-6 lg:px-16 grid lg:grid-cols-2 gap-16">
           
           {/* CTA CARD */}
-          <div className="bg-white text-slate-900 p-10 rounded-3xl shadow-xl">
-            <h3 className="text-2xl font-bold mb-4">Let's Build Your Mobile App</h3>
-            <p className="text-slate-600 mb-8">From concept to store launch — we partner end-to-end.</p>
+          <div className="bg-white text-slate-900 p-10 rounded-3xl shadow-xl letbox">
+            <h3 className="text-2xl font-bold mb-4 ready-to">Let’s Build Your Mobile App, Faster & Smarter</h3>
+            <p className="text-slate-600 mb-8">From idea validation to UI/UX design, development, testing, and final app store launch — we partner with you end-to-end to build high-performance mobile applications that drive real business growth.</p>
             <Link href="/contact-mindsmiratus-technologies" className="px-7 py-3 rounded-full bg-gradient-to-r from-sky-600 to-cyan-500 text-white font-semibold hover:shadow-lg transition">
               Request Free Consultation
             </Link>

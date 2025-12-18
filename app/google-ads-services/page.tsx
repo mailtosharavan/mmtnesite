@@ -7,9 +7,9 @@ import {
 } from "react-icons/fa";
 
 export const metadata = {
-  title: "Google Ads Services (SEM) | Mindsmiratus Technologies Pvt. Ltd.",
+  title: "Google Ads Services | Get More Leads with Smart PPC",
   description:
-    "Full-funnel Google Ads (SEM) management: Search, Display, Performance Max, Shopping, YouTube & Call Ads. Strategy, setup, optimization, and ROI tracking.",
+    "Grow faster with targeted Google Ads campaigns Services by Mindsmiratus. We optimize your PPC to deliver quality leads, and maximum ROI for your business.",
   keywords:
     "Google Ads services, SEM services, PPC management, Performance Max, YouTube Ads, Shopping Ads, Search Ads, Display Ads, paid campaigns",
   alternates: {
@@ -56,10 +56,22 @@ export default function GoogleAdsServicesPage() {
   ];
 
   const faqs = [
-    { q: "Do you handle full setup and tracking?", a: "Yes. From goals, pixels & enhanced conversions to account structure and launch." },
-    { q: "How soon can we see results?", a: "Search campaigns can produce early results within days; compounding gains arrive after enough data & iterations." },
-    { q: "Do you work with existing accounts?", a: "Yes. We audit, restructure (if needed), and implement a clean optimization cadence." },
-    { q: "What about creative & landing pages?", a: "We provide ad copy/asset variants and CRO recommendations or landing page builds as add-ons." },
+    { q: "Do you handle full setup and tracking?", 
+      a: "Yes. From goals, pixels & enhanced conversions to account structure and launch." },
+    { q: "How soon can we see results?", 
+      a: "Search campaigns can produce early results within days; compounding gains arrive after enough data & iterations." },
+    { q: "Do you work with existing accounts?",
+       a: "Yes. We audit, restructure (if needed), and implement a clean optimization cadence." },
+    { q: "What about creative & landing pages?", 
+      a: "We provide ad copy/asset variants and CRO recommendations or landing page builds as add-ons." },
+      {
+        q: "How do you make sure my ads reach the right audience?",
+        a: "We use detailed audience profiling, demographic filters, keyword intent analysis, and real-time performance data to ensure your ads reach people who are actively searching for your product or service—not random traffic. This helps boost conversions and reduce wasted ad spend."
+      },
+      {
+       q: "Why should I choose professional Google Ads services instead of running ads myself?", 
+      a: "Running Google Ads might look simple, but optimizing it for maximum ROI requires deep keyword research, strategic bidding, competitor analysis, A/B testing, and continuous monitoring. Our professional Google Ads services ensure your budget is used efficiently and delivers measurable, scalable results." 
+      }
   ];
 
   return (
@@ -68,14 +80,14 @@ export default function GoogleAdsServicesPage() {
       <section className="py-24 bg-gradient-to-br from-cyan-50 via-white to-blue-50">
         <div className="container mx-auto px-6 lg:px-16 grid lg:grid-cols-2 gap-12 items-center">
           <div>
-            <h1 className="text-4xl sm:text-5xl font-extrabold text-slate-900 leading-tight">
-              Google Ads Services{" "}
+            <h1 className="text-4xl font-extrabold text-slate-900 leading-tight web-h1">
+              Get Instant Leads & Sales with Smart Google Ads Services{" "}
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-600 to-blue-500">
                 (SEM)
               </span>
             </h1>
             <p className="mt-6 text-lg text-slate-600 leading-relaxed">
-              End-to-end PPC management across Search, Display, Performance Max, Shopping, YouTube and Call Ads — built to lower CPL and grow ROI.
+              Drive traffic, attract customers, and grow your business with targeted, high-converting Google Ads campaigns managed by our experts. <br></br> End-to-end PPC management across Search, Display, Performance Max, Shopping, YouTube and Call Ads — built to lower CPL and grow ROI.
             </p>
             <div className="mt-8 flex flex-wrap gap-4">
               <Link href="/contact-mindsmiratus-technologies"
@@ -108,9 +120,9 @@ export default function GoogleAdsServicesPage() {
       Smarter Campaigns. Faster Growth. Performance You Can Measure.
     </h2>
 
-    <p className="text-slate-600 text-center max-w-3xl mx-auto mb-14 text-lg">
-      Google Ads turns active search demand into immediate conversions. We ensure every click,
-      keyword, and audience is optimized to maximize ROI with precise targeting and continuous improvements.
+    <p className="text-slate-600 text-center mx-auto mb-14 text-lg">
+      Your audience is searching for products or services you offer right now. With Google Ads, you can appear at the <br></br> top of search results instantly, connect with potential customers, and generate measurable ROI. <br></br> Google Ads turns active search demand into immediate conversions. We ensure every click,
+      keyword, <br></br> and audience is optimized to maximize ROI with precise targeting and continuous improvements. <br></br><br></br> At Mindsmiratus Technologies, we design data-driven, results-oriented Google Ads campaigns that reach the right audience at the right time. Whether you want more website traffic, leads, or sales, we have a solution tailored to your business goals.
     </p>
 
     <div className="grid lg:grid-cols-2 gap-14">

@@ -16,3 +16,23 @@
 .mm-float {
   animation: mm-float 4s ease-in-out infinite;
 }
+
+.modern{
+  padding: 0px !important;
+}
+
+.ready-to, .web-h1{
+   font-size: 44px;
+    line-height: 55px ;
+}
+.letbox{
+  height: fit-content;
+}
+.headingwidth{
+  max-width: 43rem;
+}
+
+  .hosticon svg{
+    display: inline;
+    margin-bottom: 5px;
+  }

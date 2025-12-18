@@ -4,9 +4,9 @@ import { FaCheckCircle, FaBullhorn, FaComments, FaShareAlt, FaUsers, FaChartLine
 import TypeWriter from "../../components/TypingText";
 
 export const metadata = {
-  title: "SMO Services Company | Social Media Optimization for Brand Growth",
+  title: "Social Media Optimization Services | Grow Reach & Engagement",
   description:
-    "Professional SMO services to improve brand visibility, increase engagement, and grow your audience across social media platforms.",
+    "With professional SMO services, upgrade your social presence to improve brand visibility and engagement to grow your audience across social media platforms.",
   keywords:
     "smo services company, social media optimization, social media branding, facebook optimization, instagram optimization",
   alternates: {
@@ -125,8 +125,16 @@ export default function SMOServicesPage() {
       a: "SMO focuses on optimizing your social profiles & content for organic engagement. SMM involves paid promotions and advertising.",
     },
     {
+      q: "What is included in your SMO services?",
+      a: "Our SMO services include profile optimization, content optimization, hashtag strategy, engagement improvement, posting structure, keyword placement, and overall performance enhancement across all social media platforms."
+    },
+    {
       q: "How soon can I expect results?",
       a: "Engagement and visibility improvements generally begin within 3-5 weeks depending on industry and consistency.",
+    },
+    {
+      q: "Will you update my social media bios and visuals too?",
+      a: "Yes. We redesign your bio, content format, highlights, cover images, and profile visuals to improve brand authority and consistency."
     },
     {
       q: "Do you handle content creation?",
@@ -146,6 +154,8 @@ export default function SMOServicesPage() {
       </h1>
       <p className="mt-4 text-lg text-slate-600">
         Strengthen brand identity, increase engagement, and build credibility with structured social presence.
+        Boost your social presence with powerful SMO services. <br></br> Your customers are already searching, scrolling, and engaging — make sure your brand shows up with a strong and optimized social identity. <br></br> We optimize your profiles, content, and engagement strategy to boost reach, credibility, and conversions.
+
       </p>
 
       <div className="mt-8 flex gap-4">
@@ -178,8 +188,9 @@ export default function SMOServicesPage() {
 
     <h2 className="text-3xl font-bold text-center text-slate-900 mb-6">Why SMO Matters & How We Execute</h2>
 
-    <p className="text-slate-600 text-center max-w-3xl mx-auto mb-14 text-lg">
-      SMO ensures your brand looks professional, trustworthy, and active — driving meaningful audience engagement over time.
+    <p className="text-slate-600 text-center mx-auto mb-14 text-lg">
+      SMO ensures your brand looks professional, trustworthy, and active — driving meaningful audience engagement over time. <br></br>
+      Social Media Optimization (SMO) ensures your brand not only exists on social media, but performs. It focuses on improving your profile strength, visibility, content structure, search discoverability, and user engagement across platforms.
     </p>
 
     <div className="grid lg:grid-cols-2 gap-14">

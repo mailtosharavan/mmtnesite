@@ -14,9 +14,9 @@ import {
 } from "react-icons/fa";
 
 export const metadata = {
-  title: "IVR Service Provider | Call Automation, Routing & Customer Support Systems",
+  title: "IVR Service Provider for Call Automation | Mindsmiratus",
   description:
-    "Professional IVR (Interactive Voice Response) solutions for customer support, call routing, automated menus, lead capture, surveys and inbound call handling. Secure, scalable and cloud-based.",
+    "Get IVR (Interactive Voice Response) service for customer support, call routing, automated call handling, and interactive voice menus for higher satisfaction.",
   keywords:
     "ivr service provider, call automation system, inbound call routing, ivr call flow, customer support ivr, cloud ivr solutions",
   alternates: {
@@ -65,6 +65,17 @@ export default function IvrServiceProviderPage() {
     { icon: <FaPhoneAlt className="text-cyan-600 text-3xl" />, label: "Lead Capture & Call Tracking Flows" },
   ];
 
+   const ivrUseCase = [
+    { subTitle: "", label: "Customer support helpline" },
+    { subTitle: "", label: "Order tracking and status updates" },
+    { subTitle: "", label: "Account and balance inquiries" },
+    { subTitle: "", label: "Appointment scheduling" },
+    { subTitle: "", label: "Lead capturing and qualification" },
+    { subTitle: "", label: "Automated surveys and feedback" },
+    { subTitle: "", label: "Delivery and shipping updates" },
+    { subTitle: "", label: "Emergency hotline assistance" },
+  ];
+
   const plans = [
     {
       name: "Starter",
@@ -98,6 +109,10 @@ export default function IvrServiceProviderPage() {
 
   const faqs = [
     {
+      q: "What is an IVR service, and how can it help my business?",
+      a: "IVR (Interactive Voice Response) is an automated phone system that allows callers to interact through voice or keypad inputs. It helps businesses reduce wait time, route calls efficiently, and offer 24/7 customer support."
+    },
+    {
       q: "Can IVR handle multiple languages?",
       a: "Yes. We support multi-language voice menus and region-specific prompts.",
     },
@@ -112,6 +127,11 @@ export default function IvrServiceProviderPage() {
     {
       q: "Can calls be recorded?",
       a: "Yes. Call recording and secure storage options are available.",
+    },
+    {
+      q: "Do you provide cloud-based IVR for call centers?",
+      a: "Yes. We offer a cloud-based IVR system for call centers that supports high call volumes, multi-level IVR menus, and advanced call routing."
+
     },
     {
       q: "What about support and onboarding?",
@@ -129,7 +149,7 @@ export default function IvrServiceProviderPage() {
               IVR Service Provider
             </h1>
             <p className="mt-5 text-lg text-slate-600">
-              Automated call flows, routing and customer support systems designed to improve response efficiency and reduce manual effort.
+              Create a professional, automated, and seamless calling experience with our cloud-based IVR system. From routing calls instantly to handling customer queries 24/7, our IVR solutions help your business respond smarter and operate more efficiently.
             </p>
             <div className="mt-8 flex gap-4">
               <Link href="/contact-mindsmiratus-technologies" className="px-6 py-3 rounded-full bg-blue-600 text-white font-semibold hover:bg-blue-700">
@@ -147,7 +167,7 @@ export default function IvrServiceProviderPage() {
       {/* OVERVIEW */}
       <section className="py-20 bg-white">
         <div className="container mx-auto px-6 lg:px-16 grid lg:grid-cols-2 gap-12 items-center">
-          
+
           {/* Image */}
           <div className="flex justify-center">
             <Image
@@ -183,6 +203,8 @@ export default function IvrServiceProviderPage() {
       <section className="py-20 bg-white">
         <div className="container mx-auto px-6 lg:px-16 text-center">
           <h2 className="text-3xl font-bold text-slate-900 mb-12">Capabilities</h2>
+          <p>Customers expect quick answers—and your business can’t afford delays. Our cloud IVR system helps you automate incoming 
+            calls, guide customers through menu options, and route them to the right department without manual intervention. Whether you’re a startup, service provider, ecommerce brand, hospital, or enterprise, our IVR platform ensures professional communication every time a customer calls.</p>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
             {features.map((f, i) => (
@@ -190,6 +212,24 @@ export default function IvrServiceProviderPage() {
                 {f.icon}
                 <h3 className="mt-4 text-lg font-semibold text-slate-800">{f.title}</h3>
                 <p className="text-slate-600 text-sm mt-2">{f.desc}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* IVR use case added */}
+      <section className="py-20 bg-slate-50">
+        <div className="container mx-auto px-6 lg:px-16">
+          <h2 className="text-3xl font-bold text-center text-slate-900 mb-12">IVR Use Cases</h2>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 text-center">
+            {ivrUseCase.map((u, i) => (
+              <div key={i} className="p-6 bg-white rounded-2xl border border-slate-200 shadow-sm">
+
+                <h3 className="mt-4 text-lg font-semibold text-slate-800">{u.label}</h3>
+                <p className="text-slate-600 text-sm mt-2"> {u.subTitle}</p>
+                
               </div>
             ))}
           </div>
@@ -221,9 +261,8 @@ export default function IvrServiceProviderPage() {
             {plans.map((plan, i) => (
               <div
                 key={i}
-                className={`p-8 rounded-2xl border shadow-lg ${
-                  plan.highlight ? "border-blue-600 bg-blue-50" : "border-slate-200 bg-white"
-                }`}
+                className={`p-8 rounded-2xl border shadow-lg ${plan.highlight ? "border-blue-600 bg-blue-50" : "border-slate-200 bg-white"
+                  }`}
               >
                 <h3 className="text-2xl font-bold text-slate-900">{plan.name}</h3>
                 <p className="text-slate-600 mt-1">{plan.volume}</p>

@@ -13,9 +13,9 @@ import {
 } from "react-icons/fa";
 
 export const metadata = {
-  title: "WhatsApp API Service Provider | Official Business Messaging & Automation",
+  title: "WhatsApp API Service Provider | Business Messaging & Automation",
   description:
-    "Enterprise-grade WhatsApp Business API messaging for notifications, customer support, chatbots, and automated workflows. Secure, scalable and compliant with verified sender setup.",
+    "Mindsmiratus, a WhatsApp Business API Service provider helps businesses reach customers faster. Provide transactional and automated messages & marketing updates",
   keywords:
     "whatsapp api service provider, whatsapp business api integration, whatsapp chatbot automation, whatsapp messaging gateway, conversational marketing",
   alternates: {
@@ -97,6 +97,10 @@ export default function WhatsAppApiServiceProviderPage() {
 
   const faqs = [
     {
+      q: "What is a WhatsApp API service provider?",
+      a: "A WhatsApp API service provider allows businesses to send automated messages, notifications, and campaigns using the official WhatsApp Business API. It helps companies manage customer communication at scale.",
+    },
+    {
       q: "Is this the official WhatsApp Business API?",
       a: "Yes. We assist in verified onboarding with WhatsApp-approved providers.",
     },
@@ -113,8 +117,12 @@ export default function WhatsAppApiServiceProviderPage() {
       a: "Yes. REST APIs and callback events are provided for seamless platform integration.",
     },
     {
-      q: "How is pricing determined?",
-      a: "WhatsApp follows conversation-based pricing by category. We provide optimized routing plans.",
+      q: "Can I send bulk messages using the WhatsApp API?",
+      a: "Yes, you can run bulk WhatsApp campaigns using pre-approved templates through the WhatsApp API. This helps businesses send promotional, transactional, and engagement messages at scale.",
+    },
+    {
+      q: "Will I get support for green tick verification?",
+      a: "Yes, we help you apply for WhatsApp Green Tick Verification (subject to platform approval).",
     },
   ];
 
@@ -128,7 +136,7 @@ export default function WhatsAppApiServiceProviderPage() {
               WhatsApp API Service Provider
             </h1>
             <p className="mt-5 text-lg text-slate-600">
-              Branded, compliant and automated WhatsApp communication for customer engagement, support and lead interaction.
+              Grow Bigger with WhatsApp API Services of Mindsmiratus. Branded, compliant and automated WhatsApp communication for customer engagement, support and lead interaction. <strong>Connect Smarter. Engage Faster.</strong> 
             </p>
             <div className="mt-8 flex gap-4">
               <Link href="/contact-mindsmiratus-technologies" className="px-6 py-3 rounded-full bg-green-600 text-white font-semibold hover:bg-green-700">
