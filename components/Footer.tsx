@@ -46,8 +46,10 @@ export default function Footer() {
             <strong>Head Office:</strong><br/>
             New Delhi, Delhi, India
           </p>
-          <p className="text-sm mt-1">📧 mail@mindsmiratus.com</p>
-          <p className="text-sm mt-1">📞 +91-XXXXXXXXXX</p>
+          <p className="text-sm mt-1"><a href="mailto:mail@mindsmiratus.com">📧 mail@mindsmiratus.com</a>
+</p>
+          <p className="text-sm mt-1"> <a href="tel:+919625306474">📞+91-9625306474</a>
+</p>
         </motion.div>
 
         {/* Services */}
