@@ -89,9 +89,9 @@ export default function Footer() {
           </ul>
 
           <div className="flex gap-4 mt-6 text-slate-400">
-            <a href="#" className="hover:text-white transition"><Linkedin size={18} /></a>
-            <a href="#" className="hover:text-white transition"><Twitter size={18} /></a>
-            <a href="#" className="hover:text-white transition"><Facebook size={18} /></a>
+            <a href="https://www.linkedin.com/company/mindsmiratus/" className="hover:text-white transition"><Linkedin size={18} /></a>
+            <a href="https://x.com/mindsmiratus" className="hover:text-white transition"><Twitter size={18} /></a>
+            <a href="https://www.facebook.com/mindsmiratus.tech/" className="hover:text-white transition"><Facebook size={18} /></a>
           </div>
         </motion.div>
       </div>
