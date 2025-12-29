@@ -6,6 +6,7 @@ import Footer from "../components/Footer";
 import { Metadata } from "next";
 import { headers } from "next/headers";
 import Script from "next/script";
+import ProgressBar from '../components/ProgressBar';
 
 //Marketing / SEO pages may benefit from caching and Incremental Static Regeneration (ISR) so avoide below settings
 // export const dynamic = "force-dynamic"; // need for Authentication pages
@@ -199,6 +200,7 @@ export async function generateMetadata(): Promise<Metadata> {
             style={{ display: "none", visibility: "hidden" }}
           ></iframe>
         </noscript>
+          <ProgressBar />
         <Header />
         <main>{children}</main>
         <Footer />
