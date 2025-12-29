@@ -16,9 +16,7 @@ export const metadata = {
     "Get best voice call services by Mindsmiratus with high-quality audio, voice broadcasting campaigns, and auto dialer systems for support, sales, and promotions.",
   keywords:
     "voice call services, voice broadcasting provider, bulk voice calls, auto dialer system, predictive dialing, agent connect dialer, call automation",
-  alternates: {
-    canonical: "https://www.mindsmiratus.com/voice-call-services",
-  },
+ 
 };
 
 export default function VoiceCallServicesPage() {

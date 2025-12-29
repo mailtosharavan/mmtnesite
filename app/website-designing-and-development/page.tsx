@@ -9,9 +9,7 @@ export const metadata = {
   title: "Professional Web Design & Development Solutions by Mindsmiratus",
   description: "Mindsmiratus Technologies is a professional website designing and development company that builds stunning, SEO-optimized websites, powerful web apps, and mobile applications to grow your business.",
   keywords: "website designing, website development, mobile app development, custom business applications, eCommerce website, Mindsmiratus Technologies",
-  alternates: {
-    canonical: "https://www.mindsmiratus.com/website-designing-and-development",
-  },
+
 };
 export default function WebsiteApplicationDevelopment() {
 

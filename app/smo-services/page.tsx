@@ -9,9 +9,7 @@ export const metadata = {
     "With professional SMO services, upgrade your social presence to improve brand visibility and engagement to grow your audience across social media platforms.",
   keywords:
     "smo services company, social media optimization, social media branding, facebook optimization, instagram optimization",
-  alternates: {
-    canonical: "https://www.mindsmiratus.com/smo-services",
-  },
+ 
 };
 
 export default function SMOServicesPage() {

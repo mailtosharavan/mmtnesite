@@ -17,9 +17,7 @@ export const metadata = {
     "Professional Social Media Marketing services to grow brand visibility and generate leads. We manage Facebook, Instagram, LinkedIn, and many other platforms.",
   keywords:
     "social media marketing company, smm services, social media management agency, facebook ads, instagram marketing, linkedin branding",
-  alternates: {
-    canonical: "https://www.mindsmiratus.com/social-media-marketing",
-  },
+ 
 };
 
 export default function SocialMediaMarketingPage() {

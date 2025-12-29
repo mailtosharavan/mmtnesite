@@ -4,51 +4,177 @@ import React from "react";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 import { Metadata } from "next";
+import { headers } from "next/headers";
 import Script from "next/script";
 
-export const dynamic = "force-dynamic";
-export const fetchCache = "default-no-store";
-export const revalidate = 0;
+//Marketing / SEO pages may benefit from caching and Incremental Static Regeneration (ISR) so avoide below settings
+// export const dynamic = "force-dynamic"; // need for Authentication pages
+// export const fetchCache = "default-no-store"; // for fetch requests that should not be cached
+// export const revalidate = 0;
+export const revalidate = 3600; // 1 hour ISR
 
-export const metadata: Metadata = {
-  title: "Mindsmiratus Technologies Pvt ltd — Digital Transformation",
-  description:
-    "We accelerate digital transformation with custom apps, process digitization, web & mobile development, digital marketing, IT infrastructure, and tailored e-commerce solutions.",
-  metadataBase: new URL("https://www.mindsmiratus.com"), // for relative alternates/canonical
-  openGraph: {
-    title: "Mindsmiratus Technologies Pvt ltd — Digital Transformation",
+
+export async function generateMetadata(): Promise<Metadata> {
+  const headersList = await headers();
+
+  const protocol =
+    headersList.get("x-forwarded-proto") ?? "https";
+
+  const host =
+    headersList.get("x-forwarded-host") ??
+    headersList.get("host");
+
+  const baseUrl = `${protocol}://${host}`;
+
+
+  const organizationSchema = {
+    "@context": "https://schema.org",
+    "@type": "Corporation",
+    "@id": `${baseUrl}/#organization`,
+
+    name: "Mindsmiratus Technologies Pvt. Ltd.",
+    alternateName: "Mindsmiratus Technologies",
+
+    url: `${baseUrl}/`,
+    logo: `${baseUrl}/logo.png`,
+    image: `${baseUrl}/og-default.jpg`,
+
     description:
-      "Accelerate digital transformation: web & mobile, branding, marketing, IT & e-commerce.",
-    url: "https://www.mindsmiratus.com",
-    siteName: "Mindsmiratus Technologies Pvt ltd",
-    images: [
-      {
-        url: "https://www.mindsmiratus.com/og-default.jpg",
-        width: 1200,
-        height: 630,
-        alt: "Mindsmiratus Technologies Pvt ltd",
-      },
+      "Mindsmiratus Technologies Pvt. Ltd. delivers digital transformation solutions including custom web & mobile applications, ERP, CRM, cloud solutions, and digital marketing services.",
+
+    foundingDate: "2019",
+
+    contactPoint: {
+      "@type": "ContactPoint",
+      telephone: "+91-9625306474",
+      contactType: "customer support",
+      email: "support@mindsmiratus.com",
+      areaServed: "IN",
+      availableLanguage: ["English", "Hindi"],
+    },
+
+    address: {
+      "@type": "PostalAddress",
+      addressCountry: "IN",
+    },
+
+    sameAs: [
+      "https://www.linkedin.com/company/mindsmiratus/",
+      "https://x.com/mindsmiratus",
+      "https://www.facebook.com/mindsmiratus.tech/",
     ],
-    type: "website",
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: "Mindsmiratus Technologies Pvt ltd — Digital Transformation",
-    description:
-      "We accelerate digital transformation: custom apps, marketing, and IT.",
-    images: ["https://www.mindsmiratus.com/og-default.jpg"],
-    creator: "@mindsmiratus",
-  },
-  robots: {
-    index: true,
-    follow: true,
-  },
-  alternates: {
-    canonical: "/",
-  },
-};
+  };
 
-export default function RootLayout({ children }: { children: React.ReactNode }) {
+  const websiteSchema = {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "@id": `${baseUrl}/#website`,
+    url: `${baseUrl}/`,
+    name: "Mindsmiratus Technologies Pvt. Ltd.",
+    publisher: {
+      "@id": `${baseUrl}/#organization`,
+    },
+  };
+
+  return {
+    metadataBase: new URL(baseUrl),
+
+    title: "Mindsmiratus Technologies Pvt. Ltd. — Digital Transformation",
+    description:
+      "We accelerate digital transformation with custom apps, process digitization, web & mobile development, digital marketing, IT infrastructure, and tailored e-commerce solutions.",
+
+    openGraph: {
+      title: "Mindsmiratus Technologies Pvt. Ltd. — Digital Transformation",
+      description:
+        "Accelerate digital transformation: web & mobile, branding, marketing, IT & e-commerce.",
+      url: baseUrl,
+      siteName: "Mindsmiratus Technologies Pvt. Ltd.",
+      images: [
+        {
+          url: `${baseUrl}/og-default.jpg`,
+          width: 1200,
+          height: 630,
+          alt: "Mindsmiratus Technologies Pvt. Ltd.",
+        },
+      ],
+      type: "website",
+    },
+
+    twitter: {
+      card: "summary_large_image",
+      title: "Mindsmiratus Technologies Pvt. Ltd. — Digital Transformation",
+      description:
+        "We accelerate digital transformation: custom apps, marketing, and IT.",
+      images: [`${baseUrl}/og-default.jpg`],
+      creator: "@mindsmiratus",
+    },
+
+    robots: {
+      index: true,
+      follow: true,
+    },
+  };
+}
+
+  export default async function RootLayout({ children }: { children: React.ReactNode }) {
+  const headersList = await headers();
+
+  const protocol =
+    headersList.get("x-forwarded-proto") ?? "https";
+
+  const host =
+    headersList.get("x-forwarded-host") ??
+    headersList.get("host");
+
+  const baseUrl = `${protocol}://${host}`;
+  const organizationSchema = {
+    "@context": "https://schema.org",
+    "@type": "Corporation",
+    "@id": `${baseUrl}/#organization`,
+
+    name: "Mindsmiratus Technologies Pvt. Ltd.",
+    alternateName: "Mindsmiratus Technologies",
+
+    url: `${baseUrl}/`,
+    logo: `${baseUrl}/logo.png`,
+    image: `${baseUrl}/og-default.jpg`,
+
+    description:
+      "Mindsmiratus Technologies Pvt. Ltd. delivers digital transformation solutions including custom web & mobile applications, ERP, CRM, cloud solutions, and digital marketing services.",
+
+    foundingDate: "2019",
+
+    contactPoint: {
+      "@type": "ContactPoint",
+      telephone: "+91-9625306474",
+      contactType: "customer support",
+      email: "support@mindsmiratus.com",
+      areaServed: "IN",
+      availableLanguage: ["English", "Hindi"],
+    },
+
+    address: {
+      "@type": "PostalAddress",
+      addressCountry: "IN",
+    },
+
+    sameAs: [
+      "https://www.linkedin.com/company/mindsmiratus/",
+      "https://x.com/mindsmiratus",
+      "https://www.facebook.com/mindsmiratus.tech/",
+    ],
+  };
+
+  const websiteSchema = {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "@id": `${baseUrl}/#website`,
+    url: `${baseUrl}/`,
+    name: "Mindsmiratus Technologies Pvt. Ltd.",
+    publisher: {
+      "@id": `${baseUrl}/#organization`,
+    },
+  };
   return (
     <html lang="en">
       <head>
@@ -80,30 +206,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           id="structured-data-organization"
           type="application/ld+json"
           dangerouslySetInnerHTML={{
-            __html: JSON.stringify({
-              "@context": "https://schema.org",
-              "@type": "Organization",
-              name: "Mindsmiratus Technologies Pvt. Ltd.",
-              url: "https://www.mindsmiratus.com/",
-              logo: "https://www.digitaltransformation.com/logo.png",
-              description:
-                "We accelerate digital transformation through custom web & mobile apps, cloud solutions, and marketing services.",
-              contactPoint: [
-                {
-                  "@type": "ContactPoint",
-                  telephone: "+91-9625306474",
-                  contactType: "customer service",
-                  email: "support@digitaltransformation.com",
-                  areaServed: "IN",
-                  availableLanguage: ["English", "Hindi"],
-                },
-              ],
-              sameAs: [
-                "https://www.linkedin.com/company/mindsmiratus/",
-                "https://x.com/mindsmiratus",
-                "https://www.facebook.com/mindsmiratus.tech/",
-              ],
-            }),
+            __html: JSON.stringify([organizationSchema, websiteSchema]),
           }}
         />
       </body>

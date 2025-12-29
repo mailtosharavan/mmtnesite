@@ -17,9 +17,7 @@ export const metadata = {
   title: "Hosting & IT Support Services | Reliable Servers and Security",
   description:
     "Mindsmiratus provides web hosting services, cloud migration, email setup, SSL, backups, performance tuning and IT support for websites and business applications",
-  alternates: {
-    canonical: "https://www.mindsmiratus.com/hosting-and-it-support",
-  },
+  
 };
 
 export default function HostingAndITSupportPage() {

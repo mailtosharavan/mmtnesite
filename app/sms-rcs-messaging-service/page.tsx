@@ -18,9 +18,7 @@ export const metadata = {
     "Enterprise-grade SMS & RCS messaging service for secure OTP delivery, transactional alerts, and promotional campaigns. High deliverability, compliance ready, and scalable API integration.",
   keywords:
     "sms rcs messaging service provider, transactional sms gateway, otp messaging api, promotional sms service, rcs messaging company",
-  alternates: {
-    canonical: "https://www.mindsmiratus.com/sms-rcs-messaging-service",
-  },
+  
 };
 
 export default function SmsRcsMessagingServicePage() {

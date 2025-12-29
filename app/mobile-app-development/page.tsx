@@ -23,7 +23,7 @@ export const metadata = {
   title: "Mobile App Development Company | Android & iOS App Development",
   description:
     "We offer custom Android and iOS app development services with intuitive interfaces, smooth navigation, advanced features, seamless integrations for business with end-to-end delivery.",
-  alternates: { canonical: "https://www.mindsmiratus.com/mobile-app-development" },
+ 
 };
 
 export default function MobileAppDevelopmentPage() {

@@ -18,9 +18,7 @@ export const metadata = {
     "Mindsmiratus, a WhatsApp Business API Service provider helps businesses reach customers faster. Provide transactional and automated messages & marketing updates",
   keywords:
     "whatsapp api service provider, whatsapp business api integration, whatsapp chatbot automation, whatsapp messaging gateway, conversational marketing",
-  alternates: {
-    canonical: "https://www.mindsmiratus.com/whatsapp-api-service-provider",
-  },
+  
 };
 
 export default function WhatsAppApiServiceProviderPage() {

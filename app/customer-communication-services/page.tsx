@@ -12,9 +12,7 @@ export const metadata = {
     "Enhance customer satisfaction with professional customer communication services. We offer omnichannel support, tools & smart automation for real-time  response",
   keywords:
     "SMS, RCS, WhatsApp API, IVR, Voice Broadcasting, Customer Communication, Mindsmiratus Technologies",
-  alternates: {
-    canonical: "https://www.mindsmiratus.com/customer-communication-services",
-  },
+ 
 };
  const features = [
     { icon: <FaSms className="text-2xl" />, title: "Bulk SMS (OTP & Marketing)", desc: "High‑throughput SMS with DND handling, templates, and sender IDs." },

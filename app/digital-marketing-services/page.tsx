@@ -7,9 +7,7 @@ export const metadata = {
   title: "Digital Marketing & Online Promotion Services | Mindsmiratus",
   description: "Mindsmiratus provides professional digital marketing services, including performance marketing, SEO, social media marketing, and SMO, to grow businesses online",
   keywords: "digital marketing, SEO, SEM, Google Ads, social media marketing, SMO, online promotion, Mindsmiratus Technologies",
-  alternates: {
-    canonical: "https://www.mindsmiratus.com/digital-marketing-services",
-  },
+  
 };
 
 export default function DigitalMarketingPage() {
