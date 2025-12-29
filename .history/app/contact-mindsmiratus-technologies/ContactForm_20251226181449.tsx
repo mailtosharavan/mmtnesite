@@ -115,7 +115,7 @@ export default function ContactForm() {
         <div className="absolute inset-0 bg-gradient-to-br from-[#EAF3FF] via-white to-transparent opacity-70 pointer-events-none rounded-2xl" />
 
         {submitted ? (
-          <div id="success-message" className="text-center text-green-600 font-semibold text-lg relative z-10">
+          <div className="text-center text-green-600 font-semibold text-lg relative z-10">
             ✅ Thank you! We’ve received your message and will respond soon.
           </div>
         ) : (
