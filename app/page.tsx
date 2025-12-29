@@ -3,7 +3,6 @@ import AnimatedHeadline from "../components/AnimatedHeadline";
 import Services from "../components/Services";
 import IndustryGrid from "../components/IndustryGrid";
 import CTA from "../components/CTA";
-import SEO from "../components/SEO";
 import HeroClient from "../components/HeroClient"; // client wrapper
 import WhyChooseUs from "../components/WhyChooseUs";
 import OurClients from "../components/OurClients";
@@ -12,11 +11,6 @@ import Testimonials from "../components/Testimonials";
 export default function HomePage() {
   return (
     <>
-      <SEO
-        title="Digital Transformation Services — Custom Apps, Marketing & IT"
-        description="Partner with us for end-to-end digital transformation: digitize workflows, build custom apps, deploy cloud infrastructure, and accelerate growth with marketing."
-        url="https://www.mindsmiratus.com"
-      />
       <section className="bg-gradient-to-b from-white to-slate-50">
         <div className="container py-20">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
