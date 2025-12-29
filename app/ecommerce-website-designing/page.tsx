@@ -25,9 +25,7 @@ export const metadata = {
     "We deliver modern Ecommerce website design services with elegant layouts, and seamless shopping flow with optimized product cataloging, and checkout experiences",
   keywords:
     "ecommerce website designing, ecommerce app development, ecommerce website integration",
-  alternates: {
-    canonical: "https://www.mindsmiratus.com/ecommerce-website-designing",
-  },
+  
 };
 
 // ------------------ DATA ------------------

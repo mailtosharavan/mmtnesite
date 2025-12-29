@@ -15,7 +15,7 @@ export const metadata: Metadata = {
   title: "Mindsmiratus Technologies – Leading Web & IT Service Company ",
   description:
     "Mindsmiratus Technologies is a full-stack digital transformation partner delivering custom applications, integrated solutions, cloud hosting, and growth-driven marketing.",
-  alternates: { canonical: "https://www.mindsmiratus.com/about" },
+  
 };
 
 export default function AboutPage() {

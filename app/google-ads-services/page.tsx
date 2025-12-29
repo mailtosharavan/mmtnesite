@@ -1,10 +1,12 @@
 import Link from "next/link";
 import Image from "next/image";
+import { getServiceSchema } from "../lib/schema/serviceSchema";
 import {
-  FaGoogle, FaBullseye, FaChartLine, FaClipboardCheck, FaAsterisk,
+   FaBullseye, FaChartLine, FaClipboardCheck,
   FaSearchDollar, FaVideo, FaPlay, FaShoppingCart, FaPhoneAlt,
-  FaCheckCircle, FaRocket, FaLayerGroup
+  FaCheckCircle, FaLayerGroup
 } from "react-icons/fa";
+import Script from "next/script";
 
 export const metadata = {
   title: "Google Ads Services | Get More Leads with Smart PPC",
@@ -12,12 +14,10 @@ export const metadata = {
     "Grow faster with targeted Google Ads campaigns Services by Mindsmiratus. We optimize your PPC to deliver quality leads, and maximum ROI for your business.",
   keywords:
     "Google Ads services, SEM services, PPC management, Performance Max, YouTube Ads, Shopping Ads, Search Ads, Display Ads, paid campaigns",
-  alternates: {
-    canonical: "https://www.mindsmiratus.com/google-ads-services",
-  },
+ 
 };
 
-export default function GoogleAdsServicesPage() {
+export default async function GoogleAdsServicesPage() {
   const features = [
     { icon: <FaBullseye/>, title: "Goal-Driven Strategy", desc: "Target the right audience with laser-focused intent and clear conversion goals." },
     { icon: <FaClipboardCheck/>, title: "Clean Account Setup", desc: "Structure, keywords, negatives, SKAG/SKAG-lite, assets & tracking done right." },
@@ -73,7 +73,13 @@ export default function GoogleAdsServicesPage() {
       a: "Running Google Ads might look simple, but optimizing it for maximum ROI requires deep keyword research, strategic bidding, competitor analysis, A/B testing, and continuous monitoring. Our professional Google Ads services ensure your budget is used efficiently and delivers measurable, scalable results." 
       }
   ];
-
+const serviceSchema = await getServiceSchema({
+    name: "Google Ads Services (SEM)",
+    description:
+      "Expert Google Ads, PPC, and SEM management services to improve conversions and maximize advertising ROI.",
+    slug: "/services/google-ads-services",
+    serviceType: "Google Ads, SEM, PPC Management",
+  });
   return (
     <>
       {/* HERO */}
@@ -338,18 +344,11 @@ export default function GoogleAdsServicesPage() {
       </section>
 
       {/* JSON-LD */}
-      <script
+      <Script
+        id="structured-data-service-google-ads"
         type="application/ld+json"
         dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "Service",
-            name: "Google Ads Services (SEM)",
-            provider: { "@type": "Organization", name: "Mindsmiratus Technologies Pvt. Ltd." },
-            areaServed: "IN",
-            serviceType: ["Google Ads", "SEM", "PPC Management"],
-            url: "https://www.mindsmiratus.com/google-ads-services",
-          }),
+          __html: JSON.stringify(serviceSchema),
         }}
       />
     </>

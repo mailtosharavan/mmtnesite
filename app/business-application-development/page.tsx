@@ -23,9 +23,7 @@ export const metadata = {
     "We provide Next-Gen Business Applications Development, ERP, CRM, HRMS, and workflow systems that automate tasks, connect data, and provide cloud-ready solutions",
   keywords:
     "business application development, ERP development, CRM development, HRMS development, workflow automation, SaaS development, portals, dashboards",
-  alternates: {
-    canonical: "https://www.mindsmiratus.com/business-application-development",
-  },
+
 };
 
 // Inline premium hero SVG (visual right)

@@ -17,9 +17,7 @@ export const metadata = {
     "Boost your online visibility with expert SEO services — keyword research, on-page & off-page SEO, technical audits, by Mindsmiratus to grow organic traffic.",
   keywords:
     "seo services company, seo agency, seo expert services, search engine optimization services, local seo, link building services",
-  alternates: {
-    canonical: "https://www.mindsmiratus.com/seo-services-company",
-  },
+ 
 };
 
 export default function SeoServicesCompanyPage() {

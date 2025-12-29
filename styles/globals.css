@@ -2,6 +2,26 @@
 @tailwind components;
 @tailwind utilities;
 
+/* NProgress Styles */
+#nprogress {
+  pointer-events: none;
+}
+
+#nprogress .bar {
+  background: #3b82f6;
+  height: 3px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 9999;
+  box-shadow: 0 0 10px rgba(59, 130, 246, 0.8);
+}
+
+#nprogress .peg {
+  box-shadow: 0 0 15px rgba(59, 130, 246, 0.8),
+    0 0 8px rgba(59, 130, 246, 0.5);
+}
 
 .container {
   @apply mx-auto px-4 sm:px-6 lg:px-8;

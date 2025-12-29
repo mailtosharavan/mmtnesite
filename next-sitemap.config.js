@@ -1,25 +1,23 @@
-
 /** @type {import('next-sitemap').IConfig} */
 module.exports = {
-  siteUrl: "https://www.mindsmiratus.com", // ← your domain
+  siteUrl: process.env.NEXT_PUBLIC_SITE_URL || "http://localhost:3000",
+
   generateRobotsTxt: true,
+  autoLastmod: true,
+trailingSlash: false,
   sitemapSize: 7000,
   changefreq: "weekly",
   priority: 0.7,
-  exclude: ["/admin/*"], // optional
+
+  exclude: ["/admin/*", "/api/*"],
+
   robotsTxtOptions: {
     policies: [
       {
         userAgent: "*",
         allow: "/",
+        disallow: ["/admin", "/api"],
       },
-      {
-        userAgent: "*",
-        disallow: ["/admin"],
-      },
-    ],
-    additionalSitemaps: [
-      "https://www.mindsmiratus.com/sitemap.xml",
     ],
   },
 };

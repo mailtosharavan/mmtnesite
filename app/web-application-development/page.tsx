@@ -22,7 +22,7 @@ export const metadata = {
   title: "Web Application Development Company | Custom Web Apps & SaaS Solutions",
   description:
     "End-to-End Web Application Development services by Mindsmiratus with modern frameworks, performance, strong security, and user-centric design for all industries",
-  alternates: { canonical: "https://www.mindsmiratus.com/web-application-development" },
+  
 };
 
 export default function WebApplicationDevelopmentPage() {

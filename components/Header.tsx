@@ -33,7 +33,7 @@ export default function Header() {
 
         {/* Desktop Navigation */}
         <nav className="hidden md:flex items-center gap-4">
-          <Link href="/about" className="text-sm text-slate-700 hover:text-slate-900">About</Link>
+          <Link href="/about-us" className="text-sm text-slate-700 hover:text-slate-900">About</Link>
           <Link href="/website-designing-and-development" className="text-sm text-slate-700 hover:text-slate-900">Web & Apps</Link>
           <Link href="/digital-marketing-services" className="text-sm text-slate-700 hover:text-slate-900">Digital Marketing</Link>
           <Link href="/customer-communication-services" className="text-sm text-slate-700 hover:text-slate-900">Communication</Link>
@@ -58,7 +58,7 @@ export default function Header() {
         <nav className="md:hidden bg-white border-t border-slate-200">
           <ul className="flex flex-col gap-2 p-4">
             <li>
-              <Link href="/about" className="text-sm text-slate-700 hover:text-slate-900">About</Link>
+              <Link href="/about-us" className="text-sm text-slate-700 hover:text-slate-900">About</Link>
             </li>
             <li>
               <Link href="/website-designing-and-development" className="text-sm text-slate-700 hover:text-slate-900">Web & Apps</Link>
