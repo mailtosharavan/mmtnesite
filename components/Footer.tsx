@@ -46,8 +46,10 @@ export default function Footer() {
             <strong>Head Office:</strong><br/>
             New Delhi, Delhi, India
           </p>
-          <p className="text-sm mt-1">📧 mail@mindsmiratus.com</p>
-          <p className="text-sm mt-1">📞 +91-XXXXXXXXXX</p>
+          <p className="text-sm mt-1"><a href="mailto:mail@mindsmiratus.com">📧 mail@mindsmiratus.com</a>
+</p>
+          <p className="text-sm mt-1"> <a href="tel:+919625306474">📞+91-9625306474</a>
+</p>
         </motion.div>
 
         {/* Services */}
@@ -87,9 +89,9 @@ export default function Footer() {
           </ul>
 
           <div className="flex gap-4 mt-6 text-slate-400">
-            <a href="#" className="hover:text-white transition"><Linkedin size={18} /></a>
-            <a href="#" className="hover:text-white transition"><Twitter size={18} /></a>
-            <a href="#" className="hover:text-white transition"><Facebook size={18} /></a>
+            <a href="https://www.linkedin.com/company/mindsmiratus/" className="hover:text-white transition"><Linkedin size={18} /></a>
+            <a href="https://x.com/mindsmiratus" className="hover:text-white transition"><Twitter size={18} /></a>
+            <a href="https://www.facebook.com/mindsmiratus.tech/" className="hover:text-white transition"><Facebook size={18} /></a>
           </div>
         </motion.div>
       </div>
