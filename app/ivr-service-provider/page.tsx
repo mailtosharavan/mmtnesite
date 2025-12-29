@@ -19,9 +19,7 @@ export const metadata = {
     "Get IVR (Interactive Voice Response) service for customer support, call routing, automated call handling, and interactive voice menus for higher satisfaction.",
   keywords:
     "ivr service provider, call automation system, inbound call routing, ivr call flow, customer support ivr, cloud ivr solutions",
-  alternates: {
-    canonical: "https://www.mindsmiratus.com/ivr-service-provider",
-  },
+  
 };
 
 export default function IvrServiceProviderPage() {

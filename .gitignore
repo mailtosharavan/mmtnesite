@@ -22,3 +22,6 @@ coverage/
 .idea/
 .DS_Store
 node_modules
+# next-sitemap generated files
+public/sitemap*.xml
+public/robots.txt

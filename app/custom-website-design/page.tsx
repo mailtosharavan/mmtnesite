@@ -25,9 +25,7 @@ export const metadata = {
     "Mindsmiratus is a professional custom website design and application development company that builds stunning, SEO-optimized websites and powerful web apps.",
   keywords:
     "website designing, website development, web application development, mobile app development, custom business applications, eCommerce website,",
-  alternates: {
-    canonical: "https://www.mindsmiratus.com/custom-website-design",
-  },
+  
 };
 
 export default function WebsiteApplicationDevelopment() {

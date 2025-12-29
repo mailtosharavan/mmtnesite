@@ -1,14 +1,22 @@
 import ContactForm from "./ContactForm";
 
+
 export const metadata = {
-  title: "Contact Mindsmiratus Technologies Pvt. Ltd. | Web, Mobile & IT Solutions Partner",
+  title:
+    "Contact Mindsmiratus Technologies Pvt. Ltd. | Web, Mobile & IT Solutions Partner",
+
   description:
     "Reach out to Mindsmiratus Technologies Pvt. Ltd., your trusted IT solutions partner for web development, mobile app design, digital transformation, and cloud strategy. Let’s start building your success story.",
+
   openGraph: {
-    title: "Contact Mindsmiratus Technologies Pvt. Ltd. — Digital Transformation & App Development Experts",
+    title:
+      "Contact Mindsmiratus Technologies Pvt. Ltd. — Digital Transformation & App Development Experts",
+
     description:
       "Get in touch with Mindsmiratus Technologies for scalable web development, enterprise applications, cloud integration, and digital growth solutions.",
-    url: "https://yourdomain.com/contact-mindsmiratus-technologies",
+
+    url: "/contact-mindsmiratus-technologies",
+
     siteName: "Mindsmiratus Technologies Pvt. Ltd.",
     locale: "en_IN",
     type: "website",

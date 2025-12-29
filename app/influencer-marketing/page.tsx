@@ -7,9 +7,7 @@ export const metadata = {
   title: "Influencer Marketing Services | Creators, UGC & Brand Campaigns",
   description:
     "Influencer marketing campaigns that build trust, amplify brand voice, and drive authentic engagement. UGC creators, micro-influencers, macro, celebrity partnerships.",
-  alternates: {
-    canonical: "https://www.mindsmiratus.com/influencer-marketing",
-  },
+ 
 };
 
 export default function InfluencerMarketingPage() {
