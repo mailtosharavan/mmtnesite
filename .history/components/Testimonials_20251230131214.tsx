@@ -11,12 +11,12 @@ const testimonials = [
   {
     text: "Good service and knowledgeable team. Would definitely recommend MindsMiratus for business solutions.",
     name: "Mrs.Rucha Tayade",
-    company: "VAMA Events Pvt Ltd"
+    company: "VAMA Events"
   },
   {
     text: "A great partner for our digital marketing and CRM automation needs. Highly recommended!",
     name: "Dr. S.K. Gupta",
-    company: "ICMAI- Registered Valuers Organisation"
+    company: "RVO ICMAI"
   },
  {
     text: "Reliable company for web development and digital marketing services. Happy with the results.",
