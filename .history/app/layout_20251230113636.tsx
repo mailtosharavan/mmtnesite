@@ -49,7 +49,7 @@ export async function generateMetadata(): Promise<Metadata> {
       "@type": "ContactPoint",
       telephone: "+91-9625306474",
       contactType: "customer support",
-      email: "mail@mindsmiratus.com",
+      email: "support@mindsmiratus.com",
       areaServed: "IN",
       availableLanguage: ["English", "Hindi"],
     },
@@ -80,14 +80,14 @@ export async function generateMetadata(): Promise<Metadata> {
   return {
     metadataBase: new URL(baseUrl),
 
-    title: "Web Design, Digital Marketing & IT Solutions Company | MindsMiratus",
+    title: "Mindsmiratus Technologies Pvt. Ltd. — Digital Transformation",
     description:
       "We accelerate digital transformation with custom apps, process digitization, web & mobile development, digital marketing, IT infrastructure, and tailored e-commerce solutions.",
 
     openGraph: {
-      title: "MindsMiratus Technologies | Web Design, Digital Marketing & IT Solutions",
+      title: "Mindsmiratus Technologies Pvt. Ltd. — Digital Transformation",
       description:
-        "Grow your business with MindsMiratus Technologies – expert web design, digital marketing, mobile app development, Bulk SMS, Voice Call & WhatsApp Business API solutions in India.",
+        "Accelerate digital transformation: web & mobile, branding, marketing, IT & e-commerce.",
       url: baseUrl,
       siteName: "Mindsmiratus Technologies Pvt. Ltd.",
       images: [
@@ -103,9 +103,9 @@ export async function generateMetadata(): Promise<Metadata> {
 
     twitter: {
       card: "summary_large_image",
-      title: "MindsMiratus Technologies | Web Design, Digital Marketing & IT Solutions",
+      title: "Mindsmiratus Technologies Pvt. Ltd. — Digital Transformation",
       description:
-        "MindsMiratus Technologies offers professional web designing, digital marketing, mobile app development, telemarketing, Bulk SMS, Voice Call & WhatsApp Business API services for businesses in India.",
+        "We accelerate digital transformation: custom apps, marketing, and IT.",
       images: [`${baseUrl}/og-default.jpg`],
       creator: "@mindsmiratus",
     },
@@ -117,7 +117,7 @@ export async function generateMetadata(): Promise<Metadata> {
   };
 }
 
-export default async function RootLayout({ children }: { children: React.ReactNode }) {
+  export default async function RootLayout({ children }: { children: React.ReactNode }) {
   const headersList = await headers();
 
   const protocol =
@@ -200,7 +200,7 @@ export default async function RootLayout({ children }: { children: React.ReactNo
             style={{ display: "none", visibility: "hidden" }}
           ></iframe>
         </noscript>
-        <ProgressBar />
+          <ProgressBar />
         <Header />
         <main>{children}</main>
         <Footer />
