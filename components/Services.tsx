@@ -232,7 +232,7 @@ export default function ServicesSection() {
           </p>
           <div className="mt-6 inline-flex gap-3">
             <a
-              href="/contact"
+              href="/contact-mindsmiratus-technologies"
               className="inline-flex items-center gap-2 px-5 py-3 rounded-full bg-primary text-white font-semibold shadow hover:shadow-md focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-primary/50 transition"
             >
               Get a free consultation
