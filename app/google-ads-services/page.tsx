@@ -77,7 +77,7 @@ const serviceSchema = await getServiceSchema({
     name: "Google Ads Services (SEM)",
     description:
       "Expert Google Ads, PPC, and SEM management services to improve conversions and maximize advertising ROI.",
-    slug: "/services/google-ads-services",
+    slug: "/google-ads-services",
     serviceType: "Google Ads, SEM, PPC Management",
   });
   return (

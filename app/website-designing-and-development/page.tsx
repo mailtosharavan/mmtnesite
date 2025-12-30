@@ -1,9 +1,8 @@
 import Image from "next/image";
 import Link from "next/link";
-import { link } from "node:fs";
-import React from "react";
 import { FaCheckCircle, FaProjectDiagram, FaUserTie } from "react-icons/fa";
-
+import { getServiceSchema } from "../lib/schema/serviceSchema";
+import Script from "next/script";
 
 export const metadata = {
   title: "Professional Web Design & Development Solutions by Mindsmiratus",
@@ -11,7 +10,7 @@ export const metadata = {
   keywords: "website designing, website development, mobile app development, custom business applications, eCommerce website, Mindsmiratus Technologies",
 
 };
-export default function WebsiteApplicationDevelopment() {
+export default async function WebsiteApplicationDevelopment() {
 
   const faqs = [
     {
@@ -63,10 +62,18 @@ export default function WebsiteApplicationDevelopment() {
       },
     })),
   };
+const serviceSchema = await getServiceSchema({
+  name: "Website Designing & Development Services",
+  description:
+    "Professional website designing and development services by Mindsmiratus Technologies including responsive website design, SEO-optimized web development, custom business applications, eCommerce solutions, and mobile app development to help businesses grow online.",
+  slug: "/website-designing-and-development",
+  serviceType:
+    "Website Designing Services, Website Development, Web Application Development, Mobile App Development, eCommerce Website Development, Custom Business Applications",
+});
+
+
   return (
     <>
-
-
       {/* HERO SECTION */}
       <section className="relative overflow-hidden py-28 bg-gradient-to-br from-sky-50 via-white to-cyan-50">
 
@@ -591,6 +598,13 @@ export default function WebsiteApplicationDevelopment() {
 
         </div>
       </section>
+      <Script
+        id="structured-data-website-designing-and-development"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(serviceSchema),
+        }}
+      />
 
     </>
   );

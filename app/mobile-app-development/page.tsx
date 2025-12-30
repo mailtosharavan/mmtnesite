@@ -1,24 +1,8 @@
 import Image from "next/image";
 import Link from "next/link";
-import {
-  FaStar,
-  FaServer,
-  FaClock,
-  FaCheckCircle,
-  FaShieldAlt,
-  FaCubes,
-  FaUsersCog,
-  FaBolt,
-  FaHeadset,
-  FaThumbsUp,
-  FaRocket,
-  FaChartLine,
-  FaMobileAlt,
-  FaQuestionCircle,
-  FaApple,
-  FaAndroid,
-} from "react-icons/fa";
-
+import {FaStar,FaClock,FaShieldAlt,FaCubes,FaBolt,FaThumbsUp,FaMobileAlt,} from "react-icons/fa";
+import { getServiceSchema } from "../lib/schema/serviceSchema";
+import Script from "next/script";
 export const metadata = {
   title: "Mobile App Development Company | Android & iOS App Development",
   description:
@@ -26,7 +10,7 @@ export const metadata = {
  
 };
 
-export default function MobileAppDevelopmentPage() {
+export default async function MobileAppDevelopmentPage() {
   const capabilities = [
     {
       icon: "📱",
@@ -122,6 +106,21 @@ export default function MobileAppDevelopmentPage() {
       a: "Absolutely. Our mobile apps can integrate with CRMs, payment gateways, analytics platforms, and custom APIs for smooth workflows."
         },
   ];
+const serviceSchema = await getServiceSchema({
+  name: "Mobile App Development Company",
+  description:
+    "Professional mobile app development services by Mindsmiratus including custom Android and iOS applications, scalable mobile solutions, secure architecture, and user-focused design to help businesses grow digitally.",
+  slug: "/mobile-app-development",
+  serviceType:
+    "Mobile App Development, Android App Development, iOS App Development, Custom Mobile Applications, Enterprise Mobile Solutions",
+
+  // 🔗 Parent service relationship
+  isPartOf: {
+    "@type": "Service",
+    name: "Website Designing & Development Services",
+    url: "https://www.mindsmiratus.com/website-designing-and-development",
+  },
+});
 
   return (
     <>
@@ -407,6 +406,13 @@ export default function MobileAppDevelopmentPage() {
 
         </div>
       </section>
+      <Script
+        id="structured-data-mobile-app-development"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(serviceSchema),
+        }}
+      />
     </>
   );
 }

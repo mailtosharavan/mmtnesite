@@ -5,11 +5,17 @@ export async function getServiceSchema({
   description,
   slug,
   serviceType,
+  isPartOf, // 👈 NEW (optional)
 }: {
   name: string;
   description: string;
   slug: string;
   serviceType?: string;
+  isPartOf?: {
+    "@type": "Service";
+    name: string;
+    url: string;
+  };
 }) {
   const headersList = await headers();
 
@@ -43,5 +49,8 @@ export async function getServiceSchema({
     },
 
     url: `${baseUrl}${slug}`,
+
+    //  Added ONLY if provided
+    ...(isPartOf ? { isPartOf } : {}),
   };
 }

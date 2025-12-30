@@ -1,16 +1,8 @@
 import Link from "next/link";
 import Image from "next/image";
-import {
-  FaWhatsapp,
-  FaRobot,
-  FaPlug,
-  FaShieldAlt,
-  FaChartLine,
-  FaIndustry,
-  FaStore,
-  FaHeadset,
-  FaCheckCircle,
-} from "react-icons/fa";
+import {FaWhatsapp,FaRobot,FaPlug,FaShieldAlt,FaChartLine,FaIndustry,FaStore,FaHeadset,FaCheckCircle,} from "react-icons/fa";
+import {getServiceSchema} from "../lib/schema/serviceSchema";
+import Script from "next/script";
 
 export const metadata = {
   title: "WhatsApp API Service Provider | Business Messaging & Automation",
@@ -21,7 +13,7 @@ export const metadata = {
   
 };
 
-export default function WhatsAppApiServiceProviderPage() {
+export default async function WhatsAppApiServiceProviderPage() {
   const features = [
     {
       icon: <FaWhatsapp className="text-green-600 text-3xl" />,
@@ -123,6 +115,22 @@ export default function WhatsAppApiServiceProviderPage() {
       a: "Yes, we help you apply for WhatsApp Green Tick Verification (subject to platform approval).",
     },
   ];
+  const serviceSchema = await getServiceSchema({
+              name: "WhatsApp Business API Service Provider",
+              description:
+                "Official WhatsApp Business API services by Mindsmiratus Technologies to enable secure, scalable, and automated customer communication through WhatsApp messaging, notifications, chatbots, and marketing campaigns.",
+              slug: "/whatsapp-api-service-provider",
+              serviceType:
+                "WhatsApp Business API, WhatsApp Messaging Services, WhatsApp Automation, WhatsApp Marketing, Chatbot Integration, Omnichannel Communication",
+
+              // 🔗 Parent service relationship
+              isPartOf: {
+                "@type": "Service",
+                name: "Customer Communication Services",
+                url: "https://www.mindsmiratus.com/customer-communication-services",
+              },
+            });
+
 
   return (
     <>
@@ -319,7 +327,13 @@ export default function WhatsAppApiServiceProviderPage() {
     </div>
   </div>
 </section>
-
+<Script
+        id="structured-data-whatsapp-api-service-provider"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(serviceSchema),
+        }}
+      />
     </>
   );
 }
