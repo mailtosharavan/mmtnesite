@@ -188,7 +188,7 @@ export default function AboutPage() {
 
             <div className="relative">
               <span className="absolute -left-8 top-1 w-4 h-4 rounded-full bg-cyan-600"></span>
-              <p className="text-slate-900 font-semibold">2012</p>
+              <p className="text-slate-900 font-semibold">2010</p>
               <p className="text-slate-600 text-sm">
                 Started as <strong>Agnith Technologies</strong>, working as a proprietor firm focusing on custom software and website development for small and mid-size businesses.
               </p>
@@ -196,7 +196,7 @@ export default function AboutPage() {
 
             <div className="relative">
               <span className="absolute -left-8 top-1 w-4 h-4 rounded-full bg-cyan-600"></span>
-              <p className="text-slate-900 font-semibold">2016</p>
+              <p className="text-slate-900 font-semibold">2018</p>
               <p className="text-slate-600 text-sm">
                 Incorporated as <strong>Mindsmiratus Technologies Pvt. Ltd.</strong> with a vision to deliver enterprise-grade solutions with structured execution processes.
               </p>
@@ -238,7 +238,7 @@ export default function AboutPage() {
           <div>
             <h2 className="text-3xl font-bold text-slate-900">Message from Our Founder</h2>
             <p className="mt-4 text-slate-600 leading-relaxed">
-              When we started in 2012, our goal was simple — to build technology that truly
+              When we started in 2010, our goal was simple — to build technology that truly
               solves business problems. Not just apps, not just websites, but solutions that
               help organizations operate better, scale faster, and deliver meaningful value to
               their customers.
