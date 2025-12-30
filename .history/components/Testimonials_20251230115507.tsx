@@ -5,13 +5,13 @@ import { motion } from "framer-motion";
 const testimonials = [
   {
     text: "They transformed our legacy systems into a fully automated digital process. The impact was immediate and measurable.",
-    name: "Mr. Talha Saiffudin",
-    company: "Crystal Air Systems"
+    name: "Rakesh Mehta",
+    company: "ABC Retail Pvt. Ltd."
   },
   {
-    text: "Good service and knowledgeable team. Would definitely recommend MindsMiratus for business solutions.",
-    name: "Mrs.Rucha Tayade",
-    company: "VAMA Events"
+    text: "Excellent team – professional, responsive, and highly skilled. Our mobile app exceeded expectations.",
+    name: "Sonal Patel",
+    company: "Zenith Healthcare"
   },
   {
     text: "A great partner for our digital marketing and CRM automation needs. Highly recommended!",

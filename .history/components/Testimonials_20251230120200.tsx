@@ -5,12 +5,12 @@ import { motion } from "framer-motion";
 const testimonials = [
   {
     text: "They transformed our legacy systems into a fully automated digital process. The impact was immediate and measurable.",
-    name: "Mr. Talha Saiffudin",
+    name: "Saifuddin",
     company: "Crystal Air Systems"
   },
   {
     text: "Good service and knowledgeable team. Would definitely recommend MindsMiratus for business solutions.",
-    name: "Mrs.Rucha Tayade",
+    name: "Rucha Tayade",
     company: "VAMA Events"
   },
   {
