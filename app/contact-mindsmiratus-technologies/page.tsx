@@ -1,6 +1,6 @@
 import ContactForm from "./ContactForm";
-
-
+import Script from "next/script";
+import { headers } from "next/headers";
 export const metadata = {
   title:
     "Contact Mindsmiratus Technologies Pvt. Ltd. | Web, Mobile & IT Solutions Partner",
@@ -23,7 +23,28 @@ export const metadata = {
   },
 };
 
-export default function ContactPage() {
+export default async function ContactPage() {
+  const headersList = await headers();
+
+  const protocol =
+    headersList.get("x-forwarded-proto") ?? "https";
+
+  const host =
+    headersList.get("x-forwarded-host") ??
+    headersList.get("host");
+    const baseUrl = `${protocol}://${host}`;
+  const contactPageSchema = {
+            "@context": "https://schema.org",
+            "@type": "ContactPage",
+            "@id": `${baseUrl}/contact-mindsmiratus-technologies#contactpage`,
+            url: `${baseUrl}/contact-mindsmiratus-technologies`,
+            name: "Contact Mindsmiratus Technologies",
+            description:
+              "Get in touch with Mindsmiratus Technologies Pvt. Ltd. for digital transformation, web development, mobile apps, digital marketing, and customer communication solutions.",
+            publisher: {
+              "@id": `${baseUrl}/#organization`,
+            },
+          };
   return (
     <main className="min-h-screen bg-gradient-to-b from-slate-50 to-white py-16">
       <section className="container mx-auto px-6 text-center mb-12">
@@ -43,6 +64,13 @@ export default function ContactPage() {
           cloud infrastructure, CRM and ERP solutions, and enterprise digital transformation.
         </p>
       </section>
+      <Script
+        id="structured-data-mobile-app-development"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(contactPageSchema),
+        }}
+      />
     </main>
   );
 }

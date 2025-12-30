@@ -1,14 +1,8 @@
 import Link from "next/link";
 import Image from "next/image";
-import {
-  FaPhoneAlt,
-  FaBroadcastTower,
-  FaUserFriends,
-  FaRobot,
-  FaClock,
-  FaChartLine,
-  FaCheckCircle,
-} from "react-icons/fa";
+import {FaPhoneAlt,FaBroadcastTower,  FaUserFriends,FaRobot,FaClock,FaChartLine,} from "react-icons/fa";
+import { getServiceSchema } from "../lib/schema/serviceSchema";
+import Script from "next/script";
 
 export const metadata = {
   title: "Best Voice Call Service Provider to Boost Customer Engagement",
@@ -19,7 +13,24 @@ export const metadata = {
  
 };
 
-export default function VoiceCallServicesPage() {
+export default async function VoiceCallServicesPage() {
+
+  const serviceSchema = await getServiceSchema({
+            name: "Voice Call Services",
+            description:
+              "Professional voice call and voice broadcasting services by Mindsmiratus Technologies to deliver automated outbound calls, transactional voice alerts, promotional voice campaigns, and scalable voice communication solutions for businesses.",
+            slug: "/voice-call-services",
+            serviceType:
+              "Voice Call Services, Voice Broadcasting, Automated Voice Calls, Transactional Voice Alerts, Promotional Voice Campaigns, Outbound Calling Solutions",
+
+            // 🔗 Parent service relationship
+            isPartOf: {
+              "@type": "Service",
+              name: "Customer Communication Services",
+              url: "https://www.mindsmiratus.com/customer-communication-services",
+            },
+          });
+
   const broadcastFeatures = [
     { icon: <FaBroadcastTower className="text-blue-600 text-3xl" />, title: "Large-Scale Delivery", desc: "Send pre-recorded calls to thousands or millions of recipients." },
     { icon: <FaRobot className="text-blue-600 text-3xl" />, title: "Automated Playback", desc: "Consistent message delivery without manual dialing or agents." },
@@ -165,6 +176,13 @@ export default function VoiceCallServicesPage() {
           </div>
         </div>
       </section>
+      <Script
+        id="structured-data-voice-call-services"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(serviceSchema),
+        }}
+      />
     </>
   );
 }

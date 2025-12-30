@@ -1,6 +1,7 @@
 import Link from "next/link";
 import TypeWriter from "../../components/TypingText";
-
+import { getServiceSchema } from "../lib/schema/serviceSchema";
+import Script from "next/script";
 import {
   FaBullhorn,
   FaUsers,
@@ -20,7 +21,7 @@ export const metadata = {
  
 };
 
-export default function SocialMediaMarketingPage() {
+export default async function SocialMediaMarketingPage() {
   const services = [
     {
       title: "Social Media Strategy",
@@ -143,6 +144,15 @@ export default function SocialMediaMarketingPage() {
       a: "Yes. As part of our social media marketing services, we run performance-driven ads on Facebook, Instagram, LinkedIn, and YouTube to generate leads, sales, and brand visibility.",
     },
   ];
+  const serviceSchema = await getServiceSchema({
+  name: "Social Media Marketing Services Company",
+  description:
+    "Professional social media marketing services by Mindsmiratus to grow brand visibility and generate qualified leads through strategic management of Facebook, Instagram, LinkedIn, and other social platforms.",
+  slug: "/social-media-marketing",
+  serviceType:
+    "Social Media Marketing Services, SMM Services, Social Media Management, Facebook Marketing, Instagram Marketing, LinkedIn Marketing, Brand Promotion",
+});
+
 
   return (
     <>
@@ -349,63 +359,69 @@ Social media is where your customers spend their time and where brand trust is b
   </div>
 </section>
 
-{/* FAQ + CTA */}
-<section className="py-24 bg-gradient-to-b from-white to-slate-50">
-  <div className="container mx-auto px-6 lg:px-16 grid lg:grid-cols-2 gap-14 items-start">
+    {/* FAQ + CTA */}
+    <section className="py-24 bg-gradient-to-b from-white to-slate-50">
+      <div className="container mx-auto px-6 lg:px-16 grid lg:grid-cols-2 gap-14 items-start">
 
-    <div>
-      <h2 className="text-3xl font-bold text-slate-900 mb-8">Frequently Asked Questions</h2>
-      <div className="space-y-4">
-        {faqs.map((f, i) => (
-          <details key={i} className="group border border-slate-200 rounded-2xl bg-white shadow-sm hover:shadow-lg transition-all duration-300">
-            <summary className="px-6 py-4 cursor-pointer font-semibold text-slate-800 flex justify-between items-center">
-              {f.q}
-              <span className="text-cyan-600 text-2xl group-open:rotate-45 transition">+</span>
-            </summary>
-            <div className="px-6 pb-5 text-slate-600 leading-relaxed border-t border-slate-100">
-              {f.a}
+        <div>
+          <h2 className="text-3xl font-bold text-slate-900 mb-8">Frequently Asked Questions</h2>
+          <div className="space-y-4">
+            {faqs.map((f, i) => (
+              <details key={i} className="group border border-slate-200 rounded-2xl bg-white shadow-sm hover:shadow-lg transition-all duration-300">
+                <summary className="px-6 py-4 cursor-pointer font-semibold text-slate-800 flex justify-between items-center">
+                  {f.q}
+                  <span className="text-cyan-600 text-2xl group-open:rotate-45 transition">+</span>
+                </summary>
+                <div className="px-6 pb-5 text-slate-600 leading-relaxed border-t border-slate-100">
+                  {f.a}
+                </div>
+              </details>
+            ))}
+          </div>
+        </div>
+
+        <div className="relative overflow-hidden rounded-3xl shadow-xl bg-gradient-to-r from-cyan-600 to-blue-600 text-white p-12">
+          <div className="absolute -bottom-8 -right-10 w-52 h-52 bg-white/10 rounded-full blur-2xl"></div>
+
+          <h2 className="text-3xl font-bold mb-4 leading-tight">
+            Ready to Grow Your Brand?
+          </h2>
+          <p className="text-lg text-cyan-100 mb-10">
+            Get a free social media strategy outline tailored to your business.
+          </p>
+
+          <div className="grid grid-cols-3 gap-6 mb-10 text-center">
+            <div>
+              <p className="text-3xl font-extrabold">320+</p>
+              <p className="text-sm text-cyan-100">Projects</p>
             </div>
-          </details>
-        ))}
+            <div>
+              <p className="text-3xl font-extrabold">11+ Yrs</p>
+              <p className="text-sm text-cyan-100">Experience</p>
+            </div>
+            <div>
+              <p className="text-3xl font-extrabold">98%</p>
+              <p className="text-sm text-cyan-100">Client Success</p>
+            </div>
+          </div>
+
+          <Link
+            href="/contact-mindsmiratus-technologies"
+            className="inline-flex items-center gap-2 px-7 py-3 bg-white text-cyan-700 rounded-full font-semibold hover:bg-cyan-50 transition"
+          >
+            Request Free Strategy Session
+          </Link>
+        </div>
+
       </div>
-    </div>
-
-    <div className="relative overflow-hidden rounded-3xl shadow-xl bg-gradient-to-r from-cyan-600 to-blue-600 text-white p-12">
-      <div className="absolute -bottom-8 -right-10 w-52 h-52 bg-white/10 rounded-full blur-2xl"></div>
-
-      <h2 className="text-3xl font-bold mb-4 leading-tight">
-        Ready to Grow Your Brand?
-      </h2>
-      <p className="text-lg text-cyan-100 mb-10">
-        Get a free social media strategy outline tailored to your business.
-      </p>
-
-      <div className="grid grid-cols-3 gap-6 mb-10 text-center">
-        <div>
-          <p className="text-3xl font-extrabold">320+</p>
-          <p className="text-sm text-cyan-100">Projects</p>
-        </div>
-        <div>
-          <p className="text-3xl font-extrabold">11+ Yrs</p>
-          <p className="text-sm text-cyan-100">Experience</p>
-        </div>
-        <div>
-          <p className="text-3xl font-extrabold">98%</p>
-          <p className="text-sm text-cyan-100">Client Success</p>
-        </div>
-      </div>
-
-      <Link
-        href="/contact-mindsmiratus-technologies"
-        className="inline-flex items-center gap-2 px-7 py-3 bg-white text-cyan-700 rounded-full font-semibold hover:bg-cyan-50 transition"
-      >
-        Request Free Strategy Session
-      </Link>
-    </div>
-
-  </div>
-</section>
-
+    </section>
+      <Script
+        id="structured-data-social-media-marketing-services"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(serviceSchema),
+        }}
+      />
     </>
   );
 }

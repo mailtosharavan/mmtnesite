@@ -1,17 +1,9 @@
 
 import Link from "next/link";
 import Image from "next/image";
-import {
-  FaPhoneAlt,
-  FaNetworkWired,
-  FaHeadset,
-  FaRobot,
-  FaChartLine,
-  FaServer,
-  FaCheckCircle,
-  FaBuilding,
-  FaUserTie,
-} from "react-icons/fa";
+import {FaPhoneAlt,FaNetworkWired,FaHeadset,FaRobot,FaChartLine,FaServer,FaCheckCircle,FaBuilding,FaUserTie,} from "react-icons/fa";
+import { getServiceSchema } from "../lib/schema/serviceSchema";
+import Script from "next/script";
 
 export const metadata = {
   title: "IVR Service Provider for Call Automation | Mindsmiratus",
@@ -22,7 +14,7 @@ export const metadata = {
   
 };
 
-export default function IvrServiceProviderPage() {
+export default async function IvrServiceProviderPage() {
   const features = [
     {
       icon: <FaNetworkWired className="text-blue-600 text-3xl" />,
@@ -136,6 +128,21 @@ export default function IvrServiceProviderPage() {
       a: "We assist with IVR planning, script design, testing, and optimization.",
     },
   ];
+const serviceSchema = await getServiceSchema({
+  name: "IVR Service Provider",
+  description:
+    "Professional IVR and voice broadcasting services by Mindsmiratus Technologies to automate customer interactions, manage inbound and outbound calls, and deliver scalable voice communication solutions for businesses.",
+  slug: "/ivr-service-provider",
+  serviceType:
+    "IVR Services, Interactive Voice Response, Voice Broadcasting Services, Call Automation, Inbound IVR, Outbound Voice Campaigns",
+
+  // 🔗 Parent service relationship
+  isPartOf: {
+    "@type": "Service",
+    name: "Customer Communication Services",
+    url: "https://www.mindsmiratus.com/customer-communication-services",
+  },
+});
 
   return (
     <>
@@ -321,6 +328,13 @@ export default function IvrServiceProviderPage() {
           </div>
         </div>
       </section>
+      <Script
+        id="structured-data-ivr-service-provider"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(serviceSchema),
+        }}
+      />
     </>
   );
 }

@@ -1,15 +1,9 @@
 import Image from "next/image";
 import Link from "next/link";
-import {
-  FaCheckCircle,
-  FaSearch,
-  FaTools,
-  FaLink,
-  FaMapMarkerAlt,
-  FaGlobe,
-  FaChartLine,
-  FaCheckSquare,
-} from "react-icons/fa";
+import {FaCheckCircle,FaSearch,FaTools,FaLink,FaMapMarkerAlt,FaGlobe,FaChartLine,
+  FaCheckSquare,} from "react-icons/fa";
+import { getServiceSchema } from "../lib/schema/serviceSchema";
+import Script from "next/script";
 
 export const metadata = {
   title: "SEO Services Company | Boost Rankings, Traffic & Lead Growth",
@@ -20,7 +14,7 @@ export const metadata = {
  
 };
 
-export default function SeoServicesCompanyPage() {
+export default async function SeoServicesCompanyPage() {
   const services = [
     {
       title: "On-Page SEO Optimization",
@@ -148,7 +142,14 @@ export default function SeoServicesCompanyPage() {
     
     
   ];
-
+const serviceSchema = await getServiceSchema({
+  name: "SEO Services Company",
+  description:
+    "Expert SEO services by Mindsmiratus including keyword research, on-page SEO, off-page SEO, technical SEO audits, local SEO, and link building to improve rankings, organic traffic, and lead growth.",
+  slug: "/seo-services-company",
+  serviceType:
+    "SEO Services, Search Engine Optimization, Technical SEO, On-Page SEO, Off-Page SEO, Local SEO, Link Building",
+});
   return (
     <>
 
@@ -442,8 +443,13 @@ export default function SeoServicesCompanyPage() {
 
   </div>
 </section>
-
-
+<Script
+        id="structured-data-seo-services-company"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(serviceSchema),
+        }}
+      />
     </>
   );
 }

@@ -1,21 +1,8 @@
-import Image from "next/image";
 import Link from "next/link";
-import React from "react";
-import {
-  FaShieldAlt,
-  FaBolt,
-  FaCogs,
-  FaChartLine,
-  FaUserShield,
-  FaProjectDiagram,
-  FaCheckCircle,
-  FaIndustry,
-  FaRegLightbulb,
-  FaHandsHelping,
-  FaCheckDouble,
-  FaClock,
-} from "react-icons/fa";
-
+import {FaShieldAlt,FaBolt,FaCogs,FaChartLine,FaUserShield,FaProjectDiagram,FaCheckCircle,
+  FaIndustry,FaRegLightbulb,FaHandsHelping,FaCheckDouble,FaClock,} from "react-icons/fa";
+import { getServiceSchema } from "../lib/schema/serviceSchema";
+import Script from "next/script";
 export const metadata = {
   title:
     "Business Application Development | ERP, CRM, & Workflow Systems",
@@ -94,7 +81,7 @@ const HeroBusinessSVG = () => (
   </svg>
 );
 
-export default function BusinessApplicationDevelopmentPage() {
+export default async function BusinessApplicationDevelopmentPage() {
   const valueProps = [
     {
       icon: <FaBolt className="text-cyan-600 text-2xl" />,
@@ -231,6 +218,22 @@ export default function BusinessApplicationDevelopmentPage() {
       a: "Off-the-shelf tools often force you to fit your processes around them. A custom application adapts to your existing workflows and scales as your business grows."
     },
   ];
+  const serviceSchema = await getServiceSchema({
+  name: "Business Application Development Company",
+  description:
+    "Custom business application development services by Mindsmiratus to build scalable, secure, and high-performance enterprise applications that streamline operations and support business growth.",
+  slug: "/business-application-development",
+  serviceType:
+    "Business Application Development, Custom Business Software, Enterprise Application Development, Web Application Development, SaaS Solutions",
+
+  // 🔗 Parent service relationship
+  isPartOf: {
+    "@type": "Service",
+    name: "Website Designing & Development Services",
+    url: "https://www.mindsmiratus.com/website-designing-and-development",
+  },
+});
+
 
   return (
     <>
@@ -558,6 +561,13 @@ export default function BusinessApplicationDevelopmentPage() {
           </div>
         </div>
       </section>
+      <Script
+        id="structured-data-business-application-development"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(serviceSchema),
+        }}
+      />
     </>
   );
 }

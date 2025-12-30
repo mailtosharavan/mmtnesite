@@ -2,7 +2,8 @@
 import Image from "next/image";
 import Link from "next/link";
 import { FaGoogle, FaSearch } from "react-icons/fa";
-
+import { getServiceSchema } from "../lib/schema/serviceSchema";
+import Script from "next/script";
 export const metadata = {
   title: "Digital Marketing & Online Promotion Services | Mindsmiratus",
   description: "Mindsmiratus provides professional digital marketing services, including performance marketing, SEO, social media marketing, and SMO, to grow businesses online",
@@ -10,7 +11,7 @@ export const metadata = {
   
 };
 
-export default function DigitalMarketingPage() {
+export default async function DigitalMarketingPage() {
   const faqs = [
     {
       question: "What is digital marketing and why is it important?",
@@ -43,6 +44,14 @@ export default function DigitalMarketingPage() {
     },
   ];
 
+  const serviceSchema = await getServiceSchema({
+  name: "Digital Marketing & Online Promotion Services",
+  description:
+    "Professional digital marketing services by Mindsmiratus including performance marketing, SEO, Google Ads (SEM), social media marketing, SMO, and online brand promotion to grow business visibility and conversions.",
+  slug: "/digital-marketing-services",
+  serviceType:
+    "Digital Marketing Services, Performance Marketing, SEO, SEM, PPC, Social Media Marketing, Online Promotion",
+});
 
   return (
     <>
@@ -501,8 +510,13 @@ export default function DigitalMarketingPage() {
 
   </div>
 </section>
-
-
+ <Script
+        id="structured-data-digital-marketing-services"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(serviceSchema),
+        }}
+      />
     </>
   );
 }
