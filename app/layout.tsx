@@ -7,6 +7,8 @@ import { Metadata } from "next";
 import { headers } from "next/headers";
 import Script from "next/script";
 import ProgressBar from '../components/ProgressBar';
+import FloatingActions from "../components/FloatingActions";
+
 
 //Marketing / SEO pages may benefit from caching and Incremental Static Regeneration (ISR) so avoide below settings
 // export const dynamic = "force-dynamic"; // need for Authentication pages
@@ -204,6 +206,7 @@ export default async function RootLayout({ children }: { children: React.ReactNo
         <Header />
         <main>{children}</main>
         <Footer />
+        <FloatingActions />
         <Script
           id="structured-data-organization"
           type="application/ld+json"
