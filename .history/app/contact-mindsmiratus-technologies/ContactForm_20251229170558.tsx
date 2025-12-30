@@ -133,8 +133,8 @@ export default function ContactForm() {
               />
               <label
                 className={`absolute left-10 top-3 text-slate-500 bg-white px-1 transition-all duration-200 ${formData.name
-                  ? "top-[-10px] text-sm text-[#0078D7]"
-                  : "peer-placeholder-shown:top-3 peer-placeholder-shown:text-base"
+                    ? "top-[-10px] text-sm text-[#0078D7]"
+                    : "peer-placeholder-shown:top-3 peer-placeholder-shown:text-base"
                   } peer-focus:top-[-10px] peer-focus:text-sm peer-focus:text-[#0078D7]`}
               >
                 Your Name
@@ -155,8 +155,8 @@ export default function ContactForm() {
               />
               <label
                 className={`absolute left-10 top-3 text-slate-500 bg-white px-1 transition-all duration-200 ${formData.email
-                  ? "top-[-10px] text-sm text-[#0078D7]"
-                  : "peer-placeholder-shown:top-3 peer-placeholder-shown:text-base"
+                    ? "top-[-10px] text-sm text-[#0078D7]"
+                    : "peer-placeholder-shown:top-3 peer-placeholder-shown:text-base"
                   } peer-focus:top-[-10px] peer-focus:text-sm peer-focus:text-[#0078D7]`}
               >
                 Email Address
@@ -177,8 +177,8 @@ export default function ContactForm() {
               ></textarea>
               <label
                 className={`absolute left-10 top-3 text-slate-500 bg-white px-1 transition-all duration-200 ${formData.message
-                  ? "top-[-10px] text-sm text-[#0078D7]"
-                  : "peer-placeholder-shown:top-3 peer-placeholder-shown:text-base"
+                    ? "top-[-10px] text-sm text-[#0078D7]"
+                    : "peer-placeholder-shown:top-3 peer-placeholder-shown:text-base"
                   } peer-focus:top-[-10px] peer-focus:text-sm peer-focus:text-[#0078D7]`}
               >
                 Your Message
