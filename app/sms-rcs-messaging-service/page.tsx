@@ -1,17 +1,9 @@
 import Link from "next/link";
 import Image from "next/image";
-import {
-  FaSms,
-  FaBullseye,
-  FaChartLine,
-  FaClipboardCheck,
-  FaHospital,
-  FaTruck,
-  FaUniversity,
-  FaStore,
-  FaCheckCircle,
-} from "react-icons/fa";
-
+import {FaSms,FaBullseye,FaChartLine,FaClipboardCheck,FaHospital,
+  FaTruck,FaUniversity,FaStore,FaCheckCircle,} from "react-icons/fa";
+import { getServiceSchema } from "../lib/schema/serviceSchema";
+import Script from "next/script";
 export const metadata = {
   title: "SMS & RCS Messaging Service Provider | Transactional OTP & Marketing Messaging",
   description:
@@ -21,7 +13,25 @@ export const metadata = {
   
 };
 
-export default function SmsRcsMessagingServicePage() {
+export default async function SmsRcsMessagingServicePage() {
+  
+  
+  const serviceSchema = await getServiceSchema({
+                name: "SMS & RCS Messaging Services",
+                description:
+                  "Professional SMS and RCS messaging services by Mindsmiratus Technologies enabling real-time, reliable, and scalable customer communication for marketing, notifications, and transactional messaging.",
+                slug: "/sms-rcs-messaging-service",
+                serviceType:
+                  "SMS Messaging Services, RCS Messaging, Bulk SMS Services, Transactional SMS, Promotional SMS, Omnichannel Messaging",
+
+                // 🔗 Parent service relationship
+                isPartOf: {
+                  "@type": "Service",
+                  name: "Customer Communication Services",
+                  url: "https://www.mindsmiratus.com/customer-communication-services",
+                },
+              });
+
   const features = [
     {
       icon: <FaSms className="text-cyan-600 text-3xl" />,
@@ -221,6 +231,13 @@ export default function SmsRcsMessagingServicePage() {
           Schedule Discussion
         </Link>
       </section>
+      <Script
+        id="structured-data-sms-rcs-messaging-service"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(serviceSchema),
+        }}
+      />
     </>
   );
 }

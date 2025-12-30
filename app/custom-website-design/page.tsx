@@ -1,23 +1,11 @@
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
-import {
-  FaCheckCircle,
-  FaBolt,
-  FaShieldAlt,
-  FaUsersCog,
-  FaCubes,
-  FaClock,
-  FaThumbsUp,
-  FaHeadset,
-  FaRocket,
-  FaStar,
-  FaServer,
-  FaCodeBranch,
-  FaQuestionCircle,
-  FaChartLine,
+import {FaCheckCircle,FaBolt,FaShieldAlt,FaUsersCog,FaCubes,FaClock,FaThumbsUp,
+  FaHeadset,FaRocket,FaStar,FaServer,FaCodeBranch,FaQuestionCircle,FaChartLine,
 } from "react-icons/fa";
-
+import { getServiceSchema } from "../lib/schema/serviceSchema";
+import Script from "next/script";
 export const metadata = {
   title:
     "Custom Website Designing Services Company | Mindsmiratus",
@@ -28,7 +16,7 @@ export const metadata = {
   
 };
 
-export default function WebsiteApplicationDevelopment() {
+export default async function WebsiteApplicationDevelopment() {
   // ----- DATA -----
   const services = [
     {
@@ -143,6 +131,22 @@ export default function WebsiteApplicationDevelopment() {
       acceptedAnswer: { "@type": "Answer", text: faq.answer },
     })),
   };
+  const serviceSchema = await getServiceSchema({
+  name: "Custom Website Designing Services Company",
+  description:
+    "Professional custom website designing services by Mindsmiratus including SEO-optimized website design, custom web application development, and scalable business solutions tailored to unique business needs.",
+  slug: "/custom-website-design",
+  serviceType:
+    "Custom Website Designing, Website Development, Web Application Development, SEO Optimized Websites, Custom Business Applications, eCommerce Website Development",
+
+  // 🔗 Parent relationship (VERY IMPORTANT)
+  isPartOf: {
+    "@type": "Service",
+    name: "Website Designing & Development Services",
+    url: "https://www.mindsmiratus.com/website-designing-and-development",
+  },
+});
+
 
   return (
     <>
@@ -483,6 +487,13 @@ export default function WebsiteApplicationDevelopment() {
           </div>
         </div>
       </section>
+      <Script
+        id="structured-data-custom-website-designing-services"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(serviceSchema),
+        }}
+      />
     </>
   );
 }

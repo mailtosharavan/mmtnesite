@@ -1,15 +1,8 @@
 import Image from "next/image";
 import Link from "next/link";
 import type { Metadata } from "next";
-import {
-  FaHandshake,
-  FaLightbulb,
-  FaCogs,
-  FaChartLine,
-  FaCheckCircle,
-  FaUsers,
-  FaGlobeAsia,
-} from "react-icons/fa";
+import {FaHandshake,FaLightbulb,FaCogs,FaChartLine,FaCheckCircle,FaUsers,FaGlobeAsia,} from "react-icons/fa";
+import Script from "next/script";
 
 export const metadata: Metadata = {
   title: "Mindsmiratus Technologies – Leading Web & IT Service Company ",
@@ -18,7 +11,23 @@ export const metadata: Metadata = {
   
 };
 
-export default function AboutPage() {
+export default async function AboutPage() {
+  const aboutPageSchema = {
+            "@context": "https://schema.org",
+            "@type": "AboutPage",
+            "@id": "https://www.mindsmiratus.com/about-us#aboutpage",
+            url: "https://www.mindsmiratus.com/about-us",
+            name: "About Mindsmiratus Technologies Pvt. Ltd.",
+            description:
+              "Learn about Mindsmiratus Technologies Pvt. Ltd., a technology-driven company delivering web development, mobile applications, digital marketing, and customer communication solutions for businesses worldwide.",
+            about: {
+              "@id": "https://www.mindsmiratus.com/#organization",
+            },
+            publisher: {
+              "@id": "https://www.mindsmiratus.com/#organization",
+            },
+          };
+
   return (
     <>
       {/* HERO */}
@@ -103,14 +112,6 @@ export default function AboutPage() {
           </div>
         </div>
       </section>
-
-
-
-
-
-
-
-
 
       {/* VALUE PILLARS */}
       <section className="py-20 bg-slate-50">
@@ -311,6 +312,13 @@ export default function AboutPage() {
           </Link>
         </div>
       </section>
+      <Script
+        id="structured-data-mobile-app-development"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(aboutPageSchema),
+        }}
+      />
     </>
   );
 }

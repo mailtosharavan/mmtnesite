@@ -1,22 +1,8 @@
-import Image from "next/image";
 import Link from "next/link";
-import {
-  FaApple,
-  FaAndroid,
-  FaShieldAlt,
-  FaBolt,
-  FaLayerGroup,
-  FaChartLine,
-  FaCogs,
-  FaCloud,
-  FaUserCheck,
-  FaCheckCircle,
-  FaStar,
-  FaClock,
-  FaAward,
-  FaQuestionCircle,
-} from "react-icons/fa";
-
+import {FaApple,FaAndroid,FaShieldAlt,FaBolt,FaLayerGroup,FaChartLine,
+  FaCogs,FaCloud,FaUserCheck,FaCheckCircle,FaStar,FaClock,FaAward,FaQuestionCircle,} from "react-icons/fa";
+import { getServiceSchema } from "../lib/schema/serviceSchema";
+import Script from "next/script";
 // ------------------ SEO ------------------
 export const metadata = {
   title:
@@ -176,7 +162,23 @@ const faqSchema = {
 };
 
 // ------------------ PAGE ------------------
-export default function MobileAppDevelopmentPage() {
+export default async function MobileAppDevelopmentPage() {
+  const serviceSchema = await getServiceSchema({
+  name: "eCommerce Website Designing & Development Company",
+  description:
+    "Professional eCommerce website designing and development services by Mindsmiratus to build secure, scalable, and conversion-focused online stores with modern platforms, seamless payment integration, and optimized user experience.",
+  slug: "/ecommerce-website-designing",
+  serviceType:
+    "eCommerce Website Design, eCommerce Website Development, Online Store Development, Shopping Cart Development, Payment Gateway Integration",
+
+  // 🔗 Parent service relationship
+  isPartOf: {
+    "@type": "Service",
+    name: "Website Designing & Development Services",
+    url: "https://www.mindsmiratus.com/website-designing-and-development",
+  },
+});
+
   return (
     <>
       {/* Structured Data */}

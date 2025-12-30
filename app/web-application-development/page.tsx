@@ -1,22 +1,9 @@
 import Image from "next/image";
 import Link from "next/link";
-import {
-  FaStar,
-  FaServer,
-  FaClock,
-  FaCheckCircle,
-  FaShieldAlt,
-  FaCubes,
-  FaUsersCog,
-  FaBolt,
-  FaHeadset,
-  FaThumbsUp,
-  FaRocket,
-  FaChartLine,
-  FaQuestionCircle,
-  FaCogs,
-  FaUsers,
+import {FaStar,FaServer,FaClock,FaShieldAlt,FaBolt,FaThumbsUp,FaChartLine,FaCogs,FaUsers,
 } from "react-icons/fa";
+import { getServiceSchema } from "../lib/schema/serviceSchema";
+import Script from "next/script";
 
 export const metadata = {
   title: "Web Application Development Company | Custom Web Apps & SaaS Solutions",
@@ -25,7 +12,7 @@ export const metadata = {
   
 };
 
-export default function WebApplicationDevelopmentPage() {
+export default async function WebApplicationDevelopmentPage() {
   const services = [
     {
       icon: "⚙️",
@@ -113,6 +100,22 @@ export default function WebApplicationDevelopmentPage() {
       a: "Security is a major priority. We follow industry-best practices, including secure authentication, encrypted data handling, role-based access, and protected APIs.Your application is built with enterprise-grade security and regular vulnerability checks.",
     },
   ];
+  const serviceSchema = await getServiceSchema({
+  name: "Web Application Development Company",
+  description:
+    "End-to-end web application development services by Mindsmiratus including custom web apps and SaaS solutions built with modern frameworks, high performance, robust security, and user-centric design for all industries.",
+  slug: "/web-application-development",
+  serviceType:
+    "Web Application Development, Custom Web App Development, SaaS Application Development, Enterprise Web Solutions, Secure Web Applications",
+
+  // 🔗 Parent relationship
+  isPartOf: {
+    "@type": "Service",
+    name: "Website Designing & Development Services",
+    url: "https://www.mindsmiratus.com/website-designing-and-development",
+  },
+});
+
 
   return (
     <>
@@ -426,6 +429,13 @@ export default function WebApplicationDevelopmentPage() {
 
         </div>
       </section>
+      <Script
+        id="structured-data-web-application-development"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(serviceSchema),
+        }}
+      />
     </>
   );
 }

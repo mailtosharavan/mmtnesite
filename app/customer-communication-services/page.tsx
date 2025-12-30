@@ -3,8 +3,8 @@ import WhyChooseBenefits from "./WhyChooseBenefits";
 import ServiceBenefits from "./ServiceBenefits";
 import HeroImageSection from "./HeroImageSection";
 import { FaSms, FaWhatsapp, FaPhoneAlt,FaQuestionCircle,FaRocket,FaChartLine, FaShieldAlt, FaDatabase, FaHeadset } from "react-icons/fa";
-
-
+import { getServiceSchema } from "../lib/schema/serviceSchema";
+import Script from "next/script";
 
 export const metadata = {
   title: "Customer Communication Services | Mindsmiratus Technologies",
@@ -24,7 +24,9 @@ export const metadata = {
     { icon: <FaDatabase className="text-2xl" />, title: "Easy APIs", desc: "REST APIs, webhooks, and SDK samples for quick integration." },
     { icon: <FaHeadset className="text-2xl" />, title: "Priority Support", desc: "Solution architects and onboarding assistance when you need it." },
   ];
-export default function CustomerCommunicationServicesPage() {
+export default async function CustomerCommunicationServicesPage() {
+
+
   const faqs = [
     {
       question: "What are Customer Communication Services?",
@@ -51,6 +53,14 @@ export default function CustomerCommunicationServicesPage() {
         "The main communication channels include: SMS messaging, WhatsApp Business API, RCS messaging, Voice call broadcasting, Email campaigns, and Chatbots & AI automation",
     },
   ];
+const serviceSchema = await getServiceSchema({
+  name: "Customer Communication Services",
+  description:
+    "Professional customer communication services by Mindsmiratus Technologies offering omnichannel messaging, smart automation, and real-time customer engagement through SMS, RCS, WhatsApp API, IVR, and voice broadcasting solutions.",
+  slug: "/customer-communication-services",
+  serviceType:
+    "Customer Communication Services, Omnichannel Communication, SMS Services, RCS Messaging, WhatsApp Business API, IVR Systems, Voice Broadcasting",
+});
 
   return (
     <>
@@ -250,6 +260,13 @@ export default function CustomerCommunicationServicesPage() {
     </div>
   </div>
 </section>
+<Script
+        id="structured-data-customer-communication-services"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(serviceSchema),
+        }}
+      />
     </>
   );
 }

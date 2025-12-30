@@ -82,7 +82,7 @@ export default function Footer() {
         <motion.div {...fadeIn(0.3)}>
           <h4 className="text-white font-semibold text-lg mb-3">Company</h4>
           <ul className="space-y-2 text-sm">
-            <li><Link href="/about" className="hover:text-white transition">About Us</Link></li>
+            <li><Link href="/about-us" className="hover:text-white transition">About Us</Link></li>
             <li><Link href="/contact-mindsmiratus-technologies" className="hover:text-white transition">Contact</Link></li>
             <li><Link href="/privacy-policy" className="hover:text-white transition">Privacy Policy</Link></li>
             <li><Link href="/terms-and-conditions" className="hover:text-white transition">Terms & Conditions</Link></li>
