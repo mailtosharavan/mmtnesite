@@ -1,13 +1,13 @@
 import Image from "next/image";
 import Link from "next/link";
-import {FaStar,FaClock,FaShieldAlt,FaCubes,FaBolt,FaThumbsUp,FaMobileAlt,} from "react-icons/fa";
+import { FaStar, FaClock, FaShieldAlt, FaCubes, FaBolt, FaThumbsUp, FaMobileAlt, } from "react-icons/fa";
 import { getServiceSchema } from "../lib/schema/serviceSchema";
 import Script from "next/script";
 export const metadata = {
   title: "Mobile App Development Company | Android & iOS App Development",
   description:
     "We offer custom Android and iOS app development services with intuitive interfaces, smooth navigation, advanced features, seamless integrations for business with end-to-end delivery.",
- 
+
 };
 
 export default async function MobileAppDevelopmentPage() {
@@ -104,30 +104,30 @@ export default async function MobileAppDevelopmentPage() {
     {
       q: "Can my mobile app integrate with other tools?",
       a: "Absolutely. Our mobile apps can integrate with CRMs, payment gateways, analytics platforms, and custom APIs for smooth workflows."
-        },
+    },
   ];
-const serviceSchema = await getServiceSchema({
-  name: "Mobile App Development Company",
-  description:
-    "Professional mobile app development services by Mindsmiratus including custom Android and iOS applications, scalable mobile solutions, secure architecture, and user-focused design to help businesses grow digitally.",
-  slug: "/mobile-app-development",
-  serviceType:
-    "Mobile App Development, Android App Development, iOS App Development, Custom Mobile Applications, Enterprise Mobile Solutions",
+  const serviceSchema = await getServiceSchema({
+    name: "Mobile App Development Company",
+    description:
+      "Professional mobile app development services by Mindsmiratus including custom Android and iOS applications, scalable mobile solutions, secure architecture, and user-focused design to help businesses grow digitally.",
+    slug: "/mobile-app-development",
+    serviceType:
+      "Mobile App Development, Android App Development, iOS App Development, Custom Mobile Applications, Enterprise Mobile Solutions",
 
-  // 🔗 Parent service relationship
-  isPartOf: {
-    "@type": "Service",
-    name: "Website Designing & Development Services",
-    url: "https://www.mindsmiratus.com/website-designing-and-development",
-  },
-});
+    // 🔗 Parent service relationship
+    isPartOf: {
+      "@type": "Service",
+      name: "Website Designing & Development Services",
+      url: "https://www.mindsmiratus.com/website-designing-and-development",
+    },
+  });
 
   return (
     <>
       {/* HERO */}
       <section className="relative overflow-hidden py-24 bg-gradient-to-br from-sky-50 via-white to-cyan-50">
         <div className="container mx-auto px-6 lg:px-16 flex flex-col lg:flex-row items-center gap-12">
-          
+
           {/* TEXT */}
           <div className="flex-1 max-w-2xl text-center lg:text-left">
             <h1 className="text-4xl sm:text-5xl font-extrabold text-slate-900 leading-snug">
@@ -165,8 +165,18 @@ const serviceSchema = await getServiceSchema({
             </div>
           </div>
 
+
+          <div className="flex-1 max-w-2xl text-center lg:text-left">
+            <Image src="/MobileAppDevelopment.png" 
+              alt="Founder - Mindsmiratus Technologies"
+              width={420}
+              height={420}
+              className="rounded-3xl object-cover mobile-app-img"
+            />
+          </div>
+
           {/* VISUAL */}
-           <svg width="620" height="460" viewBox="0 0 620 460" fill="none" xmlns="http://www.w3.org/2000/svg">
+          {/* <svg width="620" height="460" viewBox="0 0 620 460" fill="none" xmlns="http://www.w3.org/2000/svg">
   <defs>
     <linearGradient id="grad1" x1="0" x2="1" y1="0" y2="1">
       <stop offset="0%" stop-color="#06b6d4"/>
@@ -197,7 +207,7 @@ const serviceSchema = await getServiceSchema({
   <circle cx="140" cy="165" r="6" fill="url(#grad1)"/>
   <circle cx="460" cy="235" r="6" fill="url(#grad1)"/>
   <circle cx="160" cy="290" r="6" fill="url(#grad1)"/>
-</svg>
+</svg> */}
 
         </div>
       </section>
@@ -324,7 +334,7 @@ const serviceSchema = await getServiceSchema({
                 tag: "Mobile App",
                 title: "Delivery Tracking App",
                 desc: "Live route tracking, updates, driver performance and analytics dashboard.",
-                img: "/case-mobile-delivery.jpg",
+                img: "/delivery-tracking.png",
                 metrics: [
                   { label: "Delivery Time", value: "-22%" },
                   { label: "Accuracy", value: "+41%" },
@@ -335,7 +345,7 @@ const serviceSchema = await getServiceSchema({
                 tag: "Cross-Platform App",
                 title: "Fitness & Coaching App",
                 desc: "Custom workout builder, progress insights, streaks & push reminders.",
-                img: "/case-mobile-fitness.jpg",
+                img: "/fitness-app.jpg",
                 metrics: [
                   { label: "Engagement", value: "+37%" },
                   { label: "Churn Drop", value: "-19%" },
@@ -378,7 +388,7 @@ const serviceSchema = await getServiceSchema({
       {/* CTA + FAQ */}
       <section className="py-24 bg-gradient-to-br from-sky-600 to-cyan-600 text-white">
         <div className="container mx-auto px-6 lg:px-16 grid lg:grid-cols-2 gap-16">
-          
+
           {/* CTA CARD */}
           <div className="bg-white text-slate-900 p-10 rounded-3xl shadow-xl letbox">
             <h3 className="text-2xl font-bold mb-4 ready-to">Let’s Build Your Mobile App, Faster & Smarter</h3>
