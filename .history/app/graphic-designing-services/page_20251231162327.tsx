@@ -131,7 +131,7 @@ export default async function WebsiteApplicationDevelopment() {
     name: "Custom Graphic Designing Services Company",
     description:
       "Professional custom graphic designing services by Mindsmiratus including logo design, branding, marketing materials, and digital visuals to enhance your brand identity.",
-    slug: "/graphic-designing-service",
+    slug: "/custom-website-design",
     serviceType:
       "Custom Graphic Designing, Logo Designing, Branding, Marketing Materials, Digital Visuals",
 
