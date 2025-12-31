@@ -133,7 +133,7 @@ const serviceSchema = await getServiceSchema({
           <div className="flex-1 relative hidden md:flex justify-center items-center">
             <div className="relative rounded-3xl shadow-xl bg-white/70 backdrop-blur-xl p-4">
               <Image
-                src="/hero-webapp.svg"
+                src="/WebsiteDesigning.png"
                 alt="Website & Application Development"
                 width={560}
                 height={420}
