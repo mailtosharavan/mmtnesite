@@ -505,6 +505,12 @@ const serviceSchema = await getServiceSchema({
               </p>
               <p className="mt-4 font-semibold text-slate-900">— Founder, Complete Eye Care</p>
             </div>
+            <div className="p-8 bg-slate-50 border border-slate-200 rounded-3xl shadow-sm">
+              <p className="text-slate-700 italic">
+                “They built a clean, fast, and scalable website exactly as required — highly professional team.”
+              </p>
+              <p className="mt-4 font-semibold text-slate-900">— Founder, Complete Eye Care</p>
+            </div>
           </div>
 
         </div>

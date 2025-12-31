@@ -496,14 +496,14 @@ const serviceSchema = await getServiceSchema({
               <p className="text-slate-700 italic">
                 “Our website redesign increased inbound leads significantly. Their communication and delivery were excellent.”
               </p>
-              <p className="mt-4 font-semibold text-slate-900">— Director, RVO ICMAI</p>
+              <p className="mt-4 font-semibold text-slate-900">— CEO, IT Consulting Firm</p>
             </div>
 
             <div className="p-8 bg-slate-50 border border-slate-200 rounded-3xl shadow-sm">
               <p className="text-slate-700 italic">
-                “They built a clean, fast, and scalable website exactly as required — highly professional team.”
+                “They built a clean, fast, and scalable web app exactly as required — highly professional team.”
               </p>
-              <p className="mt-4 font-semibold text-slate-900">— Founder, Complete Eye Care</p>
+              <p className="mt-4 font-semibold text-slate-900">— Founder, Education Startup</p>
             </div>
           </div>
 
