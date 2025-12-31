@@ -20,14 +20,11 @@ export const revalidate = 3600; // 1 hour ISR
 export async function generateMetadata(): Promise<Metadata> {
   const headersList = await headers();
 
-  const protocol =
-    headersList.get("x-forwarded-proto") ?? "https";
+  const host = headersList.get("x-forwarded-host") 
+  ?? headersList.get("host") 
+  ?? "www.mindsmiratus.com";
 
-  const host =
-    headersList.get("x-forwarded-host") ??
-    headersList.get("host");
-
-  const baseUrl = `${protocol}://${host}`;
+const baseUrl = `https://${host}`;
 
 
   const organizationSchema = {
@@ -55,11 +52,14 @@ export async function generateMetadata(): Promise<Metadata> {
       areaServed: "IN",
       availableLanguage: ["English", "Hindi"],
     },
-
     address: {
-      "@type": "PostalAddress",
-      addressCountry: "IN",
-    },
+  "@type": "PostalAddress",
+  "streetAddress": "New Delhi",
+  "addressLocality": "New Delhi",
+  "addressRegion": "Delhi",
+  "postalCode": "110044",
+  "addressCountry": "IN"
+},
 
     sameAs: [
       "https://www.linkedin.com/company/mindsmiratus/",
