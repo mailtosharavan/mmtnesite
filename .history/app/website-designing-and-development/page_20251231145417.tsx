@@ -220,9 +220,9 @@ const serviceSchema = await getServiceSchema({
             {[
               {
                 icon: "🎨",
-                title: "Graphic Designing Services",
+                title: "Custom Website Design",
                 desc: "Beautiful, responsive, and brand-aligned website designs.",
-                link: "/graphic-designing-service",
+                link: "/custom-website-design",
                 points: [
                   "Creative Layouts & UI/UX",
                   "Mobile Responsive Design",

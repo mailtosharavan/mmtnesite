@@ -27,7 +27,7 @@ const servicePages = [
   "/voice-call-services",
   "/sms-rcs-messaging-service",
   "/website-designing-and-development",
-  "/graphic-designing-service",
+  "/custom-website-design",
   "/ecommerce-website-designing",
   "/customer-communication-services",
   "/business-application-development",
