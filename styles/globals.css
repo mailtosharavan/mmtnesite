@@ -75,3 +75,34 @@
 .attention-wave:hover {
   animation-play-state: paused;
 }
+
+
+.innovation{
+  top: 10px;
+  width: 155px;
+  height: 155px;
+  right: 320px;
+}
+
+.partnership{
+  right: 400px;
+  height: 155px;
+  top: 140px;
+}
+
+.engineering{
+  right: 235px;
+  height: 155px;
+  top: 140px;
+  left: -98px;
+}
+
+.outcome{
+  right: 320px;
+  height: 155px;
+  bottom: 100px;
+}
+.girl{
+  z-index: 1;
+}
+

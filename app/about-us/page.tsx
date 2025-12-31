@@ -3,6 +3,7 @@ import Link from "next/link";
 import type { Metadata } from "next";
 import { FaHandshake, FaLightbulb, FaCogs, FaChartLine, FaCheckCircle, FaUsers, FaGlobeAsia, } from "react-icons/fa";
 import Script from "next/script";
+import InnovationSvg from "../../components/AboutCompanyHero";
 
 export const metadata: Metadata = {
   title: "Mindsmiratus Technologies – Leading Web & IT Service Company ",
@@ -31,7 +32,7 @@ export default async function AboutPage() {
   return (
     <>
       {/* HERO */}
-      <section className="py-24 bg-gradient-to-br from-cyan-50 via-white to-blue-50">
+      <section className="bg-gradient-to-br from-cyan-50 via-white to-blue-50">
         <div className="container mx-auto px-6 lg:px-16 grid lg:grid-cols-2 gap-12 items-center">
 
           <div>
@@ -49,14 +50,15 @@ export default async function AboutPage() {
           </div>
 
           <div className="hidden lg:flex justify-end">
-            <Image
+             <InnovationSvg />
+            {/* <Image
               src="/about-company-heroNew.gif"
               alt="About Mindsmiratus Technologies"
               width={540}
               height={420}
               priority
               className="mm-float"
-            />
+            /> */}
           </div>
 
         </div>
