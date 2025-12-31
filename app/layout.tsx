@@ -26,59 +26,6 @@ export async function generateMetadata(): Promise<Metadata> {
 
 const baseUrl = `https://${host}`;
 
-
-  const organizationSchema = {
-    "@context": "https://schema.org",
-    "@type": "Corporation",
-    "@id": `${baseUrl}/#organization`,
-
-    name: "Mindsmiratus Technologies Pvt. Ltd.",
-    alternateName: "Mindsmiratus Technologies",
-
-    url: `${baseUrl}/`,
-    logo: `${baseUrl}/logo.png`,
-    image: `${baseUrl}/og-default.jpg`,
-
-    description:
-      "Mindsmiratus Technologies Pvt. Ltd. delivers digital transformation solutions including custom web & mobile applications, ERP, CRM, cloud solutions, and digital marketing services.",
-
-    foundingDate: "2019",
-
-    contactPoint: {
-      "@type": "ContactPoint",
-      telephone: "+91-9625306474",
-      contactType: "customer support",
-      email: "mail@mindsmiratus.com",
-      areaServed: "IN",
-      availableLanguage: ["English", "Hindi"],
-    },
-    address: {
-  "@type": "PostalAddress",
-  "streetAddress": "New Delhi",
-  "addressLocality": "New Delhi",
-  "addressRegion": "Delhi",
-  "postalCode": "110044",
-  "addressCountry": "IN"
-},
-
-    sameAs: [
-      "https://www.linkedin.com/company/mindsmiratus/",
-      "https://x.com/mindsmiratus",
-      "https://www.facebook.com/mindsmiratus.tech/",
-    ],
-  };
-
-  const websiteSchema = {
-    "@context": "https://schema.org",
-    "@type": "WebSite",
-    "@id": `${baseUrl}/#website`,
-    url: `${baseUrl}/`,
-    name: "Mindsmiratus Technologies Pvt. Ltd.",
-    publisher: {
-      "@id": `${baseUrl}/#organization`,
-    },
-  };
-
   return {
     metadataBase: new URL(baseUrl),
 
@@ -120,16 +67,15 @@ const baseUrl = `https://${host}`;
 }
 
 export default async function RootLayout({ children }: { children: React.ReactNode }) {
-  const headersList = await headers();
+  
+const headersList = await headers();
 
-  const protocol =
-    headersList.get("x-forwarded-proto") ?? "https";
+  const host = headersList.get("x-forwarded-host") 
+  ?? headersList.get("host") 
+  ?? "www.mindsmiratus.com";
 
-  const host =
-    headersList.get("x-forwarded-host") ??
-    headersList.get("host");
+const baseUrl = `https://${host}`;
 
-  const baseUrl = `${protocol}://${host}`;
   const organizationSchema = {
     "@context": "https://schema.org",
     "@type": "Corporation",
@@ -151,15 +97,18 @@ export default async function RootLayout({ children }: { children: React.ReactNo
       "@type": "ContactPoint",
       telephone: "+91-9625306474",
       contactType: "customer support",
-      email: "support@mindsmiratus.com",
+      email: "mail@mindsmiratus.com",
       areaServed: "IN",
       availableLanguage: ["English", "Hindi"],
     },
-
     address: {
-      "@type": "PostalAddress",
-      addressCountry: "IN",
-    },
+  "@type": "PostalAddress",
+  "streetAddress": "New Delhi",
+  "addressLocality": "New Delhi",
+  "addressRegion": "Delhi",
+  "postalCode": "110044",
+  "addressCountry": "IN"
+},
 
     sameAs: [
       "https://www.linkedin.com/company/mindsmiratus/",

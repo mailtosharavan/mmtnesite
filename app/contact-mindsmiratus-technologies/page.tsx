@@ -24,15 +24,14 @@ export const metadata = {
 };
 
 export default async function ContactPage() {
-  const headersList = await headers();
-
-  const protocol =
-    headersList.get("x-forwarded-proto") ?? "https";
-
-  const host =
-    headersList.get("x-forwarded-host") ??
-    headersList.get("host");
-    const baseUrl = `${protocol}://${host}`;
+  
+    const headersList = await headers();    
+      const host = headersList.get("x-forwarded-host") 
+      ?? headersList.get("host") 
+      ?? "www.mindsmiratus.com";
+    
+    const baseUrl = `https://${host}`;
+    
   const contactPageSchema = {
             "@context": "https://schema.org",
             "@type": "ContactPage",
