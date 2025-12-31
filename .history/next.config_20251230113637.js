@@ -18,7 +18,7 @@ const nextConfig = {
       },
       {
         source: '/website-designing-services',
-        destination: '/website-designing-and-development',
+        destination: '/custom-website-design',
         permanent: true,
       },
       {

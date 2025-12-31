@@ -7,7 +7,6 @@ import {
 } from "react-icons/fa";
 import { getServiceSchema } from "../lib/schema/serviceSchema";
 import Script from "next/script";
-import { HiReceiptRefund } from "react-icons/hi";
 export const metadata = {
   title:
     "Custom Graphic Designing Services Company | Mindsmiratus",
@@ -128,12 +127,12 @@ export default async function WebsiteApplicationDevelopment() {
     })),
   };
   const serviceSchema = await getServiceSchema({
-    name: "Custom Graphic Designing Services Company",
+    name: "Custom Website Designing Services Company",
     description:
-      "Professional custom graphic designing services by Mindsmiratus including logo design, branding, marketing materials, and digital visuals to enhance your brand identity.",
+      "Professional custom website designing services by Mindsmiratus including SEO-optimized website design, custom web application development, and scalable business solutions tailored to unique business needs.",
     slug: "/custom-website-design",
     serviceType:
-      "Custom Graphic Designing, Logo Designing, Branding, Marketing Materials, Digital Visuals",
+      "Custom Website Designing, Website Development, Web Application Development, SEO Optimized Websites, Custom Business Applications, eCommerce Website Development",
 
     // 🔗 Parent relationship (VERY IMPORTANT)
     isPartOf: {
@@ -291,7 +290,7 @@ export default async function WebsiteApplicationDevelopment() {
             {services.map((s, i) => (
               <Link
                 key={i}
-                href={""}
+                href={s.href}
                 className="group relative p-8 rounded-3xl border border-slate-200 bg-white/70 backdrop-blur-xl 
                 shadow-[0_8px_30px_rgba(0,0,0,0.06)] hover:shadow-[0_12px_40px_rgba(0,0,0,0.12)]
                 hover:-translate-y-1 transition-all duration-500"

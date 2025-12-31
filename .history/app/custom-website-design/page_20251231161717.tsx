@@ -128,12 +128,12 @@ export default async function WebsiteApplicationDevelopment() {
     })),
   };
   const serviceSchema = await getServiceSchema({
-    name: "Custom Graphic Designing Services Company",
+    name: "Custom Website Designing Services Company",
     description:
-      "Professional custom graphic designing services by Mindsmiratus including logo design, branding, marketing materials, and digital visuals to enhance your brand identity.",
+      "Professional custom website designing services by Mindsmiratus including SEO-optimized website design, custom web application development, and scalable business solutions tailored to unique business needs.",
     slug: "/custom-website-design",
     serviceType:
-      "Custom Graphic Designing, Logo Designing, Branding, Marketing Materials, Digital Visuals",
+      "Custom Website Designing, Website Development, Web Application Development, SEO Optimized Websites, Custom Business Applications, eCommerce Website Development",
 
     // 🔗 Parent relationship (VERY IMPORTANT)
     isPartOf: {

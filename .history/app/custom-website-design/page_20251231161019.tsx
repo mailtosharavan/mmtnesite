@@ -7,7 +7,6 @@ import {
 } from "react-icons/fa";
 import { getServiceSchema } from "../lib/schema/serviceSchema";
 import Script from "next/script";
-import { HiReceiptRefund } from "react-icons/hi";
 export const metadata = {
   title:
     "Custom Graphic Designing Services Company | Mindsmiratus",
@@ -30,7 +29,7 @@ export default async function WebsiteApplicationDevelopment() {
         "Custom designs tailored to your business identity",
         "High-quality formats for web & print use",
       ],
-      
+      href: "/website-designing-and-development",
     },
     {
       icon: "💻",
@@ -41,7 +40,7 @@ export default async function WebsiteApplicationDevelopment() {
         "Color palette, typography & brand guidelines",
         "Consistent branding across all platforms",
       ],
-      
+      href: "/custom-web-application-development",
     },
     {
       icon: "📱",
@@ -52,7 +51,7 @@ export default async function WebsiteApplicationDevelopment() {
         "Designs for Instagram, Facebook, LinkedIn & more",
         "Creative visuals to boost engagement",
       ],
-      
+      href: "/mobile-app-development",
     },
     {
       icon: "🛒",
@@ -63,7 +62,7 @@ export default async function WebsiteApplicationDevelopment() {
         "Banners and ad creatives",
         "Designs focused on marketing & conversions",
       ],
-      
+      href: "/ecommerce-website-development",
     },
     {
       icon: "🏢",
@@ -74,7 +73,7 @@ export default async function WebsiteApplicationDevelopment() {
         "Presentation & pitch deck designs",
         "Professional corporate branding materials",
       ],
-      
+      href: "/business-application-development",
     },
     {
       icon: "🛠️",
@@ -85,7 +84,7 @@ export default async function WebsiteApplicationDevelopment() {
         "Landing page visuals",
         "Creative graphics for digital platforms",
       ],
-      
+      href: "/website-maintenance-and-support",
     },
   ];
 
@@ -128,12 +127,12 @@ export default async function WebsiteApplicationDevelopment() {
     })),
   };
   const serviceSchema = await getServiceSchema({
-    name: "Custom Graphic Designing Services Company",
+    name: "Custom Website Designing Services Company",
     description:
-      "Professional custom graphic designing services by Mindsmiratus including logo design, branding, marketing materials, and digital visuals to enhance your brand identity.",
+      "Professional custom website designing services by Mindsmiratus including SEO-optimized website design, custom web application development, and scalable business solutions tailored to unique business needs.",
     slug: "/custom-website-design",
     serviceType:
-      "Custom Graphic Designing, Logo Designing, Branding, Marketing Materials, Digital Visuals",
+      "Custom Website Designing, Website Development, Web Application Development, SEO Optimized Websites, Custom Business Applications, eCommerce Website Development",
 
     // 🔗 Parent relationship (VERY IMPORTANT)
     isPartOf: {
@@ -291,7 +290,7 @@ export default async function WebsiteApplicationDevelopment() {
             {services.map((s, i) => (
               <Link
                 key={i}
-                href={""}
+                href={s.href}
                 className="group relative p-8 rounded-3xl border border-slate-200 bg-white/70 backdrop-blur-xl 
                 shadow-[0_8px_30px_rgba(0,0,0,0.06)] hover:shadow-[0_12px_40px_rgba(0,0,0,0.12)]
                 hover:-translate-y-1 transition-all duration-500"

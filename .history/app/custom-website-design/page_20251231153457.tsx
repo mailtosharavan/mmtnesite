@@ -7,7 +7,6 @@ import {
 } from "react-icons/fa";
 import { getServiceSchema } from "../lib/schema/serviceSchema";
 import Script from "next/script";
-import { HiReceiptRefund } from "react-icons/hi";
 export const metadata = {
   title:
     "Custom Graphic Designing Services Company | Mindsmiratus",
@@ -23,69 +22,75 @@ export default async function WebsiteApplicationDevelopment() {
   const services = [
     {
       icon: "🎨",
-      title: "Logo Design",
-      desc: "Creative and memorable logo designs that represent your brand identity professionally.",
+      title: "Custom Graphic Design",
+      desc: "Beautiful, responsive, and brand-aligned graphic designs.",
       points: [
-        "Unique and memorable brand logos",
-        "Custom designs tailored to your business identity",
-        "High-quality formats for web & print use",
+        "Creative Layouts & UI/UX",
+        "Mobile Responsive Design",
+        "Brand-Aligned Visual Identity",
+        "SEO-Optimized Structure",
       ],
-      
+      href: "/website-designing-and-development",
     },
     {
       icon: "💻",
-      title: "Branding & Identity Design",
-      desc: "Consistent brand visuals that build recognition, trust, and a strong market presence.",
+      title: "Web Application Development",
+      desc: "High-performance, secure, and scalable custom applications.",
       points: [
-        "Complete brand identity creation",
-        "Color palette, typography & brand guidelines",
-        "Consistent branding across all platforms",
+        ".NET / Node.js / PHP / React / Next.js",
+        "API Integrations",
+        "Role & Access Based Modules",
+        "Secure Cloud Deployment",
       ],
-      
+      href: "/custom-web-application-development",
     },
     {
       icon: "📱",
-      title: "Social Media Creatives",
-      desc: "Engaging social media designs that attract attention and increase audience interaction.",
+      title: "Mobile App Development",
+      desc: "Cross-platform Android & iOS mobile applications.",
       points: [
-        "Eye-catching posts & banners",
-        "Designs for Instagram, Facebook, LinkedIn & more",
-        "Creative visuals to boost engagement",
+        "React Native / Flutter",
+        "High-Performance UI Components",
+        "Push Notifications & Offline Sync",
+        "App Store + Play Store Deployment",
       ],
-      
+      href: "/mobile-app-development",
     },
     {
       icon: "🛒",
-      title: "Marketing & Promotional Designs",
-      desc: "Impactful marketing visuals crafted to promote your products and boost conversions.",
+      title: "eCommerce Website Solutions",
+      desc: "Convert visitors into customers with optimized storefronts.",
       points: [
-        "Flyers, brochures & posters",
-        "Banners and ad creatives",
-        "Designs focused on marketing & conversions",
+        "Custom or Shopify/WooCommerce",
+        "Secure Payments & Checkout",
+        "Inventory & Order Automation",
+        "Sales Analytics Dashboard",
       ],
-      
+      href: "/ecommerce-website-development",
     },
     {
       icon: "🏢",
-      title: "Business & Corporate Designs",
-      desc: "Professional business materials that enhance credibility and strengthen brand communication.",
+      title: "Business Application Development",
+      desc: "ERP, CRM, HRMS & workflow systems tailored to your operations.",
       points: [
-        "Business cards & letterheads",
-        "Presentation & pitch deck designs",
-        "Professional corporate branding materials",
+        "Custom Business Logic",
+        "Data Security & Role Permissions",
+        "Integrated Workflows",
+        "Scalable Multi-User System",
       ],
-      
+      href: "/business-application-development",
     },
     {
       icon: "🛠️",
-      title: "Website & Digital Graphics",
-      desc: "Visually appealing digital designs that improve user experience and online engagement.",
+      title: "Maintenance & Support",
+      desc: "Keep your website fast, secure & updated at all times.",
       points: [
-        "Website banners & UI elements",
-        "Landing page visuals",
-        "Creative graphics for digital platforms",
+        "Security Updates & Fixes",
+        "Performance Optimization",
+        "Server Monitoring",
+        "Feature Enhancements",
       ],
-      
+      href: "/website-maintenance-and-support",
     },
   ];
 
@@ -128,12 +133,12 @@ export default async function WebsiteApplicationDevelopment() {
     })),
   };
   const serviceSchema = await getServiceSchema({
-    name: "Custom Graphic Designing Services Company",
+    name: "Custom Website Designing Services Company",
     description:
-      "Professional custom graphic designing services by Mindsmiratus including logo design, branding, marketing materials, and digital visuals to enhance your brand identity.",
+      "Professional custom website designing services by Mindsmiratus including SEO-optimized website design, custom web application development, and scalable business solutions tailored to unique business needs.",
     slug: "/custom-website-design",
     serviceType:
-      "Custom Graphic Designing, Logo Designing, Branding, Marketing Materials, Digital Visuals",
+      "Custom Website Designing, Website Development, Web Application Development, SEO Optimized Websites, Custom Business Applications, eCommerce Website Development",
 
     // 🔗 Parent relationship (VERY IMPORTANT)
     isPartOf: {
@@ -291,7 +296,7 @@ export default async function WebsiteApplicationDevelopment() {
             {services.map((s, i) => (
               <Link
                 key={i}
-                href={""}
+                href={s.href}
                 className="group relative p-8 rounded-3xl border border-slate-200 bg-white/70 backdrop-blur-xl 
                 shadow-[0_8px_30px_rgba(0,0,0,0.06)] hover:shadow-[0_12px_40px_rgba(0,0,0,0.12)]
                 hover:-translate-y-1 transition-all duration-500"
