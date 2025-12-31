@@ -102,19 +102,19 @@ export default async function WebsiteApplicationDevelopment() {
         "Yes, we provide cost-effective graphic design solutions tailored for startups, small businesses, and growing brands without compromising quality.",
     },
     {
-      question: "What is the difference between graphic design and website design?",
+      question: "Can you develop both web and mobile applications?",
       answer:
-        "Graphic design focuses on creating visual content such as logos, branding materials, social media creatives, and marketing graphics, while website design involves designing the layout, structure, and user experience of a website. Graphic design is mainly about visual communication, whereas website design focuses on functionality, usability, and user interaction along with visuals",
+        "Absolutely! We specialize in developing both web and mobile apps using the latest technologies like .NET, React, Node.js, Flutter, and React Native.",
     },
     {
-      question: "What industries do you provide graphic design services for?",
+      question: "Do you provide post-launch maintenance and support?",
       answer:
-        "We provide graphic design services for startups, small businesses, corporate brands, eCommerce, education, healthcare, and many other industries.",
+        "Yes, we offer ongoing maintenance, updates, and performance optimization to ensure your website and applications remain fast, secure, and up to date.",
     },
     {
-      question: "Can you redesign or improve my existing designs?",
+      question: "How long does it take to design and develop a website?",
       answer:
-        "Yes, we can redesign or enhance your existing logos, branding materials, or graphics to give them a fresh, modern, and professional look.",
+        "Project timelines vary based on complexity and requirements. A standard business website typically takes 2–4 weeks, while advanced web apps may take longer.",
     },
   ];
 

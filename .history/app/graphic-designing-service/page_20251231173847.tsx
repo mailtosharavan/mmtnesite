@@ -22,7 +22,7 @@ export default async function WebsiteApplicationDevelopment() {
   // ----- DATA -----
   const services = [
     {
-      icon: "/logo-design-service.png",
+      icon: "🎨",
       title: "Logo Design",
       desc: "Creative and memorable logo designs that represent your brand identity professionally.",
       points: [
@@ -44,7 +44,7 @@ export default async function WebsiteApplicationDevelopment() {
       
     },
     {
-      icon: "/social-media.png",
+      icon: "/branding.png",
       title: "Social Media Creatives",
       desc: "Engaging social media designs that attract attention and increase audience interaction.",
       points: [
@@ -55,7 +55,7 @@ export default async function WebsiteApplicationDevelopment() {
       
     },
     {
-      icon: "/promotion.png",
+      icon: "/branding.png",
       title: "Marketing & Promotional Designs",
       desc: "Impactful marketing visuals crafted to promote your products and boost conversions.",
       points: [
@@ -66,7 +66,7 @@ export default async function WebsiteApplicationDevelopment() {
       
     },
     {
-      icon: "/corporate-designs.png",
+      icon: "/branding.png",
       title: "Business & Corporate Designs",
       desc: "Professional business materials that enhance credibility and strengthen brand communication.",
       points: [
@@ -77,7 +77,7 @@ export default async function WebsiteApplicationDevelopment() {
       
     },
     {
-      icon: "/digital-graphic-design.png",
+      icon: "/branding.png",
       title: "Website & Digital Graphics",
       desc: "Visually appealing digital designs that improve user experience and online engagement.",
       points: [
@@ -92,29 +92,29 @@ export default async function WebsiteApplicationDevelopment() {
   const faqs = [
     {
       question:
-        "Can you design graphics for social media and digital marketing?",
+        "What is the difference between website designing and website development?",
       answer:
-        "Absolutely. We create high-quality social media creatives, ad banners, and digital marketing visuals that help increase engagement and brand visibility across all platforms.",
+        "Website designing focuses on the visual layout, user experience, and aesthetics, while website development involves coding and backend logic that make the site functional.",
     },
     {
-      question: "Do you offer affordable graphic design services for startups?",
+      question: "Do you offer custom website designing services?",
       answer:
-        "Yes, we provide cost-effective graphic design solutions tailored for startups, small businesses, and growing brands without compromising quality.",
+        "Yes, we create fully customized website designs tailored to your brand, goals, and audience — ensuring unique layouts, responsive performance, and SEO optimization.",
     },
     {
-      question: "What is the difference between graphic design and website design?",
+      question: "Can you develop both web and mobile applications?",
       answer:
-        "Graphic design focuses on creating visual content such as logos, branding materials, social media creatives, and marketing graphics, while website design involves designing the layout, structure, and user experience of a website. Graphic design is mainly about visual communication, whereas website design focuses on functionality, usability, and user interaction along with visuals",
+        "Absolutely! We specialize in developing both web and mobile apps using the latest technologies like .NET, React, Node.js, Flutter, and React Native.",
     },
     {
-      question: "What industries do you provide graphic design services for?",
+      question: "Do you provide post-launch maintenance and support?",
       answer:
-        "We provide graphic design services for startups, small businesses, corporate brands, eCommerce, education, healthcare, and many other industries.",
+        "Yes, we offer ongoing maintenance, updates, and performance optimization to ensure your website and applications remain fast, secure, and up to date.",
     },
     {
-      question: "Can you redesign or improve my existing designs?",
+      question: "How long does it take to design and develop a website?",
       answer:
-        "Yes, we can redesign or enhance your existing logos, branding materials, or graphics to give them a fresh, modern, and professional look.",
+        "Project timelines vary based on complexity and requirements. A standard business website typically takes 2–4 weeks, while advanced web apps may take longer.",
     },
   ];
 

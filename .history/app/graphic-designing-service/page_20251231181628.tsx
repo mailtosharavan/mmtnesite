@@ -104,7 +104,7 @@ export default async function WebsiteApplicationDevelopment() {
     {
       question: "What is the difference between graphic design and website design?",
       answer:
-        "Graphic design focuses on creating visual content such as logos, branding materials, social media creatives, and marketing graphics, while website design involves designing the layout, structure, and user experience of a website. Graphic design is mainly about visual communication, whereas website design focuses on functionality, usability, and user interaction along with visuals",
+        "Graphic design focuses on creating visual content such as logos, branding materials, social media creatives, and marketing graphics, while website design involves designing the layout, structure, and user experience of a website. Graphic design is mainly about visual communication, whereas website design focuses on functionality, usability, and user interaction along with visuals.",
     },
     {
       question: "What industries do you provide graphic design services for?",
