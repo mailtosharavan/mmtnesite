@@ -1,32 +1,32 @@
 import Image from "next/image";
 import Link from "next/link";
 import type { Metadata } from "next";
-import {FaHandshake,FaLightbulb,FaCogs,FaChartLine,FaCheckCircle,FaUsers,FaGlobeAsia,} from "react-icons/fa";
+import { FaHandshake, FaLightbulb, FaCogs, FaChartLine, FaCheckCircle, FaUsers, FaGlobeAsia, } from "react-icons/fa";
 import Script from "next/script";
 
 export const metadata: Metadata = {
   title: "Mindsmiratus Technologies – Leading Web & IT Service Company ",
   description:
     "Mindsmiratus Technologies is a full-stack digital transformation partner delivering custom applications, integrated solutions, cloud hosting, and growth-driven marketing.",
-  
+
 };
 
 export default async function AboutPage() {
   const aboutPageSchema = {
-            "@context": "https://schema.org",
-            "@type": "AboutPage",
-            "@id": "https://www.mindsmiratus.com/about-us#aboutpage",
-            url: "https://www.mindsmiratus.com/about-us",
-            name: "About Mindsmiratus Technologies Pvt. Ltd.",
-            description:
-              "Learn about Mindsmiratus Technologies Pvt. Ltd., a technology-driven company delivering web development, mobile applications, digital marketing, and customer communication solutions for businesses worldwide.",
-            about: {
-              "@id": "https://www.mindsmiratus.com/#organization",
-            },
-            publisher: {
-              "@id": "https://www.mindsmiratus.com/#organization",
-            },
-          };
+    "@context": "https://schema.org",
+    "@type": "AboutPage",
+    "@id": "https://www.mindsmiratus.com/about-us#aboutpage",
+    url: "https://www.mindsmiratus.com/about-us",
+    name: "About Mindsmiratus Technologies Pvt. Ltd.",
+    description:
+      "Learn about Mindsmiratus Technologies Pvt. Ltd., a technology-driven company delivering web development, mobile applications, digital marketing, and customer communication solutions for businesses worldwide.",
+    about: {
+      "@id": "https://www.mindsmiratus.com/#organization",
+    },
+    publisher: {
+      "@id": "https://www.mindsmiratus.com/#organization",
+    },
+  };
 
   return (
     <>
@@ -50,7 +50,7 @@ export default async function AboutPage() {
 
           <div className="hidden lg:flex justify-end">
             <Image
-              src="/about-company-hero.svg"
+              src="/about-company-heroNew.gif"
               alt="About Mindsmiratus Technologies"
               width={540}
               height={420}
@@ -74,8 +74,8 @@ export default async function AboutPage() {
         </div>
       </section> */}
 
-{/* for our vison and mission */}
-<section className="py-20 bg-slate-50">
+      {/* for our vison and mission */}
+      <section className="py-20 bg-slate-50">
         <div className="container mx-auto px-6 lg:px-16">
           <h2 className="text-3xl font-bold text-center text-slate-900 mb-14">
             Company Vision, Mission & Purpose
@@ -85,26 +85,30 @@ export default async function AboutPage() {
             {[
               {
                 // icon: <FaLightbulb className="text-cyan-600 text-3xl" />,
+                icon: "/Our-Mission.png",
                 title: "Our Mission",
                 desc: "To empower businesses with reliable, innovative, and cost-effective digital solutions that simplify processes, improve customer engagement, and drive measurable growth."
               },
               {
                 // icon: <FaHandshake className="text-cyan-600 text-3xl" />,
+                icon: "/our-vision.png",
                 title: "Our Vision",
                 desc: "To become a trusted global technology partner, known for delivering excellent customer experiences, product innovation, and long-lasting value."
               },
               {
                 // icon: <FaCogs className="text-cyan-600 text-3xl" />,
+                icon: "/our-purpose.png",
                 title: "Our Purpose",
                 desc: "We exist to empower businesses with modern, scalable, and efficient digital systems. Every solution we build is practical, measurable, and aligned with real business outcomes."
               },
-              
+
             ].map((v, i) => (
               <div
                 key={i}
                 className="p-8 bg-white rounded-3xl border border-slate-200 shadow-sm hover:shadow-xl transition"
               >
                 {/* {v.icon} */}
+                <Image src={v.icon} alt="our mission" width={55} height={55} />
                 <h3 className="text-xl font-semibold text-slate-800 mt-4 mb-2">{v.title}</h3>
                 <p className="text-slate-600 text-sm">{v.desc}</p>
               </div>
