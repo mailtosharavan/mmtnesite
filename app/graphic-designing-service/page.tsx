@@ -225,7 +225,7 @@ export default async function WebsiteApplicationDevelopment() {
           <div className="flex-1 relative hidden md:flex justify-center lg:justify-end">
             <div className="absolute -bottom-10 -right-10 w-64 h-64 bg-cyan-200/30 blur-3xl rounded-full" />
             <Image
-              src="/hero-webapp.svg"
+              src="/creative-graphic2.png"
               alt="Professional website designing and web application development"
               width={560}
               height={420}
