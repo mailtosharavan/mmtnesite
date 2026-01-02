@@ -1,6 +1,6 @@
-@tailwind base;
+/* @tailwind base;
 @tailwind components;
-@tailwind utilities;
+@tailwind utilities; */
 
 /* NProgress Styles */
 #nprogress {
@@ -23,9 +23,9 @@
     0 0 8px rgba(59, 130, 246, 0.5);
 }
 
-.container {
+/* .container {
   @apply mx-auto px-4 sm:px-6 lg:px-8;
-}
+} */
 
 @keyframes mm-float {
   0% { transform: translateY(0px); }
