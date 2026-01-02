@@ -18,6 +18,11 @@ const nextConfig = {
       },
       {
         source: '/website-designing-services',
+        destination: '/custom-website-design',
+        permanent: true,
+      },
+      {
+        source: '/graphic-designing-service',
         destination: '/website-designing-and-development',
         permanent: true,
       },

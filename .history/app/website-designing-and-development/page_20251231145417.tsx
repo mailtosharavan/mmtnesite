@@ -220,9 +220,9 @@ const serviceSchema = await getServiceSchema({
             {[
               {
                 icon: "🎨",
-                title: "Graphic Designing Services",
+                title: "Custom Website Design",
                 desc: "Beautiful, responsive, and brand-aligned website designs.",
-                link: "/graphic-designing-service",
+                link: "/custom-website-design",
                 points: [
                   "Creative Layouts & UI/UX",
                   "Mobile Responsive Design",
@@ -485,9 +485,9 @@ const serviceSchema = await getServiceSchema({
             Trusted by Businesses Across India & Beyond
           </h2>
 
-          <div className="grid grid-cols-2 sm:grid-cols-5 gap-8 transition mx-auto my-10">
-            {["client1", "client8", "client9", "client15","client16"].map((logo, i) => (
-              <Image key={i} src={`/clients/${logo}.jpg`} alt="Brand Logo" width={120} height={60} className="object-contain" />
+          <div className="grid grid-cols-2 sm:grid-cols-4 gap-8 grayscale hover:grayscale-0 transition mx-auto my-10">
+            {["brand1", "brand2", "brand3", "brand4"].map((logo, i) => (
+              <Image key={i} src={`/logos/${logo}.png`} alt="Brand Logo" width={120} height={60} className="object-contain" />
             ))}
           </div>
 

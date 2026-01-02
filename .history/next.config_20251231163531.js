@@ -22,6 +22,11 @@ const nextConfig = {
         permanent: true,
       },
       {
+        source: '/graphic-designing-service',
+        destination: '/website-designing-and-development',
+        permanent: true,
+      },
+      {
         source: '/development-services',
         destination: '/website-designing-and-development',
         permanent: true,
