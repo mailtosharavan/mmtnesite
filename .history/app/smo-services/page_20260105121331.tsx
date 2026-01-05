@@ -299,11 +299,11 @@ export default function SMOServicesPage() {
       {["client1","client8","client9","client15","client16"].map((logo,i)=>(
         <div key={i} className="flex justify-center">
           <Image 
-            src={`/clients/${logo}.jpg`} 
+            src={`/logos/${logo}.png`} 
             alt="Brand Logo" 
             width={100} 
             height={60} 
-            className="object-contain transition"
+            className="object-contain grayscale hover:grayscale-0 transition"
           />
         </div>
       ))}

@@ -296,14 +296,14 @@ export default function SMOServicesPage() {
     </p>
 
     <div className="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-6 gap-6 opacity-90">
-      {["client1","client8","client9","client15","client16"].map((logo,i)=>(
+      {["client1","client-2","client-3","client-4","client-5","client-6"].map((logo,i)=>(
         <div key={i} className="flex justify-center">
           <Image 
-            src={`/clients/${logo}.jpg`} 
+            src={`/logos/${logo}.png`} 
             alt="Brand Logo" 
             width={100} 
             height={60} 
-            className="object-contain transition"
+            className="object-contain grayscale hover:grayscale-0 transition"
           />
         </div>
       ))}
