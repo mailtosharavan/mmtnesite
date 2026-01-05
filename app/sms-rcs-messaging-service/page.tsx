@@ -34,32 +34,32 @@ export default async function SmsRcsMessagingServicePage() {
 
   const features = [
     {
-      icon: <FaSms className="text-cyan-600 text-3xl" />,
+      icon: <FaSms className="text-cyan-600 text-3xl margin-center" />,
       title: "Transactional / OTP SMS",
       desc: "Time-sensitive OTP and notification messaging routes with high delivery prioritization.",
     },
     {
-      icon: <FaBullseye className="text-cyan-600 text-3xl" />,
+      icon: <FaBullseye className="text-cyan-600 text-3xl margin-center" />,
       title: "Promotional / Marketing SMS",
       desc: "Targeted promotional outreach with sender ID, segmentation and scheduling controls.",
     },
     {
-      icon: <FaClipboardCheck className="text-cyan-600 text-3xl" />,
+      icon: <FaClipboardCheck className="text-cyan-600 text-3xl margin-center" />,
       title: "RCS Messaging",
       desc: "Enhanced messaging with branding, buttons, rich cards, and interaction responses.",
     },
     {
-      icon: <FaChartLine className="text-cyan-600 text-3xl" />,
+      icon: <FaChartLine className="text-cyan-600 text-3xl margin-center" />,
       title: "Delivery Reporting & Analytics",
       desc: "Track delivery confirmations, message interactions, and performance metrics.",
     },
   ];
 
   const useCases = [
-    { icon: <FaHospital className="text-blue-600 text-3xl" />, label: "Healthcare — Appointment and Reminders" },
-    { icon: <FaTruck className="text-blue-600 text-3xl" />, label: "Logistics — Delivery OTP and Status Updates" },
-    { icon: <FaUniversity className="text-blue-600 text-3xl" />, label: "Education — Notices and Attendance Alerts" },
-    { icon: <FaStore className="text-blue-600 text-3xl" />, label: "Retail — Promotional Offers and Customer Engagement" },
+    { icon: <FaHospital className="text-blue-600 text-3xl margin-center" />, label: "Healthcare — Appointment and Reminders" },
+    { icon: <FaTruck className="text-blue-600 text-3xl margin-center" />, label: "Logistics — Delivery OTP and Status Updates" },
+    { icon: <FaUniversity className="text-blue-600 text-3xl margin-center" />, label: "Education — Notices and Attendance Alerts" },
+    { icon: <FaStore className="text-blue-600 text-3xl margin-center" />, label: "Retail — Promotional Offers and Customer Engagement" },
   ];
 
   const plans = [
@@ -124,7 +124,7 @@ export default async function SmsRcsMessagingServicePage() {
           </div>
 
           <div className="hidden lg:flex justify-end">
-            <Image   src="/sms-rcs-messaging-service.svg" alt="SMS & RCS Messaging Service"
+            <Image   src="/RCS-messagingNew.png" alt="SMS & RCS Messaging Service"
   width={540}
   height={410}
   className="w-full max-w-[540px] h-auto object-contain"

@@ -16,42 +16,42 @@ export const metadata = {
 export default async function WhatsAppApiServiceProviderPage() {
   const features = [
     {
-      icon: <FaWhatsapp className="text-green-600 text-3xl" />,
+      icon: <FaWhatsapp className="text-green-600 text-3xl margin-center" />,
       title: "Official WhatsApp Business API",
       desc: "Verified templates, branded sender name, secure & compliant setup.",
     },
     {
-      icon: <FaRobot className="text-green-600 text-3xl" />,
+      icon: <FaRobot className="text-green-600 text-3xl margin-center" />,
       title: "Chatbots & Automated Replies",
       desc: "Enable guided conversations to resolve routine queries instantly.",
     },
     {
-      icon: <FaPlug className="text-green-600 text-3xl" />,
+      icon: <FaPlug className="text-green-600 text-3xl margin-center" />,
       title: "CRM & Application Integration",
       desc: "Connect WhatsApp with internal applications via REST APIs & webhooks.",
     },
     {
-      icon: <FaChartLine className="text-green-600 text-3xl" />,
+      icon: <FaChartLine className="text-green-600 text-3xl margin-center" />,
       title: "Analytics & Delivery Reporting",
       desc: "Track reads, responses, satisfaction and engagement performance.",
     },
     {
-      icon: <FaShieldAlt className="text-green-600 text-3xl" />,
+      icon: <FaShieldAlt className="text-green-600 text-3xl margin-center" />,
       title: "Secure & Compliant",
       desc: "Data encryption, audit controls and business verification assistance.",
     },
     {
-      icon: <FaHeadset className="text-green-600 text-3xl" />,
+      icon: <FaHeadset className="text-green-600 text-3xl margin-center" />,
       title: "Support & Onboarding",
       desc: "End-to-end setup assistance including template approvals.",
     },
   ];
 
   const useCases = [
-    { icon: <FaStore className="text-blue-600 text-3xl" />, label: "Order & Delivery Notifications" },
-    { icon: <FaIndustry className="text-blue-600 text-3xl" />, label: "Customer Support & Query Resolution" },
-    { icon: <FaRobot className="text-blue-600 text-3xl" />, label: "Lead Qualification & Campaign Follow-ups" },
-    { icon: <FaHeadset className="text-blue-600 text-3xl" />, label: "Post-Sale Assistance & Feedback Requests" },
+    { icon: <FaStore className="text-blue-600 text-3xl margin-center" />, label: "Order & Delivery Notifications" },
+    { icon: <FaIndustry className="text-blue-600 text-3xl margin-center" />, label: "Customer Support & Query Resolution" },
+    { icon: <FaRobot className="text-blue-600 text-3xl margin-center" />, label: "Lead Qualification & Campaign Follow-ups" },
+    { icon: <FaHeadset className="text-blue-600 text-3xl margin-center" />, label: "Post-Sale Assistance & Feedback Requests" },
   ];
 
   const plans = [
@@ -152,7 +152,7 @@ export default async function WhatsAppApiServiceProviderPage() {
           </div>
 
           <div className="hidden lg:flex justify-end">
-            <Image src="/whatsapp-api-hero.svg" alt="WhatsApp Business API" width={540} height={410} priority />
+            <Image src="/whatsApp-API.png" alt="WhatsApp Business API" width={540} height={410} priority />
           </div>
         </div>
       </section>
@@ -162,7 +162,7 @@ export default async function WhatsAppApiServiceProviderPage() {
  {/* Image */}
     <div className="flex justify-center">
       <Image
-        src="/whatsapp-message-api-service.svg"   
+        src="/whatsapp-message-api-service.png"   
         alt="WhatsApp Business API Workflow"
         width={420}
         height={320}
@@ -307,6 +307,13 @@ export default async function WhatsAppApiServiceProviderPage() {
           Let’s build a growth-focused digital marketing strategy customized for your business goals.
         </p>
 
+         {/* Icons Group */}
+          <div className="flex mb-9 mt-8">
+            <span className="text-white text-5xl animate-bounce delay-75">📈</span>
+            <span className="text-white text-5xl animate-bounce delay-150">🚀</span>
+            <span className="text-white text-5xl animate-bounce delay-300">🎯</span>
+          </div>
+
         <Link
           href="/contact-mindsmiratus-technologies"
           className="inline-flex items-center gap-2 px-6 py-3 bg-white text-yellow-700 rounded-full font-semibold hover:bg-yellow-50 transition"
@@ -315,12 +322,7 @@ export default async function WhatsAppApiServiceProviderPage() {
         </Link>
       </div>
 
-      {/* Icons Group */}
-      <div className="flex gap-6">
-        <span className="text-white text-5xl animate-bounce delay-75">📈</span>
-        <span className="text-white text-5xl animate-bounce delay-150">🚀</span>
-        <span className="text-white text-5xl animate-bounce delay-300">🎯</span>
-      </div>
+     
 
     </div>
 

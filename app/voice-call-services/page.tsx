@@ -87,7 +87,7 @@ export default async function VoiceCallServicesPage() {
             </div>
           </div>
           <div className="hidden lg:flex justify-end">
-            <Image src="/voice-services-hero.svg" alt="Voice Call Services" width={420} height={310} priority />
+            <Image src="/voice-services-hero.png" alt="Voice Call Services" width={550} height={410} priority />
           </div>
         </div>
       </section>

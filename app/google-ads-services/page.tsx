@@ -26,11 +26,11 @@ export default async function GoogleAdsServicesPage() {
   ];
 
   const campaignTypes = [
-    { icon: <FaSearchDollar/>, title: "Search Ads", points: ["High-intent leads", "Exact/phrase match strategy", "Ad extensions & assets"] },
-    { icon: <FaPlay/>, title: "Display Ads", points: ["Awareness & retargeting", "Contextual & in-market", "Creative testing"] },
-    { icon: <FaShoppingCart/>, title: "Shopping / PMax", points: ["Product feeds & GMC", "PMax structure & signals", "ROAS optimization"] },
-    { icon: <FaVideo/>, title: "YouTube Ads", points: ["In-stream & shorts", "Top-funnel reach", "View-to-lead orchestration"] },
-    { icon: <FaPhoneAlt/>, title: "Call Ads", points: ["Call-only/Call-extension", "Call tracking", "Service verticals"] },
+    { icon: "search-ads.png", title: "Search Ads", points: ["High-intent leads", "Exact/phrase match strategy", "Ad extensions & assets"] },
+    { icon: "display-ads.png", title: "Display Ads", points: ["Awareness & retargeting", "Contextual & in-market", "Creative testing"] },
+    { icon: "shopping.png", title: "Shopping / PMax", points: ["Product feeds & GMC", "PMax structure & signals", "ROAS optimization"] },
+    { icon: "youtube-ads.png", title: "YouTube Ads", points: ["In-stream & shorts", "Top-funnel reach", "View-to-lead orchestration"] },
+    { icon: "call-ads.png", title: "Call Ads", points: ["Call-only/Call-extension", "Call tracking", "Service verticals"] },
   ];
 
   const plans = [
@@ -112,7 +112,7 @@ const serviceSchema = await getServiceSchema({
             </div>
           </div>
           <div className="hidden lg:flex justify-end">
-            <Image src="/seo-services-abstract.svg" alt="Google Ads & SEM" width={540} height={410} priority/>
+            <Image src="/leads-sales.png" alt="Google Ads & SEM" width={540} height={410} priority/>
           </div>
         </div>
       </section>
@@ -232,7 +232,9 @@ const serviceSchema = await getServiceSchema({
           className="p-8 rounded-3xl bg-white/70 backdrop-blur-xl border border-slate-200 
                      shadow-lg hover:shadow-2xl hover:-translate-y-1 transition-all duration-500"
         >
-          <div className="text-2xl text-cyan-700">{c.icon}</div>
+          <div className="text-2xl text-cyan-700">
+            <Image src={`/ads-service/${c.icon}`} alt={c.title} width={60} height={60} />
+          </div>
 
           <h3 className="text-xl font-semibold text-slate-900 mt-4 mb-2">{c.title}</h3>
 

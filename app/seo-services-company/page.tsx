@@ -190,7 +190,7 @@ const serviceSchema = await getServiceSchema({
     </div>
 
     <div className="hidden lg:flex justify-end">
-      <Image src="/seo-services-abstract.svg" alt="SEO Services" width={540} height={410} priority />
+      <Image src="/seo-services-abstract.png" alt="SEO Services" width={540} height={410} priority />
     </div>
   </div>
 </section>
@@ -204,7 +204,7 @@ const serviceSchema = await getServiceSchema({
       Why SEO Matters & How We Drive Results
     </h2>
 
-    <p className="text-slate-600 text-center max-w-3xl mx-auto mb-14 text-lg">
+    <p className="text-slate-600 text-center mx-auto mb-14 text-lg">
       SEO is more than ranking — it ensures your brand is discovered at the exact moment
       customers are searching. We follow a proven approach to build visibility, trust,
       and sustainable growth. <br></br> At Mindsmiratus Technologies, we offer professional Search Engine Optimization (SEO) services that help your brand appear exactly where your audience is looking. Our approach focuses on long-term growth, clean SEO practices, and a strategy tailored to your business goals
