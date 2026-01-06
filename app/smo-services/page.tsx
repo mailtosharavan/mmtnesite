@@ -169,14 +169,8 @@ export default function SMOServicesPage() {
       </div>
     </div>
 
-    <div className="hidden lg:flex flex-col justify-center text-right max-w-md ml-auto">
-      <h2 className="text-3xl font-extrabold tracking-tight bg-gradient-to-r from-cyan-700 to-blue-600 bg-clip-text text-transparent leading-snug">
-        <TypeWriter
-          text={`We refine your brand's presence to inspire trust, engagement, and organic growth.`}
-          minSpeed={60}
-          maxSpeed={110}
-        />
-      </h2>
+    <div className="hidden lg:flex flex-col  ml-auto">
+     <Image src="/social-media-optimization.png" alt="SMO Hero Image" width={700} height={410} />
     </div>
 
   </div>
@@ -295,7 +289,7 @@ export default function SMOServicesPage() {
       We manage social presence for startups, enterprises, and growth-stage brands.
     </p>
 
-    <div className="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-6 gap-6 opacity-90">
+    <div className="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-5 gap-6 opacity-90">
       {["client1","client8","client9","client15","client16"].map((logo,i)=>(
         <div key={i} className="flex justify-center">
           <Image 
