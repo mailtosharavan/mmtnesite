@@ -233,7 +233,7 @@ export default async function BusinessApplicationDevelopmentPage() {
 
       {/* VALUE PROPOSITION */}
       <section id="value" className="py-18 bg-white">
-        <div className="container mx-auto px-6 lg:px-16 max-w-6xl">
+        <div className="container mx-auto px-6 lg:px-16 max-w-6xl mt-9">
           <h2 className="text-3xl font-bold text-center text-slate-900 mb-4">
             Built for Business Outcomes
           </h2>
