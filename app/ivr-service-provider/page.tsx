@@ -4,6 +4,7 @@ import Image from "next/image";
 import {FaPhoneAlt,FaNetworkWired,FaHeadset,FaRobot,FaChartLine,FaServer,FaCheckCircle,FaBuilding,FaUserTie,} from "react-icons/fa";
 import { getServiceSchema } from "../lib/schema/serviceSchema";
 import Script from "next/script";
+import { icons } from "lucide-react";
 
 export const metadata = {
   title: "IVR Service Provider for Call Automation | Mindsmiratus",
@@ -17,53 +18,53 @@ export const metadata = {
 export default async function IvrServiceProviderPage() {
   const features = [
     {
-      icon: <FaNetworkWired className="text-blue-600 text-3xl" />,
+      icon: <FaNetworkWired className="text-blue-600 text-3xl margin-center" />,
       title: "Multi-Level Call Routing",
       desc: "Route callers to the right department or agent using structured menu trees.",
     },
     {
-      icon: <FaRobot className="text-blue-600 text-3xl" />,
+      icon: <FaRobot className="text-blue-600 text-3xl margin-center" />,
       title: "Automated Voice Menus",
       desc: "Handle repetitive queries automatically without requiring manual agents.",
     },
     {
-      icon: <FaHeadset className="text-blue-600 text-3xl" />,
+      icon: <FaHeadset className="text-blue-600 text-3xl margin-center" />,
       title: "Agent & Queue Management",
       desc: "Distribute calls based on priority, skill sets or support schedules.",
     },
     {
-      icon: <FaChartLine className="text-blue-600 text-3xl" />,
+      icon: <FaChartLine className="text-blue-600 text-3xl margin-center" />,
       title: "Call Analytics & Reports",
       desc: "Monitor call flows, success rates, wait times and customer behavior.",
     },
     {
-      icon: <FaServer className="text-blue-600 text-3xl" />,
+      icon: <FaServer className="text-blue-600 text-3xl margin-center" />,
       title: "CRM & Software Integration",
       desc: "Connect IVR to CRMs, ticketing systems and internal databases with APIs.",
     },
     {
-      icon: <FaCheckCircle className="text-blue-600 text-3xl" />,
+      icon: <FaCheckCircle className="text-blue-600 text-3xl margin-center" />,
       title: "Compliance & Reliability",
       desc: "High-availability telephony routing with data and security compliance.",
     },
   ];
 
   const useCases = [
-    { icon: <FaUserTie className="text-cyan-600 text-3xl" />, label: "Customer Support & Call Assistance" },
-    { icon: <FaBuilding className="text-cyan-600 text-3xl" />, label: "Corporate Call Reception & Extensions" },
-    { icon: <FaRobot className="text-cyan-600 text-3xl" />, label: "Automated Surveys & Feedback Collection" },
-    { icon: <FaPhoneAlt className="text-cyan-600 text-3xl" />, label: "Lead Capture & Call Tracking Flows" },
+    { icon: <FaUserTie className="text-cyan-600 text-3xl margin-center" />, label: "Customer Support & Call Assistance" },
+    { icon: <FaBuilding className="text-cyan-600 text-3xl margin-center" />, label: "Corporate Call Reception & Extensions" },
+    { icon: <FaRobot className="text-cyan-600 text-3xl margin-center" />, label: "Automated Surveys & Feedback Collection" },
+    { icon: <FaPhoneAlt className="text-cyan-600 text-3xl margin-center" />, label: "Lead Capture & Call Tracking Flows" },
   ];
 
    const ivrUseCase = [
-    { subTitle: "", label: "Customer support helpline" },
-    { subTitle: "", label: "Order tracking and status updates" },
-    { subTitle: "", label: "Account and balance inquiries" },
-    { subTitle: "", label: "Appointment scheduling" },
-    { subTitle: "", label: "Lead capturing and qualification" },
-    { subTitle: "", label: "Automated surveys and feedback" },
-    { subTitle: "", label: "Delivery and shipping updates" },
-    { subTitle: "", label: "Emergency hotline assistance" },
+    { icon: "customer-support.png", subTitle: "", label: "Customer support helpline" },
+    { icon: "order-tracking.png", subTitle: "", label: "Order tracking and status updates" },
+    { icon: "account-inquiries.png", subTitle: "", label: "Account and balance inquiries" },
+    { icon: "appointment-scheduling.png", subTitle: "", label: "Appointment scheduling" },
+    { icon: "lead-capturing.png", subTitle: "", label: "Lead capturing and qualification" },
+    { icon: "automated-surveys.png", subTitle: "", label: "Automated surveys and feedback" },
+    { icon: "delivery-updates.png", subTitle: "", label: "Delivery and shipping updates" },
+    { icon: "emergency-helpline.png", subTitle: "", label: "Emergency hotline assistance" },
   ];
 
   const plans = [
@@ -164,7 +165,7 @@ const serviceSchema = await getServiceSchema({
           </div>
 
           <div className="hidden lg:flex justify-end">
-            <Image src="/ivr-service-hero.svg" alt="IVR Service Workflow" width={540} height={410} priority />
+            <Image src="/IVR-service.png" alt="IVR Service Workflow" width={540} height={410} priority />
           </div>
         </div>
       </section>
@@ -176,7 +177,7 @@ const serviceSchema = await getServiceSchema({
           {/* Image */}
           <div className="flex justify-center">
             <Image
-              src="/ivr-call-routing.svg"
+              src="/smart-call-routing.png"
               alt="IVR Workflow Routing"
               width={520}
               height={420}
@@ -207,8 +208,8 @@ const serviceSchema = await getServiceSchema({
       {/* FEATURES */}
       <section className="py-20 bg-white">
         <div className="container mx-auto px-6 lg:px-16 text-center">
-          <h2 className="text-3xl font-bold text-slate-900 mb-12">Capabilities</h2>
-          <p>Customers expect quick answers—and your business can’t afford delays. Our cloud IVR system helps you automate incoming 
+          <h2 className="text-3xl font-bold text-slate-900 mb-8">Capabilities</h2>
+          <p className="mb-8">Customers expect quick answers—and your business can’t afford delays. Our cloud IVR system helps you automate incoming 
             calls, guide customers through menu options, and route them to the right department without manual intervention. Whether you’re a startup, service provider, ecommerce brand, hospital, or enterprise, our IVR platform ensures professional communication every time a customer calls.</p>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -231,7 +232,7 @@ const serviceSchema = await getServiceSchema({
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 text-center">
             {ivrUseCase.map((u, i) => (
               <div key={i} className="p-6 bg-white rounded-2xl border border-slate-200 shadow-sm">
-
+                <div><Image src={`/ivr-use/${u.icon}`} alt={u.label} width={60} height={60} className="mx-auto" /></div>
                 <h3 className="mt-4 text-lg font-semibold text-slate-800">{u.label}</h3>
                 <p className="text-slate-600 text-sm mt-2"> {u.subTitle}</p>
                 

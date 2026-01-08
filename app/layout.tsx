@@ -31,7 +31,7 @@ const baseUrl = `https://${host}`;
 
     title: "Web Design, Digital Marketing & IT Solutions Company | MindsMiratus",
     description:
-      "We accelerate digital transformation with custom apps, process digitization, web & mobile development, digital marketing, IT infrastructure, and tailored e-commerce solutions.",
+      "We accelerate digital transformation with custom apps, web & mobile development, digital marketing, IT infrastructure, and tailored e-commerce solutions.",
 
     openGraph: {
       title: "MindsMiratus Technologies | Web Design, Digital Marketing & IT Solutions",

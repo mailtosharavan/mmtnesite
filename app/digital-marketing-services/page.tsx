@@ -97,7 +97,7 @@ export default async function DigitalMarketingPage() {
     <div className="flex justify-center lg:justify-end relative">
       <div className="absolute -top-6 -left-6 w-36 h-36 rounded-full bg-cyan-200/30 blur-2xl"></div>
       <Image
-        src="/hero-digital-marketing.svg"
+        src="/digital-darketing.png"
         alt="Digital Marketing Strategy Illustration"
         width={560}
         height={440}

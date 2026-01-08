@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
-import {FaStar,FaServer,FaClock,FaShieldAlt,FaBolt,FaThumbsUp,FaChartLine,FaCogs,FaUsers,
+import {
+  FaStar, FaServer, FaClock, FaShieldAlt, FaBolt, FaThumbsUp, FaChartLine, FaCogs, FaUsers,
 } from "react-icons/fa";
 import { getServiceSchema } from "../lib/schema/serviceSchema";
 import Script from "next/script";
@@ -9,7 +10,7 @@ export const metadata = {
   title: "Web Application Development Company | Custom Web Apps & SaaS Solutions",
   description:
     "End-to-End Web Application Development services by Mindsmiratus with modern frameworks, performance, strong security, and user-centric design for all industries",
-  
+
 };
 
 export default async function WebApplicationDevelopmentPage() {
@@ -101,20 +102,20 @@ export default async function WebApplicationDevelopmentPage() {
     },
   ];
   const serviceSchema = await getServiceSchema({
-  name: "Web Application Development Company",
-  description:
-    "End-to-end web application development services by Mindsmiratus including custom web apps and SaaS solutions built with modern frameworks, high performance, robust security, and user-centric design for all industries.",
-  slug: "/web-application-development",
-  serviceType:
-    "Web Application Development, Custom Web App Development, SaaS Application Development, Enterprise Web Solutions, Secure Web Applications",
+    name: "Web Application Development Company",
+    description:
+      "End-to-end web application development services by Mindsmiratus including custom web apps and SaaS solutions built with modern frameworks, high performance, robust security, and user-centric design for all industries.",
+    slug: "/web-application-development",
+    serviceType:
+      "Web Application Development, Custom Web App Development, SaaS Application Development, Enterprise Web Solutions, Secure Web Applications",
 
-  // 🔗 Parent relationship
-  isPartOf: {
-    "@type": "Service",
-    name: "Website Designing & Development Services",
-    url: "https://www.mindsmiratus.com/website-designing-and-development",
-  },
-});
+    // 🔗 Parent relationship
+    isPartOf: {
+      "@type": "Service",
+      name: "Website Designing & Development Services",
+      url: "https://www.mindsmiratus.com/website-designing-and-development",
+    },
+  });
 
 
   return (
@@ -163,32 +164,17 @@ export default async function WebApplicationDevelopmentPage() {
           </div>
 
           {/* VISUAL */}
-          <svg width="620" height="460" viewBox="0 0 620 460" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <defs>
-              <linearGradient id="gradB" x1="0" x2="1" y1="0" y2="1">
-                <stop offset="0%" stop-color="#06b6d4" />
-                <stop offset="100%" stop-color="#3b82f6" />
-              </linearGradient>
-            </defs>
-
-            <rect width="620" height="460" rx="24" fill="#f8fafc" />
-
-            <rect x="100" y="80" width="420" height="260" rx="18" fill="#fff" stroke="#dbe3f0" stroke-width="2" />
-
-            <rect x="120" y="105" width="90" height="14" rx="7" fill="url(#gradB)" opacity="0.6" />
-            <rect x="220" y="105" width="65" height="14" rx="7" fill="#e2e8f0" />
-            <rect x="295" y="105" width="55" height="14" rx="7" fill="#e2e8f0" />
-
-            <rect x="120" y="140" width="40" height="160" rx="10" fill="#f1f5f9" />
-
-            <rect x="180" y="150" width="120" height="70" rx="12" fill="url(#gradB)" opacity="0.12" />
-            <rect x="320" y="150" width="150" height="70" rx="12" fill="#f1f5f9" />
-
-            <rect x="180" y="240" width="150" height="60" rx="12" fill="#f1f5f9" />
-            <rect x="350" y="240" width="120" height="60" rx="12" fill="url(#gradB)" opacity="0.12" />
-
-            <circle cx="520" cy="110" r="70" fill="url(#gradB)" opacity="0.14" />
-          </svg>
+          <div className="flex-1 relative hidden md:flex justify-center lg:justify-end">
+            <div className="absolute -bottom-10 -right-10 w-64 h-64 bg-cyan-200/30 blur-3xl rounded-full" />
+            <Image
+              src="/web-applicationNew.png"
+              alt="Web Application Development Services by Mindsmiratus"
+              width={560}
+              height={420}
+              className="drop-shadow-xl max-w-full h-auto object-contain"
+              priority
+            />
+          </div>
 
 
         </div>
@@ -344,7 +330,7 @@ export default async function WebApplicationDevelopmentPage() {
                 tag: "Web Application",
                 title: "Operations Dashboard for D2C Brand",
                 desc: "Unified orders, inventory, and support with role-based access and real-time KPIs.",
-                img: "/case-webapp-ops.jpg",
+                img: "/operations-dashboard.png",
                 metrics: [
                   { icon: <FaChartLine />, label: "Lead-time", value: "-28%" },
                   { icon: <FaClock />, label: "Task TAT", value: "-34%" },
@@ -355,7 +341,7 @@ export default async function WebApplicationDevelopmentPage() {
                 tag: "Website + SEO",
                 title: "High-Conversion Site for B2B SaaS",
                 desc: "Redesigned IA, performance tuning, and SEO setup boosted demo requests.",
-                img: "/case-site-b2b.jpg",
+                img: "/high-conversion-site.png",
                 metrics: [
                   { icon: <FaChartLine />, label: "Demo CTR", value: "+41%" },
                   { icon: <FaBolt />, label: "CWV Score", value: "90+ LCP" },

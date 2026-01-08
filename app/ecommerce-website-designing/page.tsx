@@ -1,6 +1,9 @@
+import Image from "next/image";
 import Link from "next/link";
-import {FaApple,FaAndroid,FaShieldAlt,FaBolt,FaLayerGroup,FaChartLine,
-  FaCogs,FaCloud,FaUserCheck,FaCheckCircle,FaStar,FaClock,FaAward,FaQuestionCircle,} from "react-icons/fa";
+import {
+  FaApple, FaAndroid, FaShieldAlt, FaBolt, FaLayerGroup, FaChartLine,
+  FaCogs, FaCloud, FaUserCheck, FaCheckCircle, FaStar, FaClock, FaAward, FaQuestionCircle,
+} from "react-icons/fa";
 import { getServiceSchema } from "../lib/schema/serviceSchema";
 import Script from "next/script";
 // ------------------ SEO ------------------
@@ -11,7 +14,7 @@ export const metadata = {
     "We deliver modern Ecommerce website design services with elegant layouts, and seamless shopping flow with optimized product cataloging, and checkout experiences",
   keywords:
     "ecommerce website designing, ecommerce app development, ecommerce website integration",
-  
+
 };
 
 // ------------------ DATA ------------------
@@ -141,7 +144,7 @@ const faqs = [
     q: "How long does it take to build an e-commerce website?",
     a: "A basic e-commerce website usually takes 7–14 days, while feature-rich custom stores may take 3–5 weeks, depending on product count and complexity.",
   },
-   {
+  {
     q: "Can you add custom features to my online store?",
     a: "Yes! Whether you need filters, product variants, coupons, membership features, or custom checkout functions — we can develop almost anything you need in your e-commerce store.",
   },
@@ -164,20 +167,20 @@ const faqSchema = {
 // ------------------ PAGE ------------------
 export default async function MobileAppDevelopmentPage() {
   const serviceSchema = await getServiceSchema({
-  name: "eCommerce Website Designing & Development Company",
-  description:
-    "Professional eCommerce website designing and development services by Mindsmiratus to build secure, scalable, and conversion-focused online stores with modern platforms, seamless payment integration, and optimized user experience.",
-  slug: "/ecommerce-website-designing",
-  serviceType:
-    "eCommerce Website Design, eCommerce Website Development, Online Store Development, Shopping Cart Development, Payment Gateway Integration",
+    name: "eCommerce Website Designing & Development Company",
+    description:
+      "Professional eCommerce website designing and development services by Mindsmiratus to build secure, scalable, and conversion-focused online stores with modern platforms, seamless payment integration, and optimized user experience.",
+    slug: "/ecommerce-website-designing",
+    serviceType:
+      "eCommerce Website Design, eCommerce Website Development, Online Store Development, Shopping Cart Development, Payment Gateway Integration",
 
-  // 🔗 Parent service relationship
-  isPartOf: {
-    "@type": "Service",
-    name: "Website Designing & Development Services",
-    url: "https://www.mindsmiratus.com/website-designing-and-development",
-  },
-});
+    // 🔗 Parent service relationship
+    isPartOf: {
+      "@type": "Service",
+      name: "Website Designing & Development Services",
+      url: "https://www.mindsmiratus.com/website-designing-and-development",
+    },
+  });
 
   return (
     <>
@@ -231,33 +234,9 @@ export default async function MobileAppDevelopmentPage() {
             </div>
           </div>
 
-          <svg width="620" height="460" viewBox="0 0 620 460" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <defs>
-              <linearGradient id="gradC" x1="0" x2="1" y1="0" y2="1">
-                <stop offset="0%" stop-color="#06b6d4" />
-                <stop offset="100%" stop-color="#3b82f6" />
-              </linearGradient>
-            </defs>
-
-            <rect width="620" height="460" rx="24" fill="#f9fafb" />
-
-            <rect x="90" y="90" width="440" height="270" rx="18" fill="#fff" stroke="#dce3ef" stroke-width="2" />
-
-            <rect x="120" y="120" width="120" height="140" rx="12" fill="#f2f6fb" />
-            <rect x="260" y="120" width="120" height="140" rx="12" fill="#f2f6fb" />
-            <rect x="400" y="120" width="120" height="140" rx="12" fill="url(#gradC)" opacity="0.18" />
-
-            <rect x="120" y="270" width="120" height="20" rx="6" fill="url(#gradC)" opacity="0.9" />
-            <rect x="260" y="270" width="120" height="20" rx="6" fill="url(#gradC)" opacity="0.9" />
-            <rect x="400" y="270" width="120" height="20" rx="6" fill="url(#gradC)" opacity="0.9" />
-
-            <circle cx="500" cy="90" r="45" fill="url(#gradC)" opacity="0.25" />
-            <path d="M505 78h-15l-3 12h17l-2 6h-15" stroke="#0284c7" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" />
-          </svg>
-
-
-
-
+          <div className="flex-1 relative hidden md:flex justify-center lg:justify-end">
+            <Image src="/online-store.png" alt="Professional website designing and web application development" width={560} height={420} className="drop-shadow-xl max-w-full h-auto object-contain" />
+          </div>
 
         </div>
       </section>

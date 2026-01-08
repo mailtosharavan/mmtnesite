@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import TypeWriter from "../../components/TypingText";
 import { getServiceSchema } from "../lib/schema/serviceSchema";
 import Script from "next/script";
@@ -194,13 +195,7 @@ Build trust, engage your audience, and increase conversions with powerful and co
 
 <div className="hidden lg:flex flex-col justify-center text-right max-w-md ml-auto">
 
-  <h2 className="text-3xl font-extrabold tracking-tight bg-gradient-to-r from-cyan-700 to-blue-600 bg-clip-text text-transparent leading-snug">
-    <TypeWriter text={`We don’t just post. We build meaningful relationships, communities, and conversions.`} />
-  </h2>
-
-  <p className="mt-5 text-slate-500 text-[15px]">
-    Social Media Marketing that connects → engages → converts.
-  </p>
+ <Image src="/social-media-new.png" alt="Social Media Marketing" width={540} height={410} priority />
 
 </div>
 
@@ -218,7 +213,7 @@ Build trust, engage your audience, and increase conversions with powerful and co
       Why Social Media Matters & How We Execute
     </h2>
 
-    <p className="text-slate-600 text-center max-w-3xl mx-auto mb-14 text-lg">
+    <p className="text-slate-600 text-center mx-auto mb-14 text-lg">
       
 Social media is where your customers spend their time and where brand trust is built. <br></br>
  We help you connect with your audience through content that feels real, relevant, and worth engaging with.

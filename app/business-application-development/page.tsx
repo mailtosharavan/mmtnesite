@@ -1,6 +1,9 @@
 import Link from "next/link";
-import {FaShieldAlt,FaBolt,FaCogs,FaChartLine,FaUserShield,FaProjectDiagram,FaCheckCircle,
-  FaIndustry,FaRegLightbulb,FaHandsHelping,FaCheckDouble,FaClock,} from "react-icons/fa";
+import Image from "next/image";
+import {
+  FaShieldAlt, FaBolt, FaCogs, FaChartLine, FaUserShield, FaProjectDiagram, FaCheckCircle,
+  FaIndustry, FaRegLightbulb, FaHandsHelping, FaCheckDouble, FaClock,
+} from "react-icons/fa";
 import { getServiceSchema } from "../lib/schema/serviceSchema";
 import Script from "next/script";
 export const metadata = {
@@ -13,73 +16,6 @@ export const metadata = {
 
 };
 
-// Inline premium hero SVG (visual right)
-const HeroBusinessSVG = () => (
-  <svg
-    viewBox="0 0 600 420"
-    role="img"
-    aria-label="Business Application Development Illustration"
-    className="w-full h-auto"
-  >
-    <defs>
-      <linearGradient id="g1" x1="0" y1="0" x2="1" y2="1">
-        <stop offset="0%" stopColor="#06b6d4" />
-        <stop offset="100%" stopColor="#3b82f6" />
-      </linearGradient>
-      <linearGradient id="g2" x1="0" y1="1" x2="1" y2="0">
-        <stop offset="0%" stopColor="#a5f3fc" />
-        <stop offset="100%" stopColor="#bfdbfe" />
-      </linearGradient>
-      <filter id="blur" x="-10%" y="-10%" width="120%" height="120%">
-        <feGaussianBlur stdDeviation="18" />
-      </filter>
-    </defs>
-
-    {/* background blobs */}
-    <g opacity="0.35">
-      <circle cx="480" cy="80" r="80" fill="url(#g1)" filter="url(#blur)" />
-      <circle cx="360" cy="320" r="90" fill="url(#g2)" filter="url(#blur)" />
-    </g>
-
-    {/* Card stack */}
-    <g>
-      <rect x="120" y="80" width="360" height="220" rx="20" fill="#ffffff" stroke="#e5e7eb" />
-      <rect x="145" y="110" width="310" height="18" rx="9" fill="#e2e8f0" />
-      <rect x="145" y="140" width="210" height="12" rx="6" fill="#cbd5e1" />
-      <rect x="145" y="165" width="260" height="12" rx="6" fill="#cbd5e1" />
-
-      {/* mini charts */}
-      <rect x="145" y="195" width="130" height="80" rx="12" fill="#f8fafc" stroke="#e2e8f0" />
-      <polyline
-        points="155,260 175,235 195,245 215,220 235,228"
-        fill="none"
-        stroke="url(#g1)"
-        strokeWidth="3"
-        strokeLinecap="round"
-      />
-      <rect x="295" y="195" width="160" height="80" rx="12" fill="#f8fafc" stroke="#e2e8f0" />
-      <g fill="url(#g1)">
-        <rect x="305" y="255" width="16" height="20" rx="4" />
-        <rect x="327" y="245" width="16" height="30" rx="4" />
-        <rect x="349" y="235" width="16" height="40" rx="4" />
-        <rect x="371" y="220" width="16" height="55" rx="4" />
-        <rect x="393" y="232" width="16" height="43" rx="4" />
-      </g>
-    </g>
-
-    {/* connectors */}
-    <g stroke="#94a3b8" strokeWidth="2" opacity="0.7">
-      <line x1="120" y1="300" x2="60" y2="360" />
-      <line x1="480" y1="300" x2="540" y2="360" />
-    </g>
-
-    {/* endpoint nodes */}
-    <circle cx="60" cy="360" r="16" fill="white" stroke="#e5e7eb" />
-    <circle cx="540" cy="360" r="16" fill="white" stroke="#e5e7eb" />
-    <path d="M54 360 h12" stroke="url(#g1)" strokeWidth="3" />
-    <path d="M534 360 h12" stroke="url(#g1)" strokeWidth="3" />
-  </svg>
-);
 
 export default async function BusinessApplicationDevelopmentPage() {
   const valueProps = [
@@ -219,20 +155,20 @@ export default async function BusinessApplicationDevelopmentPage() {
     },
   ];
   const serviceSchema = await getServiceSchema({
-  name: "Business Application Development Company",
-  description:
-    "Custom business application development services by Mindsmiratus to build scalable, secure, and high-performance enterprise applications that streamline operations and support business growth.",
-  slug: "/business-application-development",
-  serviceType:
-    "Business Application Development, Custom Business Software, Enterprise Application Development, Web Application Development, SaaS Solutions",
+    name: "Business Application Development Company",
+    description:
+      "Custom business application development services by Mindsmiratus to build scalable, secure, and high-performance enterprise applications that streamline operations and support business growth.",
+    slug: "/business-application-development",
+    serviceType:
+      "Business Application Development, Custom Business Software, Enterprise Application Development, Web Application Development, SaaS Solutions",
 
-  // 🔗 Parent service relationship
-  isPartOf: {
-    "@type": "Service",
-    name: "Website Designing & Development Services",
-    url: "https://www.mindsmiratus.com/website-designing-and-development",
-  },
-});
+    // 🔗 Parent service relationship
+    isPartOf: {
+      "@type": "Service",
+      name: "Website Designing & Development Services",
+      url: "https://www.mindsmiratus.com/website-designing-and-development",
+    },
+  });
 
 
   return (
@@ -289,22 +225,22 @@ export default async function BusinessApplicationDevelopmentPage() {
           </div>
 
           {/* Visual */}
-          <div className="flex-1 hidden lg:flex justify-end">
-            <HeroBusinessSVG />
+          <div className="flex-1 relative hidden md:flex justify-center lg:justify-end">
+            <Image src="/powerful-business.png" alt="Professional website designing and web application development" width={560} height={420} className="drop-shadow-xl max-w-full h-auto object-contain" />
           </div>
         </div>
       </section>
 
       {/* VALUE PROPOSITION */}
       <section id="value" className="py-18 bg-white">
-        <div className="container mx-auto px-6 lg:px-16 max-w-6xl">
+        <div className="container mx-auto px-6 lg:px-16 max-w-6xl mt-9">
           <h2 className="text-3xl font-bold text-center text-slate-900 mb-4">
             Built for Business Outcomes
           </h2>
           <p className="text-slate-600 text-center max-w-3xl mx-auto mb-12">
             In today’s fast-paced business world, efficiency is key to reduce operational drag, and harden security—without compromising usability.
-             We design custom business applications that simplify everyday workflows, centralize operations, and give you tools to manage 
-             your business more smartly. No compromises — just powerful, reliable software tailored to your unique needs.
+            We design custom business applications that simplify everyday workflows, centralize operations, and give you tools to manage
+            your business more smartly. No compromises — just powerful, reliable software tailored to your unique needs.
           </p>
 
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
