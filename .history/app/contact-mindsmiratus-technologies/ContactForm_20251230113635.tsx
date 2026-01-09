@@ -63,11 +63,6 @@ export default function ContactForm() {
       }
 
       setSubmitted(true);
-      // gtm code for lead submit
-      (window as any).dataLayer = (window as any).dataLayer || [];
-(window as any).dataLayer.push({
-  event: "lead_submit"
-});
     } catch (err) {
       console.error("Network/Fetch Error:", err);
 
