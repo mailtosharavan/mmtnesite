@@ -8,6 +8,7 @@ import { headers } from "next/headers";
 import Script from "next/script";
 import ProgressBar from '../components/ProgressBar';
 import FloatingActions from "../components/FloatingActions";
+import { FloatingActionsProvider } from "../context/FloatingActionsContext";
 
 
 //Marketing / SEO pages may benefit from caching and Incremental Static Regeneration (ISR) so avoide below settings
@@ -20,14 +21,19 @@ export const revalidate = 3600; // 1 hour ISR
 export async function generateMetadata(): Promise<Metadata> {
   const headersList = await headers();
 
-  const host = headersList.get("x-forwarded-host") 
-  ?? headersList.get("host") 
-  ?? "www.mindsmiratus.com";
+  const host = headersList.get("x-forwarded-host")
+    ?? headersList.get("host")
+    ?? "www.mindsmiratus.com";
 
-const baseUrl = `https://${host}`;
+  const baseUrl = `https://${host}`;
+  const pathname = headersList.get("x-pathname") || "";
+  const canonicalUrl = `${baseUrl}${pathname}`;
 
   return {
     metadataBase: new URL(baseUrl),
+    alternates: {
+      canonical: canonicalUrl,
+    },
 
     title: "Web Design, Digital Marketing & IT Solutions Company | MindsMiratus",
     description:
@@ -37,7 +43,7 @@ const baseUrl = `https://${host}`;
       title: "MindsMiratus Technologies | Web Design, Digital Marketing & IT Solutions",
       description:
         "Grow your business with MindsMiratus Technologies – expert web design, digital marketing, mobile app development, Bulk SMS, Voice Call & WhatsApp Business API solutions in India.",
-      url: baseUrl,
+      url: canonicalUrl,
       siteName: "Mindsmiratus Technologies Pvt. Ltd.",
       images: [
         {
@@ -67,14 +73,14 @@ const baseUrl = `https://${host}`;
 }
 
 export default async function RootLayout({ children }: { children: React.ReactNode }) {
-  
-const headersList = await headers();
 
-  const host = headersList.get("x-forwarded-host") 
-  ?? headersList.get("host") 
-  ?? "www.mindsmiratus.com";
+  const headersList = await headers();
 
-const baseUrl = `https://${host}`;
+  const host = headersList.get("x-forwarded-host")
+    ?? headersList.get("host")
+    ?? "www.mindsmiratus.com";
+
+  const baseUrl = `https://${host}`;
 
   const organizationSchema = {
     "@context": "https://schema.org",
@@ -102,13 +108,13 @@ const baseUrl = `https://${host}`;
       availableLanguage: ["English", "Hindi"],
     },
     address: {
-  "@type": "PostalAddress",
-  "streetAddress": "New Delhi",
-  "addressLocality": "New Delhi",
-  "addressRegion": "Delhi",
-  "postalCode": "110044",
-  "addressCountry": "IN"
-},
+      "@type": "PostalAddress",
+      "streetAddress": "New Delhi",
+      "addressLocality": "New Delhi",
+      "addressRegion": "Delhi",
+      "postalCode": "110044",
+      "addressCountry": "IN"
+    },
 
     sameAs: [
       "https://www.linkedin.com/company/mindsmiratus/",
@@ -151,11 +157,13 @@ const baseUrl = `https://${host}`;
             style={{ display: "none", visibility: "hidden" }}
           ></iframe>
         </noscript>
-        <ProgressBar />
-        <Header />
-        <main>{children}</main>
-        <Footer />
-        <FloatingActions />
+        <FloatingActionsProvider>
+          <ProgressBar />
+          <Header />
+          <main>{children}</main>
+          <Footer />
+          <FloatingActions />
+        </FloatingActionsProvider>
         <Script
           id="structured-data-organization"
           type="application/ld+json"

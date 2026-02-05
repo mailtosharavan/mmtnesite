@@ -1,10 +1,11 @@
 
 import Link from "next/link";
-import Image from "next/image";
-import {FaPhoneAlt,FaNetworkWired,FaHeadset,FaRobot,FaChartLine,FaServer,FaCheckCircle,FaBuilding,FaUserTie,} from "react-icons/fa";
+import { FaPhoneAlt, FaNetworkWired, FaHeadset, FaRobot, FaChartLine, FaServer, FaCheckCircle, FaBuilding, FaUserTie, } from "react-icons/fa";
 import { getServiceSchema } from "../lib/schema/serviceSchema";
 import Script from "next/script";
-import { icons } from "lucide-react";
+import HeroSection from "./HeroSection";
+import IVRFloatingConfig from "./IVRFloatingConfig";
+import RoiCalculator from "./RoiCalculator";
 
 export const metadata = {
   title: "IVR Service Provider for Call Automation | Mindsmiratus",
@@ -12,246 +13,112 @@ export const metadata = {
     "Get IVR (Interactive Voice Response) service for customer support, call routing, automated call handling, and interactive voice menus for higher satisfaction.",
   keywords:
     "ivr service provider, call automation system, inbound call routing, ivr call flow, customer support ivr, cloud ivr solutions",
-  
+
 };
 
 export default async function IvrServiceProviderPage() {
   const features = [
     {
-      icon: <FaNetworkWired className="text-blue-600 text-3xl margin-center" />,
+      icon: <FaNetworkWired className="text-cyan-glow text-4xl mb-4" />,
       title: "Multi-Level Call Routing",
-      desc: "Route callers to the right department or agent using structured menu trees.",
+      desc: "Route callers to the right department using intelligent logic trees.",
     },
     {
-      icon: <FaRobot className="text-blue-600 text-3xl margin-center" />,
-      title: "Automated Voice Menus",
-      desc: "Handle repetitive queries automatically without requiring manual agents.",
+      icon: <FaRobot className="text-cyan-glow text-4xl mb-4" />,
+      title: "AI & Automated Menus",
+      desc: "Handle repetitive queries automatically with neural voice AI.",
     },
     {
-      icon: <FaHeadset className="text-blue-600 text-3xl margin-center" />,
-      title: "Agent & Queue Management",
-      desc: "Distribute calls based on priority, skill sets or support schedules.",
+      icon: <FaHeadset className="text-cyan-glow text-4xl mb-4" />,
+      title: "Smart Queue Management",
+      desc: "Distribute workload with skill-based routing and priority queues.",
     },
     {
-      icon: <FaChartLine className="text-blue-600 text-3xl margin-center" />,
-      title: "Call Analytics & Reports",
-      desc: "Monitor call flows, success rates, wait times and customer behavior.",
+      icon: <FaChartLine className="text-cyan-glow text-4xl mb-4" />,
+      title: "Real-Time Analytics",
+      desc: "Live dashboards for wait times, drop-offs, and agent performance.",
     },
     {
-      icon: <FaServer className="text-blue-600 text-3xl margin-center" />,
-      title: "CRM & Software Integration",
-      desc: "Connect IVR to CRMs, ticketing systems and internal databases with APIs.",
+      icon: <FaServer className="text-cyan-glow text-4xl mb-4" />,
+      title: "CRM & API Integration",
+      desc: "Seamlessly connect with Salesforce, Zoho, HubSpot, and custom DBs.",
     },
     {
-      icon: <FaCheckCircle className="text-blue-600 text-3xl margin-center" />,
-      title: "Compliance & Reliability",
-      desc: "High-availability telephony routing with data and security compliance.",
+      icon: <FaCheckCircle className="text-cyan-glow text-4xl mb-4" />,
+      title: "Compliance & Security",
+      desc: "Enterprise-grade encryption, call recording storage, and GDPR compliance.",
     },
-  ];
-
-  const useCases = [
-    { icon: <FaUserTie className="text-cyan-600 text-3xl margin-center" />, label: "Customer Support & Call Assistance" },
-    { icon: <FaBuilding className="text-cyan-600 text-3xl margin-center" />, label: "Corporate Call Reception & Extensions" },
-    { icon: <FaRobot className="text-cyan-600 text-3xl margin-center" />, label: "Automated Surveys & Feedback Collection" },
-    { icon: <FaPhoneAlt className="text-cyan-600 text-3xl margin-center" />, label: "Lead Capture & Call Tracking Flows" },
-  ];
-
-   const ivrUseCase = [
-    { icon: "customer-support.png", subTitle: "", label: "Customer support helpline" },
-    { icon: "order-tracking.png", subTitle: "", label: "Order tracking and status updates" },
-    { icon: "account-inquiries.png", subTitle: "", label: "Account and balance inquiries" },
-    { icon: "appointment-scheduling.png", subTitle: "", label: "Appointment scheduling" },
-    { icon: "lead-capturing.png", subTitle: "", label: "Lead capturing and qualification" },
-    { icon: "automated-surveys.png", subTitle: "", label: "Automated surveys and feedback" },
-    { icon: "delivery-updates.png", subTitle: "", label: "Delivery and shipping updates" },
-    { icon: "emergency-helpline.png", subTitle: "", label: "Emergency hotline assistance" },
   ];
 
   const plans = [
     {
       name: "Starter",
       volume: "Up to 5,000 Calls / Month",
-      details: [
-        "Single-level IVR Menu",
-        "Basic Routing & Call Transfer",
-        "Email Support",
-      ],
+      price: "Ideal for Startups",
+      details: ["Single-level IVR Menu", "Basic Call Forwarding", "Email Support", "Standard Reporting"],
     },
     {
       name: "Business",
       volume: "50,000+ Calls / Month",
-      details: [
-        "Multi-level IVR Menu Trees",
-        "Queue Management + Call Recording",
-        "Account Manager Support",
-      ],
+      price: "Best for Growing Teams",
+      details: ["Multi-level Infinite Routing", "Queue Management + Recording", "Dedicated Account Manager", "CRM Integrations"],
       highlight: true,
     },
     {
       name: "Enterprise",
-      volume: "Custom Scale & SLA Uptime",
-      details: [
-        "Advanced Workflows & CRM Integrations",
-        "High Availability Infrastructure",
-        "Dedicated Telephony Support",
-      ],
+      volume: "Custom Scale",
+      price: "Talk to Sales",
+      details: ["Custom SLA & Uptime Guarantee", "Private Cloud Deployment", "24/7 Priority Phone Support", "AI Voice Bot Setup"],
     },
   ];
 
   const faqs = [
-    {
-      q: "What is an IVR service, and how can it help my business?",
-      a: "IVR (Interactive Voice Response) is an automated phone system that allows callers to interact through voice or keypad inputs. It helps businesses reduce wait time, route calls efficiently, and offer 24/7 customer support."
-    },
-    {
-      q: "Can IVR handle multiple languages?",
-      a: "Yes. We support multi-language voice menus and region-specific prompts.",
-    },
-    {
-      q: "Can IVR integrate with my CRM or application?",
-      a: "Yes. We support API, webhook and database integrations for workflows.",
-    },
-    {
-      q: "Do I need special hardware?",
-      a: "No. Our IVR system is fully cloud-based and works with any phone system.",
-    },
-    {
-      q: "Can calls be recorded?",
-      a: "Yes. Call recording and secure storage options are available.",
-    },
-    {
-      q: "Do you provide cloud-based IVR for call centers?",
-      a: "Yes. We offer a cloud-based IVR system for call centers that supports high call volumes, multi-level IVR menus, and advanced call routing."
-
-    },
-    {
-      q: "What about support and onboarding?",
-      a: "We assist with IVR planning, script design, testing, and optimization.",
-    },
+    { q: "What is cloud IVR?", a: "Cloud IVR (Interactive Voice Response) is an automated system hosted on the internet that interacts with callers, gathers information, and routes calls to the appropriate recipient." },
+    { q: "Can I use my existing number?", a: "Yes! We can port your existing business number or provide new toll-free/local numbers." },
+    { q: "Is hardware required?", a: "Zero hardware. Our solution is 100% cloud-based. You just need a computer/phone and internet." },
+    { q: "Do you support Hindi/Regional languages?", a: "Absolutely. We support 10+ Indian languages and global major languages with premium text-to-speech." },
   ];
-const serviceSchema = await getServiceSchema({
-  name: "IVR Service Provider",
-  description:
-    "Professional IVR and voice broadcasting services by Mindsmiratus Technologies to automate customer interactions, manage inbound and outbound calls, and deliver scalable voice communication solutions for businesses.",
-  slug: "/ivr-service-provider",
-  serviceType:
-    "IVR Services, Interactive Voice Response, Voice Broadcasting Services, Call Automation, Inbound IVR, Outbound Voice Campaigns",
 
-  // 🔗 Parent service relationship
-  isPartOf: {
-    "@type": "Service",
-    name: "Customer Communication Services",
-    url: "https://www.mindsmiratus.com/customer-communication-services",
-  },
-});
+  const serviceSchema = await getServiceSchema({
+    name: "IVR Service Provider",
+    description: "Premium Cloud IVR and Voice Automation Services by Mindsmiratus Technologies.",
+    slug: "/ivr-service-provider",
+    serviceType: "IVR Services, Cloud Telephony, Contact Center Solution",
+    isPartOf: { "@type": "Service", name: "Customer Communication Services", url: "https://www.mindsmiratus.com/customer-communication-services" },
+  });
 
   return (
-    <>
-      {/* HERO */}
-      <section className="py-20 bg-gradient-to-br from-blue-50 via-white to-cyan-50">
-        <div className="container mx-auto px-6 lg:px-16 grid lg:grid-cols-2 gap-12 items-center">
-          <div>
-            <h1 className="text-4xl sm:text-5xl font-extrabold text-slate-900 leading-tight">
-              IVR Service Provider
-            </h1>
-            <p className="mt-5 text-lg text-slate-600">
-              Create a professional, automated, and seamless calling experience with our cloud-based IVR system. From routing calls instantly to handling customer queries 24/7, our IVR solutions help your business respond smarter and operate more efficiently.
-            </p>
-            <div className="mt-8 flex gap-4">
-              <Link href="/contact-mindsmiratus-technologies" className="px-6 py-3 rounded-full bg-blue-600 text-white font-semibold hover:bg-blue-700">
-                Request Consultation
-              </Link>
-            </div>
-          </div>
+    <div className="bg-navy-900 min-h-screen text-slate-300 font-display">
+      <HeroSection />
 
-          <div className="hidden lg:flex justify-end">
-            <Image src="/IVR-service.png" alt="IVR Service Workflow" width={540} height={410} priority />
+      {/* TRUST STRIP */}
+      {/* <div className="border-y border-navy-800 bg-navy-900/50 py-8">
+        <div className="container mx-auto px-6 text-center">
+          <p className="text-sm font-semibold text-slate-500 uppercase tracking-widest mb-6">Trusted by Forward-Thinking Brands</p>
+          <div className="flex flex-wrap justify-center gap-12 opacity-50 grayscale hover:grayscale-0 transition-all duration-500">
+            {['salesforce', 'hubspot', 'zoho', 'freshworks', 'zendesk'].map(crm => (
+              <img key={crm} src={`/crms/${crm}.svg`} alt={crm} className="h-8 w-auto hover:opacity-100 transition" />
+            ))}
           </div>
         </div>
-      </section>
+      </div> */}
 
-      {/* OVERVIEW */}
-      <section className="py-20 bg-white">
-        <div className="container mx-auto px-6 lg:px-16 grid lg:grid-cols-2 gap-12 items-center">
-
-          {/* Image */}
-          <div className="flex justify-center">
-            <Image
-              src="/smart-call-routing.png"
-              alt="IVR Workflow Routing"
-              width={520}
-              height={420}
-              className="w-full max-w-[520px] h-auto object-contain"
-              priority
-            />
+      {/* CAPABILITIES GRID */}
+      <section className="py-24 relative overflow-hidden">
+        <div className="container mx-auto px-6 lg:px-16 relative z-10">
+          <div className="text-center max-w-3xl mx-auto mb-16">
+            <h2 className="text-3xl lg:text-5xl font-bold text-white mb-6">Built for <span className="text-cyan-glow">Scale & Speed</span></h2>
+            <p className="text-lg text-slate-400">Everything you need to run a world-class contact center without the hardware headaches.</p>
           </div>
 
-          {/* Text */}
-          <div>
-            <h2 className="text-3xl font-bold text-slate-900 mb-6">
-              Smart Call Routing and Customer Experience Automation
-            </h2>
-            <p className="text-slate-600 leading-relaxed mb-6">
-              Our IVR platform helps businesses manage large-scale inbound call volumes while ensuring
-              callers are directed to the right agent or department efficiently.
-            </p>
-            <ul className="space-y-3 text-slate-700 text-base">
-              <li className="flex gap-2"><FaCheckCircle className="text-blue-600 mt-1" /> Automated query handling and menu prompts</li>
-              <li className="flex gap-2"><FaCheckCircle className="text-blue-600 mt-1" /> Reduces wait times and improves support quality</li>
-              <li className="flex gap-2"><FaCheckCircle className="text-blue-600 mt-1" /> Works with your current support and telephony systems</li>
-            </ul>
-          </div>
-
-        </div>
-      </section>
-
-      {/* FEATURES */}
-      <section className="py-20 bg-white">
-        <div className="container mx-auto px-6 lg:px-16 text-center">
-          <h2 className="text-3xl font-bold text-slate-900 mb-8">Capabilities</h2>
-          <p className="mb-8">Customers expect quick answers—and your business can’t afford delays. Our cloud IVR system helps you automate incoming 
-            calls, guide customers through menu options, and route them to the right department without manual intervention. Whether you’re a startup, service provider, ecommerce brand, hospital, or enterprise, our IVR platform ensures professional communication every time a customer calls.</p>
-
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {features.map((f, i) => (
-              <div key={i} className="p-8 bg-slate-50 rounded-2xl border border-slate-200 shadow-sm">
-                {f.icon}
-                <h3 className="mt-4 text-lg font-semibold text-slate-800">{f.title}</h3>
-                <p className="text-slate-600 text-sm mt-2">{f.desc}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* IVR use case added */}
-      <section className="py-20 bg-slate-50">
-        <div className="container mx-auto px-6 lg:px-16">
-          <h2 className="text-3xl font-bold text-center text-slate-900 mb-12">IVR Use Cases</h2>
-
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 text-center">
-            {ivrUseCase.map((u, i) => (
-              <div key={i} className="p-6 bg-white rounded-2xl border border-slate-200 shadow-sm">
-                <div><Image src={`/ivr-use/${u.icon}`} alt={u.label} width={60} height={60} className="mx-auto" /></div>
-                <h3 className="mt-4 text-lg font-semibold text-slate-800">{u.label}</h3>
-                <p className="text-slate-600 text-sm mt-2"> {u.subTitle}</p>
-                
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* USE CASES */}
-      <section className="py-20 bg-slate-50">
-        <div className="container mx-auto px-6 lg:px-16">
-          <h2 className="text-3xl font-bold text-center text-slate-900 mb-12">Business Use Cases</h2>
-
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 text-center">
-            {useCases.map((u, i) => (
-              <div key={i} className="p-6 bg-white rounded-2xl border border-slate-200 shadow-sm">
-                {u.icon}
-                <p className="mt-3 text-slate-700 font-medium">{u.label}</p>
+              <div key={i} className="group p-8 rounded-2xl bg-navy-800 border border-navy-700 hover:border-cyan-glow/50 hover:bg-navy-800/80 transition-all duration-300 hover:-translate-y-2 shadow-xl">
+                <div className="w-16 h-16 rounded-full bg-navy-900 flex items-center justify-center mb-6 group-hover:scale-110 transition border border-navy-700 group-hover:border-cyan-glow/30">
+                  {f.icon}
+                </div>
+                <h3 className="text-xl font-bold text-white mb-3 group-hover:text-cyan-glow transition">{f.title}</h3>
+                <p className="text-slate-400 leading-relaxed">{f.desc}</p>
               </div>
             ))}
           </div>
@@ -259,31 +126,34 @@ const serviceSchema = await getServiceSchema({
       </section>
 
       {/* PRICING */}
-      <section className="py-20 bg-white" id="pricing">
-        <div className="container mx-auto px-6 lg:px-16 text-center">
-          <h2 className="text-3xl font-bold text-slate-900 mb-12">Pricing Structure</h2>
+      <section id="pricing" className="py-24 bg-gradient-to-b from-navy-900 to-navy-800 border-t border-navy-800">
+        <div className="container mx-auto px-6 lg:px-16">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl lg:text-4xl font-bold text-white">Simple, Transparent Pricing</h2>
+            <p className="mt-4 text-slate-400">No hidden fees. Pay as you grow.</p>
+          </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-8">
-            {plans.map((plan, i) => (
-              <div
-                key={i}
-                className={`p-8 rounded-2xl border shadow-lg ${plan.highlight ? "border-blue-600 bg-blue-50" : "border-slate-200 bg-white"
-                  }`}
-              >
-                <h3 className="text-2xl font-bold text-slate-900">{plan.name}</h3>
-                <p className="text-slate-600 mt-1">{plan.volume}</p>
-                <ul className="mt-6 space-y-2 text-sm text-slate-700 text-left">
-                  {plan.details.map((d, idx) => (
-                    <li key={idx} className="flex gap-2">
-                      <FaCheckCircle className="text-blue-600 mt-1" /> {d}
+
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto items-stretch">
+            {plans.map((p, i) => (
+              <div key={i} className={`relative p-8 rounded-3xl border flex flex-col ${p.highlight ? 'bg-navy-800 border-cyan-glow shadow-glow-lg scale-105 z-10' : 'bg-navy-900 border-navy-700 opacity-90 hover:opacity-100 hover:border-slate-500 transition'}`}>
+                {p.highlight && <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-cyan-glow text-navy-900 px-4 py-1 rounded-full text-xs font-bold uppercase tracking-wider">Most Popular</div>}
+
+                <h3 className="text-2xl font-bold text-white mb-2">{p.name}</h3>
+                <p className="text-cyan-glow font-medium mb-6">{p.volume}</p>
+                <div className="text-3xl font-bold text-white mb-8">{p.price}</div>
+
+                <ul className="space-y-4 mb-8 flex-1">
+                  {p.details.map((d, idx) => (
+                    <li key={idx} className="flex gap-3 text-sm text-slate-300">
+                      <FaCheckCircle className="text-cyan-glow flex-shrink-0 mt-0.5" /> {d}
                     </li>
                   ))}
                 </ul>
-                <Link
-                  href="/contact-mindsmiratus-technologies"
-                  className="mt-6 inline-block w-full px-6 py-3 rounded-full bg-blue-600 text-white font-semibold hover:bg-blue-700"
-                >
-                  Request Pricing
+
+                <Link href="/contact-mindsmiratus-technologies" className={`w-full py-4 rounded-xl font-bold text-center transition ${p.highlight ? 'bg-cyan-glow text-navy-900 hover:bg-cyan-400' : 'bg-navy-700 text-white hover:bg-navy-600'}`}>
+                  Get Started
                 </Link>
               </div>
             ))}
@@ -291,51 +161,52 @@ const serviceSchema = await getServiceSchema({
         </div>
       </section>
 
-      {/* FAQ + CTA */}
-      <section className="py-20 bg-slate-50">
+      {/* FAQ */}
+      {/* FAQ & ROI Section */}
+      <section className="py-24">
         <div className="container mx-auto px-6 lg:px-16">
-          <div className="grid lg:grid-cols-2 gap-12 items-start">
+          <h2 className="text-3xl font-bold text-white text-center mb-16">Calculate Savings & Learn More</h2>
 
-            {/* FAQ */}
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
+
+            {/* Left: ROI Calculator */}
             <div>
-              <h2 className="text-3xl font-bold text-slate-900 mb-8">Frequently Asked Questions</h2>
-              <div className="space-y-4">
-                {faqs.map((f, i) => (
-                  <details key={i} className="group border border-slate-200 rounded-2xl bg-white shadow-sm hover:shadow-md transition">
-                    <summary className="px-6 py-4 cursor-pointer font-semibold text-slate-800 flex justify-between items-center">
-                      {f.q}
-                      <span className="text-blue-600 group-open:rotate-45 transition">+</span>
-                    </summary>
-                    <div className="px-6 pb-4 text-slate-600">{f.a}</div>
-                  </details>
-                ))}
-              </div>
+              <RoiCalculator />
             </div>
 
-            {/* CTA */}
-            <div className="bg-gradient-to-r from-blue-600 to-cyan-600 text-white rounded-3xl p-10 shadow-lg">
-              <h2 className="text-3xl font-bold mb-4">Need Help Designing Your IVR Flow?</h2>
-              <p className="mb-8 text-lg">
-                Our team will help define routing logic, menu prompts, call paths and agent distribution.
-              </p>
-              <Link
-                href="/contact-mindsmiratus-technologies"
-                className="inline-flex items-center gap-2 px-6 py-3 bg-white text-blue-700 rounded-full font-semibold hover:bg-blue-50 transition"
-              >
-                Schedule Consultation
-              </Link>
+            {/* Right: FAQ */}
+            <div className="space-y-4">
+              <h3 className="text-2xl font-bold text-white mb-6">Frequently Asked Questions</h3>
+              {faqs.map((f, i) => (
+                <details key={i} className="group bg-navy-800 rounded-2xl border border-navy-700 overflow-hidden">
+                  <summary className="flex justify-between items-center p-6 cursor-pointer font-semibold text-white group-hover:text-cyan-glow transition">
+                    {f.q}
+                    <span className="text-cyan-glow group-open:rotate-45 transition transform text-xl">+</span>
+                  </summary>
+                  <div className="px-6 pb-6 text-slate-400 leading-relaxed border-t border-navy-700 pt-4">
+                    {f.a}
+                  </div>
+                </details>
+              ))}
             </div>
 
           </div>
         </div>
       </section>
-      <Script
-        id="structured-data-ivr-service-provider"
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify(serviceSchema),
-        }}
-      />
-    </>
+
+      {/* FINAL CTA */}
+      <section className="py-20 bg-gradient-to-r from-cyan-600 to-blue-700 text-center">
+        <div className="container mx-auto px-6">
+          <h2 className="text-4xl font-bold text-white mb-6">Ready to Automate Your Calls?</h2>
+          <p className="text-cyan-100 text-lg mb-8 max-w-2xl mx-auto">Join hundreds of businesses using Mindsmiratus IVR to deliver exceptional customer experiences.</p>
+          <Link href="/contact-mindsmiratus-technologies" className="inline-block px-10 py-4 bg-white text-blue-700 font-bold rounded-full shadow-xl hover:bg-cyan-50 transition transform hover:scale-105">
+            Book a Free Consultation
+          </Link>
+        </div>
+      </section>
+
+      <Script id="structured-data-ivr-service-provider" type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }} />
+      <IVRFloatingConfig />
+    </div>
   );
 }
