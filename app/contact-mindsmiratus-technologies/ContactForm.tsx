@@ -1,11 +1,11 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { Mail, Phone, MapPin, Send, User, MessageSquare, Shield } from "lucide-react";
+import { Mail, Phone, MapPin, Send, User, MessageSquare, Shield, PhoneIcon, PhoneForwarded, Contact2 } from "lucide-react";
 import { motion } from "framer-motion";
 
 export default function ContactForm() {
-  const [formData, setFormData] = useState({ name: "", email: "", message: "", captcha: "" });
+  const [formData, setFormData] = useState({ name: "", email: "", phone: "", message: "", captcha: "" });
   const [errors, setErrors] = useState<{ [key: string]: string }>({});
   const [loading, setLoading] = useState(false);
   const [submitted, setSubmitted] = useState(false);
@@ -48,6 +48,7 @@ export default function ContactForm() {
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
           name: formData.name,
+          phone: formData.phone,
           email: formData.email,
           message: formData.message,
         }),
@@ -102,6 +103,10 @@ export default function ContactForm() {
           <span><a href="tel:+919625306474">+91-9625306474</a></span>
         </div>
         <div className="flex items-center gap-3">
+          <Contact2 className="text-[#0078D7]" />
+          <span><a href="tel:+01144786201">+011 44786201</a></span>
+        </div>
+        <div className="flex items-center gap-3">
           <MapPin className="text-[#0078D7]" />
           <span>A-263, 1st Floor, Vishwakarma Colony, Delhi 110044, India</span>
         </div>
@@ -145,6 +150,23 @@ export default function ContactForm() {
                 Your Name
               </label>
               {errors.name && <p className="text-sm text-red-500 mt-1">{errors.name}</p>}
+            </div>
+            {/* Phone Field */}
+            <div className="relative">
+              <Phone className="absolute left-3 top-4 text-[#0078D7]" />
+              <input type="tel" name="phone" value={formData.phone} onChange={handleChange}
+                className={`peer w-full pl-10 border-b-2 bg-transparent py-3 text-slate-800 focus:outline-none focus:border-[#0078D7] ${errors.phone ? "border-red-500" : "border-slate-300"
+                  }`}
+              />
+              <label
+                className={`absolute left-10 top-3 text-slate-500 bg-white px-1 transition-all duration-200 ${formData.phone
+                  ? "top-[-10px] text-sm text-[#0078D7]"
+                  : "peer-placeholder-shown:top-3 peer-placeholder-shown:text-base"
+                  } peer-focus:top-[-10px] peer-focus:text-sm peer-focus:text-[#0078D7]`}
+              >
+                Phone Number
+              </label>
+              {errors.phone && <p className="text-sm text-red-500 mt-1">{errors.phone}</p>}
             </div>
 
             {/* Email Field */}
