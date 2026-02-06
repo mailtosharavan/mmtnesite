@@ -37,7 +37,7 @@ export default function AudioProof() {
             </div>
             <audio
                 ref={audioRef}
-                src="/audio/speech-voice-call-Fem.wav"
+                src="/audio/speech-voice-call-fem.wav"
                 onEnded={() => setIsPlaying(false)}
                 preload="none"
             />

@@ -23,17 +23,17 @@ export default function IVRInteractive() {
   const getSample = () => {
     // Local assets from public/audio folder
     if (lang === "en") {
-      return voice === "male" ? "/audio/speech-e-male.wav" : "/audio/speech-Eng-Fem.wav";
+      return voice === "male" ? "/audio/speech-e-male.wav" : "/audio/speech-eng-fem.wav";
     }
     if (lang === "hi") {
-      return voice === "male" ? "/audio/speech-hindi-male.wav" : "/audio/speech-hindi-FeM.wav";
+      return voice === "male" ? "/audio/speech-hindi-male.wav" : "/audio/speech-hindi-fem.wav";
     }
     if (lang === "gu") {
 
-      return voice === "male" ? "/audio/speech-Guj-male.wav" : "/audio/speech-Guj-Fem.wav";
+      return voice === "male" ? "/audio/speech-Guj-male.wav" : "/audio/speech-guj-fem.wav";
     }
     // Fallback
-    return "/audio/speech-Eng-Fem.wav";
+    return "/audio/speech-eng-fem.wav";
   };
 
   const togglePlay = () => {
