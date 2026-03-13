@@ -34,7 +34,7 @@ export default function HeroSection() {
               <Link href="#pricing" className="px-8 py-4 rounded-full bg-cyan-glow text-navy-900 font-bold text-lg shadow-glow hover:bg-cyan-400 transition transform hover:-translate-y-1">
                 Build My IVR Flow Now
               </Link>
-              <Link href="https://wa.me/919999999999" className="px-8 py-4 rounded-full border border-slate-600 text-white font-semibold text-lg hover:border-cyan-glow hover:text-cyan-glow transition flex items-center justify-center gap-2 group">
+              <Link href="https://wa.me/919625306474" className="px-8 py-4 rounded-full border border-slate-600 text-white font-semibold text-lg hover:border-cyan-glow hover:text-cyan-glow transition flex items-center justify-center gap-2 group">
                 <span className="group-hover:animate-pulse">💬</span> Instant Quote via WhatsApp
               </Link>
             </div>
