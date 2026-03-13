@@ -17,7 +17,7 @@ export default function MultiStepForm() {
   const progress = (step / 3) * 100;
 
   const validateEmail = (email: string) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
-  const validatePhone = (phone: string) => /^[0-9]{10,15}$/.test(phone);
+  const validatePhone = (phone: string) => /^[0-9]{10,13}$/.test(phone);
 
   const handleMobileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const val = e.target.value.replace(/\D/g, ''); // Remove non-digits
@@ -33,7 +33,7 @@ export default function MultiStepForm() {
     const newErrors: typeof errors = {};
     if (!name.trim()) newErrors.name = "Name is required.";
     if (!mobile) newErrors.mobile = "Mobile number is required.";
-    else if (!validatePhone(mobile)) newErrors.mobile = "Enter a valid 10-15 digit number.";
+    else if (!validatePhone(mobile)) newErrors.mobile = "Enter a valid 10-12 digit number.";
     if (email && !validateEmail(email)) newErrors.email = "Enter a valid email address.";
 
     if (Object.keys(newErrors).length > 0) {
@@ -179,7 +179,7 @@ export default function MultiStepForm() {
                     className={`w-full p-3 rounded-lg bg-navy-800 border text-white focus:ring-1 outline-none transition ${errors.mobile ? 'border-red-500 focus:border-red-500' : 'border-navy-600 focus:border-cyan-glow focus:ring-cyan-glow'}`}
                     value={mobile}
                     onChange={handleMobileChange}
-                    maxLength={15}
+                    maxLength={13}
                   />
                   {errors.mobile && <p className="text-red-400 text-xs mt-1 animate-pulse">{errors.mobile}</p>}
                 </div>

@@ -140,6 +140,12 @@ const nextConfig = {
       },
     ];
   },
+
+  // Image optimization configuration
+  images: {
+    remotePatterns: [],
+    unoptimized: true, // Disable optimization for compatibility with all image formats
+  },
 };
 
 module.exports = nextConfig;

@@ -487,7 +487,7 @@ const serviceSchema = await getServiceSchema({
 
           <div className="grid grid-cols-2 sm:grid-cols-5 gap-8 transition mx-auto my-10">
             {["client1", "client8", "client9", "client15","client16"].map((logo, i) => (
-              <Image key={i} src={`/clients/${logo}.jpg`} alt="Brand Logo" width={120} height={60} className="object-contain" />
+              <Image key={i} src={`/clients/${logo}.JPG`} alt="Brand Logo" width={120} height={60} className="object-contain" unoptimized />
             ))}
           </div>
 

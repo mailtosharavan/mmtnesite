@@ -40,6 +40,7 @@ export default function OurClients() {
                 width={150}
                 height={80}
                 className="mx-auto object-contain"
+                unoptimized
               />
             </div>
           ))}

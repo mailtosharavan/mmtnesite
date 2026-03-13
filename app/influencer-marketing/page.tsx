@@ -301,11 +301,12 @@ export default function InfluencerMarketingPage() {
             {["client1", "client8", "client9", "client15", "client16"].map((logo, i) => (
               <div key={i} className="flex justify-center">
                 <Image
-                  src={`/clients/${logo}.jpg`}
+                  src={`/clients/${logo}.JPG`}
                   alt="Brand Logo"
                   width={100}
                   height={60}
                   className="object-contain transition"
+                  unoptimized
                 />
               </div>
             ))}
