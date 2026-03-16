@@ -179,7 +179,7 @@ export default async function DigitalMarketingPage() {
   title: "SEO - Search Engine Optimization",
   desc: "Grow long-term organic traffic, improve keyword rankings, and build strong domain authority.",
   icon: <FaSearch className="text-cyan-600 text-5xl mb-4 mx-auto" />,
-  link: "/seo-services",
+  link: "/seo-services-company",
   points: [
     "On-Page & Technical SEO Fixes",
     "Keyword Clustering & Search Intent Targeting",

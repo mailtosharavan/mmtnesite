@@ -156,6 +156,19 @@ export default async function WhatsAppApiServiceProviderPage() {
           </div>
         </div>
       </section>
+
+      {/* New Section with Iframe */}
+      <section className="relative py-20 bg-gradient-to-br from-blue-50 to-green-50 overflow-hidden">
+        <div className="absolute inset-0 opacity-30">
+          <div className="absolute top-10 left-10 w-20 h-20 bg-green-200 rounded-full"></div>
+          <div className="absolute top-40 right-20 w-32 h-32 bg-blue-200 rounded-lg rotate-45"></div>
+          <div className="absolute bottom-20 left-1/4 w-24 h-24 bg-yellow-200 rounded-full"></div>
+        </div>
+        <div className="container mx-auto px-6 lg:px-16 relative z-10">
+          <iframe src='https://pinnacle.in/embedded-signup/fb-signup.php?token=hH716w0K%2B6YKxerRQ4fb1Wd3j%2FW7zXOWfOLKl5vq5wcwjmT5TpTUaJFU1qNQWB4o&app_id=cN68Ez7noCfuZ3pWtBhQ%2FA%3D%3D&config_id=sRSKeIy6BIO6BxZzW7FSaw%3D%3D&solution_id=pUtRdrSndU3whIdin7Ed8Q%3D%3D&mode=syY6PAgG1PR5fAG1p89cCw%3D%3D&themecolor=001d4c&app_secret=XAnn1UAkVRL2v%2Bzfsf3of0yoPclxOJucflOtmPlO4QybR05WC2AnJ36CK9p0MvSB' width='100%' style={{height:'80vh'}} frameBorder='0'></iframe>
+        </div>
+      </section>
+
 {/* Service Overview - Improved Layout */}
 <section className="bg-white">
   <div className="container mx-auto px-6 lg:px-16 grid lg:grid-cols-2 gap-12 items-center">

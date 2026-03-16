@@ -67,7 +67,7 @@ export default function Footer() {
               <li><Link href="/website-designing-and-development" className="hover:text-white transition">Website Designing & Development</Link></li>
               <li><Link href="/web-application-development" className="hover:text-white transition">Web Application Development</Link></li>
               <li><Link href="/mobile-app-development" className="hover:text-white transition">Mobile App Development</Link></li>
-              <li><Link href="/ecommerce-website-development" className="hover:text-white transition">eCommerce Development</Link></li>
+              <li><Link href="/ecommerce-website-designing" className="hover:text-white transition">eCommerce Development</Link></li>
               <li><Link href="/business-application-development" className="hover:text-white transition">Business / ERP / CRM Systems</Link></li>
               <li><Link href="/web-hosting-and-it-support" className="hover:text-white transition">Hosting & IT Support</Link></li>
             </ul>
@@ -78,7 +78,7 @@ export default function Footer() {
             <h4 className="text-white font-semibold text-lg mb-3">Digital Marketing</h4>
             <ul className="space-y-2 text-sm">
               <li><Link href="/digital-marketing-services" className="hover:text-white transition">Digital Marketing Services</Link></li>
-              <li><Link href="/seo-services" className="hover:text-white transition">SEO Services</Link></li>
+              <li><Link href="/seo-services-company" className="hover:text-white transition">SEO Services</Link></li>
               <li><Link href="/social-media-marketing" className="hover:text-white transition">Social Media Marketing</Link></li>
               <li><Link href="/smo-services" className="hover:text-white transition">SMO Services</Link></li>
               <li><Link href="/influencer-marketing" className="hover:text-white transition">Influencer Marketing</Link></li>
