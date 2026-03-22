@@ -6,7 +6,9 @@ ENV NODE_ENV=production
 # ---------- Dependencies ----------
 FROM base AS deps
 COPY package*.json ./
-RUN npm ci
+
+# ✅ FIX HERE
+RUN npm ci --include=dev
 
 # ---------- Builder ----------
 FROM base AS builder
@@ -22,10 +24,8 @@ WORKDIR /app
 ENV NODE_ENV=production
 ENV PORT=3000
 
-# Create non-root user (security)
 RUN addgroup -S nextjs && adduser -S nextjs -G nextjs
 
-# Copy standalone output
 COPY --from=builder /app/.next/standalone ./
 COPY --from=builder /app/.next/static ./.next/static
 COPY --from=builder /app/public ./public
