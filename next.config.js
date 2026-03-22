@@ -1,7 +1,7 @@
 ﻿/** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
-
+  output: 'standalone',
   // URL Redirects - Old URLs to New URLs (301 Permanent Redirects for SEO)
   redirects: async () => {
     return [
