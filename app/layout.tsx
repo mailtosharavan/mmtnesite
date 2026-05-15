@@ -9,6 +9,7 @@ import Script from "next/script";
 import ProgressBar from '../components/ProgressBar';
 import FloatingActions from "../components/FloatingActions";
 import { FloatingActionsProvider } from "../context/FloatingActionsContext";
+import { getOGMetadata } from "../lib/og-metadata";
 
 
 //Marketing / SEO pages may benefit from caching and Incremental Static Regeneration (ISR) so avoide below settings
@@ -26,8 +27,11 @@ export async function generateMetadata(): Promise<Metadata> {
     ?? "www.mindsmiratus.com";
 
   const baseUrl = `https://${host}`;
-  const pathname = headersList.get("x-pathname") || "";
+  const pathname = headersList.get("x-pathname") || "/";
   const canonicalUrl = `${baseUrl}${pathname}`;
+
+  // Get page-specific OG metadata
+  const ogMetadata = getOGMetadata(pathname, baseUrl);
 
   return {
     metadataBase: new URL(baseUrl),
@@ -35,19 +39,17 @@ export async function generateMetadata(): Promise<Metadata> {
       canonical: canonicalUrl,
     },
 
-    title: "Web Design, Digital Marketing & IT Solutions Company | MindsMiratus",
-    description:
-      "We accelerate digital transformation with custom apps, web & mobile development, digital marketing, IT infrastructure, and tailored e-commerce solutions.",
+    title: ogMetadata.title,
+    description: ogMetadata.description,
 
     openGraph: {
-      title: "MindsMiratus Technologies | Web Design, Digital Marketing & IT Solutions",
-      description:
-        "Grow your business with MindsMiratus Technologies – expert web design, digital marketing, mobile app development, Bulk SMS, Voice Call & WhatsApp Business API solutions in India.",
+      title: ogMetadata.title,
+      description: ogMetadata.description,
       url: canonicalUrl,
       siteName: "Mindsmiratus Technologies Pvt. Ltd.",
       images: [
         {
-          url: `${baseUrl}/og-default.jpg`,
+          url: ogMetadata.image,
           width: 1200,
           height: 630,
           alt: "Mindsmiratus Technologies Pvt. Ltd.",
@@ -58,10 +60,9 @@ export async function generateMetadata(): Promise<Metadata> {
 
     twitter: {
       card: "summary_large_image",
-      title: "MindsMiratus Technologies | Web Design, Digital Marketing & IT Solutions",
-      description:
-        "MindsMiratus Technologies offers professional web designing, digital marketing, mobile app development, telemarketing, Bulk SMS, Voice Call & WhatsApp Business API services for businesses in India.",
-      images: [`${baseUrl}/og-default.jpg`],
+      title: ogMetadata.title,
+      description: ogMetadata.description,
+      images: [ogMetadata.image],
       creator: "@mindsmiratus",
     },
 
@@ -81,6 +82,8 @@ export default async function RootLayout({ children }: { children: React.ReactNo
     ?? "www.mindsmiratus.com";
 
   const baseUrl = `https://${host}`;
+  const pathname = headersList.get("x-pathname") || "";
+  const canonicalUrl = `${baseUrl}${pathname}`;
 
   const organizationSchema = {
     "@context": "https://schema.org",
@@ -133,6 +136,63 @@ export default async function RootLayout({ children }: { children: React.ReactNo
       "@id": `${baseUrl}/#organization`,
     },
   };
+
+  // Generate breadcrumb schema dynamically based on pathname
+  const generateBreadcrumbs = () => {
+    if (!pathname || pathname === '/') {
+      return null;
+    }
+
+    const paths = pathname.split('/').filter(Boolean);
+    const breadcrumbItems = [
+      {
+        "@type": "ListItem",
+        position: 1,
+        name: "Home",
+        item: `${baseUrl}/`,
+      },
+    ];
+
+    let currentPath = '';
+    paths.forEach((path, index) => {
+      currentPath += `/${path}`;
+      breadcrumbItems.push({
+        "@type": "ListItem",
+        position: index + 2,
+        name: path
+          .replace(/-/g, ' ')
+          .replace(/\b\w/g, (l) => l.toUpperCase()),
+        item: `${baseUrl}${currentPath}`,
+      });
+    });
+
+    return {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      itemListElement: breadcrumbItems,
+    };
+  };
+
+  const breadcrumbSchema = generateBreadcrumbs();
+
+  // WebPage schema for current page
+  const webPageSchema = {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "@id": `${canonicalUrl}#webpage`,
+    url: canonicalUrl,
+    name: "Mindsmiratus Technologies",
+    isPartOf: {
+      "@id": `${baseUrl}/#website`,
+    },
+    primaryImageOfPage: {
+      "@type": "ImageObject",
+      url: `${baseUrl}/og-default.jpg`,
+      width: 1200,
+      height: 630,
+    },
+  };
+
   return (
     <html lang="en">
       <head>
@@ -168,7 +228,12 @@ export default async function RootLayout({ children }: { children: React.ReactNo
           id="structured-data-organization"
           type="application/ld+json"
           dangerouslySetInnerHTML={{
-            __html: JSON.stringify([organizationSchema, websiteSchema]),
+            __html: JSON.stringify([
+              organizationSchema,
+              websiteSchema,
+              webPageSchema,
+              ...(breadcrumbSchema ? [breadcrumbSchema] : []),
+            ]),
           }}
         />
       </body>
