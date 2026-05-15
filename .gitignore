@@ -10,6 +10,7 @@ coverage/
 
 # === Environment files (do NOT push) ===
 .env
+.vs
 .env*.local
 
 # === Logs & caches ===

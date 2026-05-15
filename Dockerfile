@@ -7,7 +7,7 @@ ENV NODE_ENV=production
 FROM base AS deps
 COPY package*.json ./
 
-# ✅ FIX HERE
+# Install dependencies including dev (needed for build step)
 RUN npm ci --include=dev
 
 # ---------- Builder ----------
