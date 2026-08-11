@@ -11,6 +11,7 @@ const staticPages = [
   "/terms-and-conditions",
   "/refund-policy",
   "/cookie-policy",
+  "/landing",
 ];
 
 /** 2️⃣ Service pages */
