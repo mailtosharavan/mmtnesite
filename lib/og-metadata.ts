@@ -78,6 +78,13 @@ export const pageOGMetadata: Record<
     image: "/og-contact.jpg",
     slug: "/contact-mindsmiratus-technologies",
   },
+  "/landing": {
+    title: "WhatsApp Pricing Landing Page | Mindsmiratus Technologies",
+    description:
+      "Premium WhatsApp API pricing landing page with a high-conversion lead form, package comparison, and FAQ support.",
+    image: "/whatsApp-API.png",
+    slug: "/landing",
+  },
 };
 
 export function getOGMetadata(pathname: string, baseUrl: string) {

@@ -70,6 +70,7 @@ export default function Footer() {
               <li><Link href="/ecommerce-website-designing" className="hover:text-white transition">eCommerce Development</Link></li>
               <li><Link href="/business-application-development" className="hover:text-white transition">Business / ERP / CRM Systems</Link></li>
               <li><Link href="/web-hosting-and-it-support" className="hover:text-white transition">Hosting & IT Support</Link></li>
+              <li><Link href="/whatsapp-automation-for-business" className="hover:text-white transition">Whatsapp Automation For Business</Link></li>
             </ul>
           </motion.div>
 
