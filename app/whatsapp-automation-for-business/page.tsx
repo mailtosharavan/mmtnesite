@@ -2,9 +2,8 @@ import type { Metadata } from "next";
 import LandingPageClient from "./LandingPageClient";
 
 export const metadata: Metadata = {
-  title: "WhatsApp Pricing Landing Page | Mindsmiratus Technologies",
-  description:
-    "High-conversion WhatsApp API pricing landing page with premium lead form, pricing plans, and FAQ support from Mindsmiratus Technologies.",
+  title: "WhatsApp Automation & Business API | Automate Your Business",
+  description: "Automate customer conversations with WhatsApp Business API. Send notifications, manage leads, automate support, and grow your business with WhatsApp automation.",
   keywords: [
     "WhatsApp API pricing",
     "WhatsApp Business API landing page",

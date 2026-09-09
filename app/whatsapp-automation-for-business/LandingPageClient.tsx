@@ -14,12 +14,12 @@ const planCopy = {
     yearly: "9,590",
   },
   Growth: {
-    monthly: "2,799",
+    monthly: "1,999",
     quarterly: "7,725",
     yearly: "26,870",
   },
   Pro: {
-    monthly: "3,799",
+    monthly: "2,999",
     quarterly: "10,485",
     yearly: "36,470",
   },
@@ -478,7 +478,12 @@ export default function LandingPageClient() {
               <div className={styles.formCard}>
                 <div className={styles.formCardHeader}>
                   <span className={styles.formBadge}>Instant Quote</span>
-                  <h2>Request a Premium Consultation</h2>
+                  <h2 className="landing-module-form-heading">
+                    <span className="form-heading-first">Get Your </span>
+                    <span className="form-heading-second" style={{color:'#039766'}}>WhatsApp Automation Plan</span>
+                  </h2>
+
+                  {/* <h2>Get Your WhatsApp Automation Plan</h2> */}
                   <p>Share your business details and our team will reply with the best fit plan.</p>
                 </div>
 
@@ -503,8 +508,11 @@ export default function LandingPageClient() {
                         placeholder="Company name"
                       />
                     </label>
-                    <label className={styles.field}>
-                      <span>Phone</span>
+                   
+                  </div>
+
+                  <label className={styles.field}>
+                   <span>Phone</span>
                       <input
                         value={formData.phone}
                         onChange={(event) => setFormData((prev) => ({ ...prev, phone: event.target.value }))}
@@ -512,20 +520,20 @@ export default function LandingPageClient() {
                         placeholder="Mobile number"
                         required
                       />
-                    </label>
-                    <label className={styles.field}>
-                      <span>Email</span>
-                      <input
+                  </label>
+
+                  <label className={styles.field}>
+                   <span>Email</span>
+                     <input
                         value={formData.email}
                         onChange={(event) => setFormData((prev) => ({ ...prev, email: event.target.value }))}
                         type="email"
                         placeholder="you@company.com"
-                        required
+                        required 
                       />
-                    </label>
-                  </div>
+                  </label>
 
-                  <label className={styles.field}>
+                  {/* <label className={styles.field}>
                     <span>How can we help?</span>
                     <textarea
                       value={formData.message}
@@ -533,7 +541,7 @@ export default function LandingPageClient() {
                       placeholder="Tell us about your campaign, volume, or automation needs"
                       rows={4}
                     />
-                  </label>
+                  </label> */}
 
                   <input
                     type="text"
@@ -545,7 +553,7 @@ export default function LandingPageClient() {
                   />
 
                   <button type="submit" className={styles.submitButton} disabled={status.kind === "loading"}>
-                    {status.kind === "loading" ? "Submitting..." : "Get My Proposal"}
+                    {status.kind === "loading" ? "Submitting..." : "Book my Demo"}
                   </button>
 
                   {status.kind !== "idle" && (
@@ -734,12 +742,12 @@ export default function LandingPageClient() {
                       <ul className={styles.tableList}>
                         <li>
                           <span>Marketing</span>
-                          <span>{planName === "Enterprise" ? "Custom" : <><span className={styles.currency}>&#8377;</span>0.863</>}</span>
+                          <span>{planName === "Enterprise" ? "Custom" : <><span className={styles.currency}>&#8377;</span>1.00</>}</span>
                         </li>
                         <li>
                           <span>Utility</span>
                           <span>
-                            <span className={styles.currency}>&#8377;</span>0.115
+                            <span className={styles.currency}>&#8377;</span>0.99
                           </span>
                         </li>
                         <li>
@@ -810,13 +818,6 @@ export default function LandingPageClient() {
             <div className={styles.faqHeader}>
               <span className={styles.faqEyebrow}>FAQ</span>
 
-              <h2 className={styles.faqTitle}>
-                WhatsApp Pricing Explained
-              </h2>
-
-              <p className={styles.faqLead}>
-                A quick breakdown of how pricing, templates, and free conversations work.
-              </p>
             </div>
 
             <div className={styles.accordion}>
