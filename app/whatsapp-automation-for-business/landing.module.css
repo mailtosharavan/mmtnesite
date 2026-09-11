@@ -2365,7 +2365,7 @@
   width: 274px;
   height: 520px;
   position: relative;
-  right: 0%;
+  right: 12%;
 }
 
 .phoneScreen {
@@ -2644,6 +2644,10 @@
     font-size: 38px
   }
 
+  .phone {
+  right: 0%;
+}
+
   .step {
     grid-template-columns: 38px 58px minmax(0, 1fr);
     padding: 20px 16px;
@@ -2682,6 +2686,10 @@
   .sectionHeading {
     margin-bottom: 34px
   }
+
+    .phone {
+  right: 0%;
+}
 
   .sectionHeading h2,
   .pricingIntro h2,
