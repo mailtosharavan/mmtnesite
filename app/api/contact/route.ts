@@ -39,9 +39,19 @@ export async function POST(req: Request) {
   }
 
   const { SMTP_HOST, SMTP_PORT, SMTP_USER, SMTP_PASSWORD } = process.env;
-  if (!SMTP_HOST || !SMTP_PORT || !SMTP_USER || !SMTP_PASSWORD) {
-    console.error("Contact mail is not configured: SMTP environment variables are missing.");
-    return NextResponse.json({ success: false, error: "Email service is not configured." }, { status: 503 });
+  const missingMailSettings = [
+    !SMTP_HOST && "SMTP_HOST",
+    !SMTP_PORT && "SMTP_PORT",
+    !SMTP_USER && "SMTP_USER",
+    !SMTP_PASSWORD && "SMTP_PASSWORD",
+  ].filter(Boolean);
+  if (missingMailSettings.length) {
+    const missingNames = missingMailSettings.join(", ");
+    console.error(`Contact mail is not configured. Missing runtime variables: ${missingNames}`);
+    return NextResponse.json({
+      success: false,
+      error: `Email service is not configured. Missing server variables: ${missingNames}.`,
+    }, { status: 503 });
   }
 
   const recipient = process.env.CONTACT_TO || "mail@mindsmiratus.com";
