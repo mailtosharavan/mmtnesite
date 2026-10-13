@@ -464,7 +464,7 @@ export default function LandingPageClient() {
             <form className={styles.trialForm} onSubmit={submitTrial}>
               <label>Name<input required autoComplete="name" value={trialData.name} onChange={(event) => setTrialData({ ...trialData, name: event.target.value })} placeholder="Your name" /></label>
               <label>Phone number<input required type="tel" autoComplete="tel" inputMode="tel" value={trialData.phone} onChange={(event) => setTrialData({ ...trialData, phone: event.target.value })} placeholder="Your phone number" /></label>
-              <label>Company name<input required autoComplete="organization" value={trialData.company} onChange={(event) => setTrialData({ ...trialData, company: event.target.value })} placeholder="Your company" /></label>
+              <label>Company name<input autoComplete="organization" value={trialData.company} onChange={(event) => setTrialData({ ...trialData, company: event.target.value })} placeholder="Your company" /></label>
               <label>Email address<input required type="email" autoComplete="email" value={trialData.email} onChange={(event) => setTrialData({ ...trialData, email: event.target.value })} placeholder="you@company.com" /></label>
               <label>Number of employees<select required value={trialData.employees} onChange={(event) => setTrialData({ ...trialData, employees: event.target.value })}><option value="" disabled>Select team size</option><option>1-10</option><option>11-50</option><option>51-200</option><option>201-500</option><option>501+</option></select></label>
               {trialStatus === "error" && <p className={styles.trialError} role="alert">{trialError}</p>}
