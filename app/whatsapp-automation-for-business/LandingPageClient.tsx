@@ -31,7 +31,7 @@ import styles from "./landing.module.css";
 
 type BillingPlan = "monthly" | "quarterly" | "yearly";
 
-const WHATSAPP_NUMBER = "9625306474";
+const WHATSAPP_NUMBER = "8800232575";
 
 // WhatsApp function
 const openWhatsApp = (message: string) => {
