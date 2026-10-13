@@ -6,6 +6,7 @@ import {
   BarChart3,
   Bot,
   CalendarCheck2,
+  CarFront,
   Check,
   ChevronDown,
   Headphones,
@@ -13,11 +14,14 @@ import {
   Megaphone,
   MessageCircle,
   MessageSquareText,
+  Plane,
   Play,
   Plus,
   Send,
   ShoppingCart,
   Sparkles,
+  Smartphone,
+  Utensils,
   Users,
   Workflow,
   X,
@@ -39,9 +43,9 @@ const openWhatsApp = (message: string) => {
 };
 
 const planCopy = {
-  Basic: { monthly: "999", quarterly: "2,757", yearly: "9,590" },
-  Growth: { monthly: "1,999", quarterly: "7,725", yearly: "26,870" },
-  Pro: { monthly: "2,999", quarterly: "10,485", yearly: "36,470" },
+  Basic: { monthly: "999*", quarterly: "2,757", yearly: "9,590" },
+  Growth: { monthly: "1,999*", quarterly: "7,725", yearly: "26,870" },
+  Pro: { monthly: "2,999*", quarterly: "10,485", yearly: "36,470" },
   Enterprise: { monthly: "On Request", quarterly: "On Request", yearly: "On Request" },
 } as const;
 
@@ -159,7 +163,7 @@ const faqs = [
   },
   {
     question: "What Are the Message Charges?",
-    answer: "The landing page uses the current plan comparison supplied for your business: Marketing ₹ 1.00, Utility ₹ 0.99, Authentication ₹ 0.115 and Service Unlimited Free, with Enterprise marketing pricing shown as Custom.",
+    answer: "The landing page uses the current plan comparison supplied for your business: Marketing ₹ 1.00, Utility ₹ 0.99, Authentication ₹ 0.15 and Service Unlimited Free, with Enterprise marketing pricing shown as Custom.",
   },
   {
     question: "Can I Integrate with My Existing CRM or Tools?",
@@ -221,6 +225,10 @@ export default function LandingPageClient() {
   const [activeFaq, setActiveFaq] = useState<number | null>(0);
   const [mobileOpen, setMobileOpen] = useState(false);
   const [activeVideo, setActiveVideo] = useState<{ title: string; src: string } | null>(null);
+  const [trialPlan, setTrialPlan] = useState<"Basic" | "Growth" | "Pro" | null>(null);
+  const [trialData, setTrialData] = useState({ name: "", phone: "", company: "", email: "", employees: "" });
+  const [trialStatus, setTrialStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
+  const [trialError, setTrialError] = useState("");
   const [status, setStatus] = useState<{ kind: "idle" | "loading" | "success" | "error"; message: string }>({ kind: "idle", message: "" });
   const [formData, setFormData] = useState({ name: "", business: "", phone: "", email: "", message: "", website: "" });
 
@@ -237,6 +245,52 @@ export default function LandingPageClient() {
     };
   }, [activeVideo]);
 
+  useEffect(() => {
+    if (!trialPlan) return;
+    const onKeyDown = (event: KeyboardEvent) => {
+      if (event.key === "Escape") setTrialPlan(null);
+    };
+    document.body.style.overflow = "hidden";
+    window.addEventListener("keydown", onKeyDown);
+    return () => {
+      document.body.style.overflow = "";
+      window.removeEventListener("keydown", onKeyDown);
+    };
+  }, [trialPlan]);
+
+  const submitTrial = async (event: FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+    if (!trialPlan) return;
+    setTrialStatus("loading");
+    setTrialError("");
+    try {
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          name: trialData.name,
+          phone: trialData.phone,
+          email: trialData.email,
+          company: trialData.company,
+          employees: trialData.employees,
+          plan: trialPlan,
+          price: `₹ ${planCopy[trialPlan][billingPlan]} / ${billingPlan}`,
+          message: `14-day trial request for ${trialPlan} plan (₹ ${planCopy[trialPlan][billingPlan]} / ${billingPlan}). Company: ${trialData.company}. Number of employees: ${trialData.employees}.`,
+        }),
+      });
+      const result = await response.json();
+      if (!response.ok || !result.success) {
+        setTrialError(result.error || "Unable to submit your request. Please try again.");
+        setTrialStatus("error");
+        return;
+      }
+      setTrialStatus("success");
+    } catch {
+      setTrialError("Network error. Please check your connection and try again.");
+      setTrialStatus("error");
+    }
+  };
+
 
   return (
     <main className={styles.page}>
@@ -246,14 +300,22 @@ export default function LandingPageClient() {
         <div className={styles.container + " " + styles.heroGrid}>
           <Reveal className={styles.heroCopy}>
             <span className={styles.eyebrow}><Check size={14} /> Official WhatsApp Business API Partner</span>
-            <h1>Too Many Messages<br /> <mark> Not Enough Time?</mark> <span className={styles.growthArrow}>↗</span></h1>
-            <p className={styles.heroSubtitle}><i>Automate Your WhatsApp and Support Sales.</i> <br></br>
-              <span style={{ fontSize: '17px' }}>Complete WhatsApp Automation & Business API Solution for Your Business</span> </p>
+            <h1>Turn WhatsApp Into<br /> <mark> Your Sales Channel — On Autopilot</mark> <span className={styles.growthArrow}>↗</span></h1>
+            <p className={styles.heroSubtitle}><i>You Focus on Business. </i> <br></br>
+              <span className={styles.herosubtitle}>We'll Handle Every WhatsApp Message. Handle Thousands of Customers' Messages, Auto-Replies, Leads</span> </p>
 
             <div className={styles.heroBenefits}><span><Check size={15} /> More Leads</span><span><Check size={15} /> Happier Customers</span><span><Check size={15} /> Higher Sales</span></div>
             <div className={styles.heroActions}>
-              <a href="https://wa.me/9625306474?text=Hi%2C%20I%20want%20a%20free%20demo%20of%20WhatsApp%20Automation." className={styles.primaryBtn}><MessageCircle size={19} /> Get Free Demo Now <ArrowRight size={17} /></a><a href="#how-it-works" className={styles.outlineBtn}><Play size={16} fill="currentColor" /> Watch How It Works</a>
+              <a href="https://wa.me/8800232575?text=t4travel" className={styles.primaryBtn}><Plane size={19} /> Travel <ArrowRight size={17} /></a>
+
+              <a href="https://wa.me/8800232575?text=how%20does%20the%20whatsapp%20api%20setup%20work" className={styles.primaryBtn}><Smartphone size={19} /> Whatsapp API  <ArrowRight size={17} /></a>
+
+              <a href="https://wa.me/8826165727?text=menu" className={styles.primaryBtn}><Utensils size={19} /> Resturent <ArrowRight size={17} /></a>
+
+              <a href="https://wa.me/8826165727?text=carwasing" className={styles.primaryBtn}><CarFront size={19} /> Carwasing <ArrowRight size={17} /></a>
             </div>
+
+
             <div className={styles.heroTrust}><span><Zap size={15} /> No Setup Hassle</span><span><Headphones size={15} /> Dedicated Support</span><span><BarChart3 size={15} /> Scalable for All Businesses</span></div>
           </Reveal>
 
@@ -280,37 +342,37 @@ export default function LandingPageClient() {
           </Reveal>
 
           <div className={styles.serviceGrid}>
-  {services.map((service, index) => {
-    const Icon = service.icon;
+            {services.map((service, index) => {
+              const Icon = service.icon;
 
-    return (
-      <Reveal
-        key={service.title}
-        delay={index * 70}
-      >
-        <article className={styles.serviceCard}>
+              return (
+                <Reveal
+                  key={service.title}
+                  delay={index * 70}
+                >
+                  <article className={styles.serviceCard}>
 
-          {/* TITLE */}
-          <div className={styles.serviceTitle}>
-            <span
-              className={`${styles.serviceIcon} ${styles[service.tone]}`}
-            >
-              <Icon size={20} />
-            </span>
+                    {/* TITLE */}
+                    <div className={styles.serviceTitle}>
+                      <span
+                        className={`${styles.serviceIcon} ${styles[service.tone]}`}
+                      >
+                        <Icon size={20} />
+                      </span>
 
-            <h3>{service.title}</h3>
-          </div>
+                      <h3>{service.title}</h3>
+                    </div>
 
 
-          {/* VIDEO */}
-          <div className={styles.serviceVisual}>
+                    {/* VIDEO */}
+                    <div className={styles.serviceVisual}>
 
-            <ServiceVisual
-              src={service.video}
-              title={service.title}
-            />
+                      <ServiceVisual
+                        src={service.video}
+                        title={service.title}
+                      />
 
-            {/* <button
+                      {/* <button
               className={styles.videoPlay}
               aria-label={`Play ${service.title} workflow`}
               onClick={() =>
@@ -326,60 +388,92 @@ export default function LandingPageClient() {
               />
             </button> */}
 
+                    </div>
+
+
+                    {/* DESCRIPTION */}
+                    <p>{service.text}</p>
+
+
+                    {/* ACTIONS */}
+                    <div className={styles.serviceActions}>
+
+                      <button
+                        className={styles.workflowBtn}
+                        onClick={() =>
+                          setActiveVideo({
+                            title: service.title,
+                            src: service.video,
+                          })
+                        }
+                      >
+                        <Play
+                          size={13}
+                          fill="currentColor"
+                        />
+                        Watch Workflow
+                      </button>
+
+
+                      <button
+                        className={styles.whatsappBtn}
+                        onClick={() =>
+                          openWhatsApp(service.whatsappMessage)
+                        }
+                      >
+                        <MessageCircle size={16} />
+                        WhatsApp
+                      </button>
+
+                    </div>
+
+                  </article>
+                </Reveal>
+              );
+            })}
           </div>
-
-
-          {/* DESCRIPTION */}
-          <p>{service.text}</p>
-
-
-          {/* ACTIONS */}
-          <div className={styles.serviceActions}>
-
-            <button
-              className={styles.workflowBtn}
-              onClick={() =>
-                setActiveVideo({
-                  title: service.title,
-                  src: service.video,
-                })
-              }
-            >
-              <Play
-                size={13}
-                fill="currentColor"
-              />
-              Watch Workflow
-            </button>
-
-
-            <button
-              className={styles.whatsappBtn}
-              onClick={() =>
-                openWhatsApp(service.whatsappMessage)
-              }
-            >
-              <MessageCircle size={16} />
-              WhatsApp
-            </button>
-
-          </div>
-
-        </article>
-      </Reveal>
-    );
-  })}
-</div>
         </div>
       </section>
 
       <section className={styles.section + " " + styles.howSection} ><div className={styles.container}><Reveal className={styles.sectionHeading}><span className={styles.eyebrow}><Zap size={14} /> HOW IT WORKS</span><h2>Get Started in <mark>3 Simple Steps</mark></h2><p>From setup to automation — it’s fast, simple and effective.</p></Reveal><div className={styles.steps}>{[{ n: "1", icon: Link2, title: "Connect Your WhatsApp Business API", text: "We’ll help you set it up — no technical skills needed." }, { n: "2", icon: Workflow, title: "Set Up Automation", text: "Create automated workflows, messages and chatbots as per your business needs." }, { n: "3", icon: BarChart3, title: "Start Engaging & Growing", text: "Handle queries, generate leads and boost sales — automatically." }].map((step, index) => { const Icon = step.icon; return <Reveal key={step.n} delay={index * 100} className={styles.stepWrap}><article className={styles.step}><span className={styles.stepNumber}>{step.n}</span><span className={styles.stepIcon}><Icon size={26} /></span><div><h3>{step.title}</h3><p>{step.text}</p></div></article>{index < 2 && <ArrowRight className={styles.stepArrow} />}</Reveal> })}</div></div></section>
 
-      <section className={styles.section + " " + styles.pricingSection} id="pricing"><div className={styles.container}><Reveal className={styles.pricingIntro}><div><span className={styles.eyebrow}><Sparkles size={14} /> PRICING PLANS</span><h2>Simple, Transparent <mark>Pricing</mark></h2><p>Choose the plan that fits your business. Upgrade anytime.</p></div><div className={styles.billingToggle}>{(["monthly", "quarterly", "yearly"] as const).map(plan => <button key={plan} onClick={() => setBillingPlan(plan)} className={billingPlan === plan ? styles.activeBilling : ""}>{plan === "monthly" ? "Monthly" : plan === "quarterly" ? "Quarterly - 8%" : "Yearly - 20%"}</button>)}</div></Reveal><div className={styles.pricingGrid}>{(["Basic", "Growth", "Pro", "Enterprise"] as const).map((planName, index) => { const popular = planName === "Growth"; return <Reveal key={planName} delay={index * 90}><article className={`${styles.planCard} ${popular ? styles.popularPlan : ""}`}>{popular && <span className={styles.popularBadge}>Most Popular</span>}<div className={styles.planTop}><div className={styles.planName}><span>{planName === "Growth" ? <Sparkles size={16} /> : planName === "Pro" ? <BarChart3 size={16} /> : <Workflow size={16} />}</span>{planName}</div><div className={styles.planPrice}><span>₹ </span>{planCopy[planName][billingPlan]}<small>{planName === "Enterprise" ? "Custom engagement" : "/mo (+taxes)"}</small></div><button className={`${styles.planButton} ${planName === "Growth" ? styles.planGreen : planName === "Pro" ? styles.planBlue : planName === "Enterprise" ? styles.planDark : ""}`}>{planName === "Enterprise" ? "Get In Touch" : "Try 14-Day Trial"}</button>{planName !== "Enterprise" && <small className={styles.noCard}>No credit card required</small>}</div><div className={styles.planBlock}><h4>Per Template Message Charges</h4><ul className={styles.chargeList}><li><span>Marketing</span><b>{planName === "Enterprise" ? "Custom" : "₹ 1.00"}</b></li><li><span>Utility</span><b>₹ 0.99</b></li><li><span>Authentication</span><b>₹ 0.115</b></li><li><span>Service</span><b>Unlimited Free</b></li></ul></div><div className={styles.planBlock}><h4>{featureSets[planName].title}</h4><ul className={styles.checkList}>{featureSets[planName].bullets.map(item => <li key={item}><Check size={14} />{item}</li>)}</ul></div><div className={styles.planBlock + " " + styles.lastPlanBlock}><ul className={styles.checkList}>{featureSets[planName].capacity.map(item => <li key={item}><Check size={14} />{item}</li>)}</ul></div></article></Reveal> })}</div></div></section>
+      <section className={styles.section + " " + styles.pricingSection} id="pricing"><div className={styles.container}>
+        <Reveal className={styles.pricingIntro}>
+          <div><span className={styles.eyebrow}><Sparkles size={14} /> PRICING PLANS</span>
+            <h2>Simple, Transparent <mark>Pricing</mark></h2>
+            <p>Choose the plan that fits your business. Upgrade anytime.</p>
+          </div>
+          <div className={styles.billingToggle}>{(["monthly", "quarterly", "yearly"] as const).map(plan => <button key={plan} onClick={() => setBillingPlan(plan)} className={billingPlan === plan ? styles.activeBilling : ""}>{plan === "monthly" ? "Monthly" : plan === "quarterly" ? "Quarterly - 8%" : "Yearly - 20%"}</button>)}
+          </div>
+          </Reveal>
+          
+          <div className={styles.pricingGrid}>{(["Basic", "Growth", "Pro", "Enterprise"] as const).map((planName, index) => { const popular = planName === "Growth"; return <Reveal key={planName} delay={index * 90}><article className={`${styles.planCard} ${popular ? styles.popularPlan : ""}`}>{popular && <span className={styles.popularBadge}>Most Popular</span>}<div className={styles.planTop}><div className={styles.planName}><span>{planName === "Growth" ? <Sparkles size={16} /> : planName === "Pro" ? <BarChart3 size={16} /> : <Workflow size={16} />}</span>{planName}</div><div className={styles.planPrice}><span>₹ </span>{planCopy[planName][billingPlan]}<small>{planName === "Enterprise" ? "Custom engagement" : "/mo (+taxes)"}</small></div><button type="button" onClick={() => { if (planName === "Enterprise") { document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" }); } else { setTrialPlan(planName); setTrialData({ name: "", phone: "", company: "", email: "", employees: "" }); setTrialStatus("idle"); } }} className={`${styles.planButton} ${planName === "Growth" ? styles.planGreen : planName === "Pro" ? styles.planBlue : planName === "Enterprise" ? styles.planDark : ""}`}>{planName === "Enterprise" ? "Get In Touch" : "Try 14-Day Trial*"}</button>{planName !== "Enterprise" && <small className={styles.noCard}>No credit card required</small>}</div><div className={styles.planBlock}><h4>Per Template Message Charges</h4><ul className={styles.chargeList}><li><span>Marketing</span><b>{planName === "Enterprise" ? "Custom" : "₹ 0.99"}</b></li><li><span>Utility</span><b>₹ 0.15</b></li><li><span>Authentication</span><b>₹ 0.15</b></li><li><span>Service</span><b>Unlimited Free</b></li></ul></div><div className={styles.planBlock}><h4>{featureSets[planName].title}</h4><ul className={styles.checkList}>{featureSets[planName].bullets.map(item => <li key={item}><Check size={14} />{item}</li>)}</ul></div><div className={styles.planBlock + " " + styles.lastPlanBlock}><ul className={styles.checkList}>{featureSets[planName].capacity.map(item => <li key={item}><Check size={14} />{item}</li>)}</ul></div></article></Reveal> })}</div></div></section>
 
       <section className={styles.section + " " + styles.faqSection} id="faq"><div className={styles.container}><Reveal className={styles.faqIntro}><span className={styles.eyebrow}><MessageSquareText size={14} /> FREQUENTLY ASKED QUESTIONS</span><h2>Got Questions?<br /><mark>We’ve Got Answers.</mark></h2><p>Find quick answers to common questions about our WhatsApp Automation & Business API services.</p>
       </Reveal><div className={styles.faqGrid}><div>{faqs.slice(0, 5).map((faq, index) => <FaqItem key={faq.question} faq={faq} index={index} activeFaq={activeFaq} setActiveFaq={setActiveFaq} />)}</div><div>{faqs.slice(5).map((faq, index) => <FaqItem key={faq.question} faq={faq} index={index + 5} activeFaq={activeFaq} setActiveFaq={setActiveFaq} />)}</div></div></div></section>
 
+
+      {trialPlan && <div className={styles.trialModalBackdrop} role="dialog" aria-modal="true" aria-labelledby="trial-modal-title" onMouseDown={(event) => { if (event.target === event.currentTarget) setTrialPlan(null); }}>
+        <section className={styles.trialModal}>
+          <button type="button" className={styles.trialClose} onClick={() => setTrialPlan(null)} aria-label="Close trial form"><X size={20} /></button>
+          {trialStatus === "success" ? <div className={styles.trialSuccess}><span className={styles.trialIcon}><Check size={24} /></span><h2 id="trial-modal-title">Request received</h2><p>Thanks, {trialData.name}. Our team will contact you about your {trialPlan} 14-day trial.</p><button type="button" className={styles.trialSubmit} onClick={() => setTrialPlan(null)}>Done</button></div> : <>
+            <span className={styles.trialEyebrow}><Sparkles size={14} /> 14-DAY FREE TRIAL</span>
+            <h2 id="trial-modal-title">Start your {trialPlan} trial</h2>
+            <p className={styles.trialDescription}>Share a few details and our team will help you get started.</p>
+            <div className={styles.trialSelectedPlan}><span><b>{trialPlan}</b><small>Selected plan</small></span><strong>₹ {planCopy[trialPlan][billingPlan]}<small> / {billingPlan} (+taxes)</small></strong></div>
+            <form className={styles.trialForm} onSubmit={submitTrial}>
+              <label>Name<input required autoComplete="name" value={trialData.name} onChange={(event) => setTrialData({ ...trialData, name: event.target.value })} placeholder="Your name" /></label>
+              <label>Phone number<input required type="tel" autoComplete="tel" inputMode="tel" value={trialData.phone} onChange={(event) => setTrialData({ ...trialData, phone: event.target.value })} placeholder="Your phone number" /></label>
+              <label>Company name<input required autoComplete="organization" value={trialData.company} onChange={(event) => setTrialData({ ...trialData, company: event.target.value })} placeholder="Your company" /></label>
+              <label>Email address<input required type="email" autoComplete="email" value={trialData.email} onChange={(event) => setTrialData({ ...trialData, email: event.target.value })} placeholder="you@company.com" /></label>
+              <label>Number of employees<select required value={trialData.employees} onChange={(event) => setTrialData({ ...trialData, employees: event.target.value })}><option value="" disabled>Select team size</option><option>1-10</option><option>11-50</option><option>51-200</option><option>201-500</option><option>501+</option></select></label>
+              {trialStatus === "error" && <p className={styles.trialError} role="alert">{trialError}</p>}
+              <button className={styles.trialSubmit} type="submit" disabled={trialStatus === "loading"}>{trialStatus === "loading" ? "Sending request…" : <>Request my free trial <ArrowRight size={17} /></>}</button>
+              <small className={styles.trialFootnote}>No credit card required. Your details stay private.</small>
+            </form>
+          </>}
+        </section>
+      </div>}
 
       {activeVideo && <div className={styles.videoModalBackdrop} role="dialog" aria-modal="true" aria-label={`${activeVideo.title} workflow video`} onMouseDown={(event) => { if (event.target === event.currentTarget) setActiveVideo(null); }}>
         <div className={styles.videoModal}>

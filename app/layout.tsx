@@ -1,6 +1,5 @@
-import "./../styles/globals.css";
+import "../styles/globals.css";
 import React from "react";
-
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 import { Metadata } from "next";
@@ -195,6 +194,7 @@ export default async function RootLayout({ children }: { children: React.ReactNo
 
   return (
     <html lang="en">
+
       <head>
 
             <!-- Meta Pixel Code -->
@@ -240,7 +240,7 @@ src="https://www.facebook.com/tr?id=1447902180777938&ev=PageView&noscript=1"
         <FloatingActionsProvider>
           <ProgressBar />
           <Header />
-          <main>{children}</main>
+          <div>{children}</div>
           <Footer />
           <FloatingActions />
         </FloatingActionsProvider>
