@@ -58,7 +58,10 @@ export default function ContactForm() {
 
       if (!res.ok || !result.success) {
         console.error("Server error:", result.error || "Unknown error");
-        alert("Something went wrong. Please try again.");
+        const errorMessage = typeof result.error === "string"
+          ? result.error
+          : `Form submission failed (HTTP ${res.status}). Check the server terminal for details.`;
+        alert(errorMessage);
         setLoading(false);
         return;
       }

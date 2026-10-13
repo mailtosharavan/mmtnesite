@@ -1,6 +1,5 @@
-import "./../styles/globals.css";
+import "../styles/globals.css";
 import React from "react";
-
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 import { Metadata } from "next";
@@ -195,6 +194,7 @@ export default async function RootLayout({ children }: { children: React.ReactNo
 
   return (
     <html lang="en">
+
       <head>
         <Script
           id="google-tag-manager"
@@ -220,7 +220,7 @@ export default async function RootLayout({ children }: { children: React.ReactNo
         <FloatingActionsProvider>
           <ProgressBar />
           <Header />
-          <main>{children}</main>
+          <div>{children}</div>
           <Footer />
           <FloatingActions />
         </FloatingActionsProvider>

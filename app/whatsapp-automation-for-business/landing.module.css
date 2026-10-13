@@ -156,19 +156,21 @@
 .headerCta,
 .primaryBtn,
 .ctaButton {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 8px;
-  background: linear-gradient(135deg, #05b878, #00945e);
-  color: #fff !important;
-  border: 0;
+
+  /* background: linear-gradient(135deg, #07e997f5, #07e997f5); */
+  border: 1px solid #00a86b;
   border-radius: 12px;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  color: black;
   padding: 12px 18px;
   font-size: 12px;
   font-weight: 800;
-  box-shadow: 0 12px 25px rgba(0, 168, 107, .18);
-  transition: transform .25s, box-shadow .25s
+  transition: transform .25s, box-shadow .25s;
+  display: flex;
+  box-shadow: 0 12px 25px #00a86b2e;
+  color: #0aab71 !important;
 }
 
 .headerCta:hover,
@@ -254,11 +256,11 @@
 }
 
 .hero h1 {
-  font-size: 54px;
-  line-height: 1.22;
-  letter-spacing: -2.5px;
+  letter-spacing: -1.5px;
   margin: 20px 0 14px;
-  font-weight: 850
+  font-size: 50px;
+  font-weight: 850;
+  line-height: 1.1;
 }
 
 .serviceActions {
@@ -317,19 +319,18 @@
   transform: translateY(0);
 }
 
-.heading-para{
+.heading-para {
   font-size: 17px !important;
 }
 
 .hero mark,
 .section mark {
   color: #00a86b;
-  background: transparent
+  background: transparent;
 }
 
 .growthArrow {
   color: #0bbf76;
-  font-size: 45px;
   vertical-align: 8px;
   display: inline-block;
   animation: arrowPulse 2s ease-in-out infinite
@@ -369,11 +370,12 @@
 .heroActions {
   display: flex;
   gap: 12px;
-  flex-wrap: wrap
+  flex-wrap: wrap;
+  margin-bottom: 12px;
 }
 
 .primaryBtn {
-  padding: 15px 21px;
+  padding: 11px 21px;
   border-radius: 13px
 }
 
@@ -656,9 +658,9 @@
 }
 
 .heroFeatureStack small {
-      color: #49544f;
-    margin-top: 2px;
-    font-size: 11px;
+  color: #49544f;
+  margin-top: 2px;
+  font-size: 11px;
 }
 
 .phoneConnector {
@@ -855,7 +857,7 @@
   background: radial-gradient(circle at 50% 25%, rgba(255, 255, 255, .9), transparent 50%)
 }
 
-.serviceVisual > button.videoPlay {
+.serviceVisual>button.videoPlay {
   position: absolute;
   left: 50%;
   top: 50%;
@@ -878,7 +880,7 @@
     background 0.3s ease;
 }
 
-.serviceVisual > button.videoPlay:hover {
+.serviceVisual>button.videoPlay:hover {
   transform: translate(-50%, -50%) scale(1.1);
   background: #00a86b;
 }
@@ -976,6 +978,10 @@
   align-items: center;
   justify-content: center;
   gap: 5px
+}
+
+.herosubtitle {
+  font-size: 17px;
 }
 
 .visualChat {
@@ -1832,8 +1838,16 @@
     gap: 17px
   }
 
+
   .headerContact {
     display: none
+  }
+
+  .heroActions {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+    margin-bottom: 12px;
   }
 
   .heroGrid {
@@ -1876,6 +1890,25 @@
 @media(max-width:780px) {
   .container {
     width: min(100% - 28px, 620px)
+  }
+
+  .heroActions {
+    gap: 12px;
+    flex-wrap: wrap;
+    margin-bottom: 12px;
+  }
+
+  .herosubtitle {
+    font-size: 15px;
+  }
+
+  .growthArrow {
+    font-size: 30px;
+  }
+
+
+  .section mark {
+    line-height: 1.4;
   }
 
   .topBar .container {
@@ -1943,7 +1976,7 @@
   }
 
   .heroVisual {
-    min-height: 510px;
+    min-height: 620px;
     margin-top: 10px
   }
 
@@ -2061,12 +2094,12 @@
 
 @media(max-width:500px) {
   .hero h1 {
-    font-size: 37px;
-    letter-spacing: -1.8px
+    font-size: 30px;
+    letter-spacing: -1.8px;
   }
 
   .heroSubtitle {
-    font-size: 16px
+    font-size: 16px;
   }
 
   .phone {
@@ -2093,7 +2126,8 @@
 
   .automationLabel {
     font-size: 14px;
-    left: 0
+    left: 0;
+    display: none;
   }
 
   .heroTrust {
@@ -2341,8 +2375,8 @@
 
 .step p {
   color: #3e4541;
-    font-size: 13px;
-    line-height: 1.6;
+  font-size: 13px;
+  line-height: 1.6;
 }
 
 .stepArrow {
@@ -2645,8 +2679,8 @@
   }
 
   .phone {
-  right: 0%;
-}
+    right: 0%;
+  }
 
   .step {
     grid-template-columns: 38px 58px minmax(0, 1fr);
@@ -2687,9 +2721,9 @@
     margin-bottom: 34px
   }
 
-    .phone {
-  right: 0%;
-}
+  .phone {
+    right: 0%;
+  }
 
   .sectionHeading h2,
   .pricingIntro h2,
@@ -2826,8 +2860,8 @@
   }
 
   .phone {
-    width: 218px;
-    height: 430px
+    width: 300px;
+    height: 560px;
   }
 
   .phoneVideoOverlay {
@@ -2842,8 +2876,54 @@
     grid-template-columns: 1fr;
   }
 
-  .workflowBtn, .whatsappBtn {
+  .workflowBtn,
+  .whatsappBtn {
     width: 100%;
   }
 
+}
+
+.trialModalBackdrop {
+  position: fixed; inset: 0; z-index: 1000; display: grid; place-items: center;
+  padding: 20px; background: rgba(5, 20, 16, .64); backdrop-filter: blur(6px);
+}
+.trialModal {
+  position: relative; width: min(100%, 480px); max-height: min(92vh, 780px); overflow: auto;
+  padding: 34px; border: 1px solid rgba(255,255,255,.7); border-radius: 24px;
+  background: #fff; box-shadow: 0 24px 80px rgba(0,0,0,.24); color: var(--ink);
+}
+.trialClose { position: absolute; top: 18px; right: 18px; width: 36px; height: 36px; border: 0; border-radius: 50%; display: grid; place-items: center; color: #596579; background: #f1f5f3; cursor: pointer; }
+.trialEyebrow { display: inline-flex; align-items: center; gap: 7px; color: #008754; font-size: 11px; font-weight: 800; letter-spacing: .1em; }
+.trialModal h2 { margin: 12px 42px 7px 0; font-size: 27px; line-height: 1.2; letter-spacing: -.03em; }
+.trialDescription { margin: 0 0 20px; color: #667085; font-size: 14px; line-height: 1.5; }
+.trialSelectedPlan { display: flex; justify-content: space-between; align-items: center; gap: 14px; margin-bottom: 20px; padding: 14px 16px; border: 1px solid #d8eee3; border-radius: 14px; background: #f3fbf7; }
+.trialSelectedPlan span, .trialSelectedPlan strong { display: grid; gap: 3px; }
+.trialSelectedPlan span b { font-size: 15px; }
+.trialSelectedPlan strong { color: #008754; font-size: 17px; text-align: right; }
+.trialSelectedPlan small { color: #788477; font-size: 11px; font-weight: 500; }
+.trialForm { display: grid; grid-template-columns: 1fr 1fr; gap: 14px 12px; }
+.trialForm label { display: grid; gap: 7px; color: #344054; font-size: 12px; font-weight: 700; }
+.trialForm input, .trialForm select { width: 100%; min-width: 0; height: 44px; padding: 0 12px; border: 1px solid #dce4df; border-radius: 10px; outline: none; color: #172b24; background: #fff; font: inherit; font-size: 13px; }
+.trialForm input:focus, .trialForm select:focus { border-color: #00a86b; box-shadow: 0 0 0 3px rgba(0,168,107,.12); }
+.trialSubmit { grid-column: 1 / -1; min-height: 48px; display: flex; align-items: center; justify-content: center; gap: 9px; border: 0; border-radius: 11px; color: white; background: #008f5b; font: inherit; font-size: 14px; font-weight: 750; cursor: pointer; transition: background .2s, transform .2s; }
+.trialSubmit:hover:not(:disabled) { background: #06774e; transform: translateY(-1px); }
+.trialSubmit:disabled { opacity: .7; cursor: wait; }
+.trialFootnote { grid-column: 1 / -1; color: #7a8693; font-size: 11px; text-align: center; }
+.trialError { grid-column: 1 / -1; margin: 0; color: #b42318; font-size: 12px; }
+.trialSuccess { padding: 20px 0 4px; text-align: center; }
+.trialSuccess h2 { margin: 16px 0 8px; }
+.trialSuccess p { margin: 0 0 24px; color: #667085; font-size: 14px; line-height: 1.6; }
+.trialIcon { width: 54px; height: 54px; margin: auto; display: grid; place-items: center; border-radius: 50%; color: #008754; background: #e5f7ee; }
+.trialSuccess .trialSubmit { width: 100%; }
+@media (max-width: 520px) { .trialModal { padding: 28px 22px; border-radius: 20px; } .trialModal h2 { font-size: 23px; } .trialForm { grid-template-columns: 1fr; gap: 12px; } }
+
+/* Match Solutions actions to the logo's navy and cyan brand colors. */
+.servicesSection .workflowBtn {
+  border-color: #16dde4;
+  background: linear-gradient(110deg, #0a2a65 0%, #16bde0 100%);
+  color: #fff;
+}
+.servicesSection .workflowBtn:hover {
+  background: linear-gradient(110deg, #082357 0%, #12a9cf 100%);
+  box-shadow: 0 8px 20px rgba(10, 42, 101, .2);
 }
