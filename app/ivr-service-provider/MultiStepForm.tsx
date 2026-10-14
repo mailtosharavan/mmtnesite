@@ -1,5 +1,6 @@
 "use client";
 import { useState } from "react";
+import { openGmailCompose } from "../../lib/gmail-compose";
 
 export default function MultiStepForm() {
   const [step, setStep] = useState(1);
@@ -11,7 +12,6 @@ export default function MultiStepForm() {
   const [website, setWebsite] = useState(""); // Honeypot
   const [errors, setErrors] = useState<{ name?: string, mobile?: string, email?: string }>({});
   const [submitted, setSubmitted] = useState(false);
-  const [isSubmitting, setIsSubmitting] = useState(false);
 
   // Progress Bar Width
   const progress = (step / 3) * 100;
@@ -25,7 +25,7 @@ export default function MultiStepForm() {
     if (errors.mobile) setErrors({ ...errors, mobile: undefined }); // Clear error on type
   };
 
-  const submit = async () => {
+  const submit = () => {
     // BOT TRAP
     if (website) return;
 
@@ -41,36 +41,21 @@ export default function MultiStepForm() {
       return;
     }
 
-    setIsSubmitting(true);
-    try {
-      const res = await fetch("/api/contact", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          name: name,
-          phone: mobile,
-          email: email || "Not Provided",
-          message: `IVR Blueprint Request:\nIndustry: ${industry}\nEstimated Daily Calls: ${calls >= 10000 ? "10,000+" : calls}`,
-        }),
-      });
-
-      if (!res.ok) throw new Error("Failed to send");
-
-      setSubmitted(true);
-    } catch (error) {
-      alert("Something went wrong. Please try again.");
-    } finally {
-      setIsSubmitting(false);
-    }
-    // TODO: wire to API/CRM
+    openGmailCompose("IVR Blueprint Request", [
+      ["Name", name],
+      ["Phone", mobile],
+      ["Email", email],
+      ["Industry", industry],
+      ["Estimated Daily Calls", calls >= 10000 ? "10,000+" : String(calls)],
+    ]);
   };
 
   if (submitted) return (
     <div className="p-8 rounded-2xl bg-navy-800/80 backdrop-blur-lg border border-cyan-glow/30 text-white shadow-glow-lg animate-fade-in text-center">
       <div className="w-16 h-16 bg-cyan-glow/20 rounded-full flex items-center justify-center mx-auto mb-4 text-3xl">🎉</div>
-      <h3 className="text-xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-cyan-400 to-white">Blueprint Sent!</h3>
+      <h3 className="text-xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-cyan-400 to-white">Email Draft Ready</h3>
       <p className="text-slate-300 mt-2 text-sm leading-relaxed">
-        We've emailed your <span className="text-cyan-glow font-semibold capitalize">{industry}</span> IVR strategy to <br /><strong className="text-white">{email}</strong>.
+        Gmail compose is opening with your <span className="text-cyan-glow font-semibold capitalize">{industry}</span> IVR details. Review the draft and press Send.
       </p>
       <button onClick={() => setSubmitted(false)} className="mt-6 text-sm text-cyan-glow underline hover:text-white transition">Start Over</button>
     </div>
@@ -205,18 +190,9 @@ export default function MultiStepForm() {
                   <button onClick={() => setStep(2)} className="w-1/3 py-3 bg-navy-800 text-white font-semibold rounded-lg hover:bg-navy-700 transition border border-navy-700">Back</button>
                   <button
                     onClick={submit}
-                    disabled={isSubmitting}
                     className="w-2/3 py-3 bg-gradient-to-r from-cyan-500 to-blue-600 text-white font-bold rounded-lg hover:shadow-glow-lg transition disabled:opacity-70 disabled:cursor-not-allowed flex items-center justify-center gap-2"
                   >
-                    {isSubmitting ? (
-                      <>
-                        <svg className="animate-spin h-4 w-4 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
-                          <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
-                          <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
-                        </svg>
-                        Sending...
-                      </>
-                    ) : "Send My Blueprint 🚀"}
+                    Submit Request
                   </button>
                 </div>
               </div>

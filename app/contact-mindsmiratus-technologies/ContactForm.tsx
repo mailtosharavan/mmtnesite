@@ -3,13 +3,13 @@
 import { useEffect, useState } from "react";
 import { Mail, Phone, MapPin, Send, User, MessageSquare, Shield, PhoneIcon, PhoneForwarded, Contact2 } from "lucide-react";
 import { motion } from "framer-motion";
+import { openGmailCompose } from "../../lib/gmail-compose";
 
 export default function ContactForm() {
   const [formData, setFormData] = useState({ name: "", email: "", phone: "", message: "", captcha: "" });
   const [errors, setErrors] = useState<{ [key: string]: string }>({});
-  const [loading, setLoading] = useState(false);
-  const [submitted, setSubmitted] = useState(false);
   const [captchaNumbers, setCaptchaNumbers] = useState<{ a: number; b: number } | null>(null);
+  const [sendReminder, setSendReminder] = useState(false);
 
 
   useEffect(() => {
@@ -35,49 +35,21 @@ export default function ContactForm() {
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
     setErrors({ ...errors, [e.target.name]: "" });
+    setSendReminder(false);
   };
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     if (!validate()) return;
-    setLoading(true); // start loading
-
-    try {
-      const res = await fetch("/api/contact", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          name: formData.name,
-          phone: formData.phone,
-          email: formData.email,
-          message: formData.message,
-        }),
-      });
-
-      const result = await res.json();
-
-      if (!res.ok || !result.success) {
-        console.error("Server error:", result.error || "Unknown error");
-        const errorMessage = typeof result.error === "string"
-          ? result.error
-          : `Form submission failed (HTTP ${res.status}). Check the server terminal for details.`;
-        alert(errorMessage);
-        setLoading(false);
-        return;
-      }
-
-      setSubmitted(true);
-      // gtm code for lead submit
-      (window as any).dataLayer = (window as any).dataLayer || [];
-(window as any).dataLayer.push({
-  event: "lead_submit"
-});
-    } catch (err) {
-      console.error("Network/Fetch Error:", err);
-
-      alert("Network error occurred. Please retry later.");
-    }
-    setLoading(false);
+    openGmailCompose(`Website inquiry from ${formData.name}`, [
+      ["Name", formData.name],
+      ["Phone", formData.phone],
+      ["Email", formData.email],
+      ["Message", formData.message],
+    ]);
+    setFormData({ name: "", email: "", phone: "", message: "", captcha: "" });
+    setCaptchaNumbers({ a: Math.floor(Math.random() * 10) + 1, b: Math.floor(Math.random() * 10) + 1 });
+    setSendReminder(true);
   };
 
   return (
@@ -127,12 +99,8 @@ export default function ContactForm() {
       >
         <div className="absolute inset-0 bg-gradient-to-br from-[#EAF3FF] via-white to-transparent opacity-70 pointer-events-none rounded-2xl" />
 
-        {submitted ? (
-          <div id="success-message" className="text-center text-green-600 font-semibold text-lg relative z-10">
-            ✅ Thank you! We’ve received your message and will respond soon.
-          </div>
-        ) : (
-          <div className="relative z-10 space-y-6">
+        <div className="relative z-10 space-y-6">
+            {sendReminder && <p role="status" className="rounded-lg bg-blue-50 p-3 text-center text-sm font-semibold text-[#005fb0]">Your email draft is ready. Please review it and press Send from your email account to submit your inquiry.</p>}
             {/* Name Field */}
             <div className="relative">
               <User className="absolute left-3 top-4 text-[#0078D7]" />
@@ -236,27 +204,12 @@ export default function ContactForm() {
             {/* Submit */}
             <button
               type="submit"
-              disabled={loading}
-              className={`flex items-center justify-center gap-2 w-full bg-[#0078D7] text-white py-3 rounded-full mt-4 transition-all duration-300 shadow-md hover:shadow-lg ${loading ? "opacity-70 cursor-not-allowed" : "hover:bg-[#005fb0]"
-                }`}
+              className="flex items-center justify-center gap-2 w-full bg-[#0078D7] text-white py-3 rounded-full mt-4 transition-all duration-300 shadow-md hover:shadow-lg hover:bg-[#005fb0]"
             >
-              {loading ? (
-                <span className="flex items-center gap-2">
-                  <svg className="animate-spin h-5 w-5" viewBox="0 0 24 24">
-                    <circle className="opacity-25" cx="12" cy="12" r="10" stroke="white" strokeWidth="4"></circle>
-                    <path className="opacity-75" fill="white" d="M4 12a8 8 0 018-8v4"></path>
-                  </svg>
-                  Sending...
-                </span>
-              ) : (
-                <>
-                  <Send className="w-5 h-5" /> Send Message
-                </>
-              )}
+              <Send className="w-5 h-5" /> Send Message
             </button>
 
-          </div>
-        )}
+        </div>
       </motion.form>
     </section>
   );
