@@ -2,7 +2,8 @@
 
 import { useState, useEffect } from "react";
 import { useSearchParams } from "next/navigation";
-import { FaPaperPlane, FaSpinner, FaUser, FaPhoneAlt, FaEnvelope, FaCheckCircle, FaLock } from "react-icons/fa";
+import { FaPaperPlane, FaUser, FaPhoneAlt, FaEnvelope, FaCheckCircle, FaLock } from "react-icons/fa";
+import { openGmailCompose } from "../../lib/gmail-compose";
 
 export default function VoiceLeadForm() {
     const searchParams = useSearchParams();
@@ -14,7 +15,6 @@ export default function VoiceLeadForm() {
     const [email, setEmail] = useState("");
     const [website, setWebsite] = useState(""); // Honeypot
 
-    const [isSubmitting, setIsSubmitting] = useState(false);
     const [submitted, setSubmitted] = useState(false);
     const [errors, setErrors] = useState<{ mobile?: string, email?: string, name?: string }>({});
 
@@ -33,7 +33,7 @@ export default function VoiceLeadForm() {
         if (errors.mobile) setErrors({ ...errors, mobile: undefined });
     };
 
-    const submit = async () => {
+    const submit = () => {
         if (website) return; // Bot trap
 
         const newErrors: typeof errors = {};
@@ -47,27 +47,13 @@ export default function VoiceLeadForm() {
             return;
         }
 
-        setIsSubmitting(true);
-        try {
-            const res = await fetch("/api/contact", {
-                method: "POST",
-                headers: { "Content-Type": "application/json" },
-                body: JSON.stringify({
-                    name,
-                    phone: mobile,
-                    email: email || "Not Provided",
-                    message: `Voice Service Inquiry:\nType: ${campaignType}\nVolume: ${volume}`,
-                    website, // Check on server too
-                }),
-            });
-
-            if (!res.ok) throw new Error("Failed");
-            setSubmitted(true);
-        } catch (err) {
-            alert("Something went wrong. Please try again.");
-        } finally {
-            setIsSubmitting(false);
-        }
+        openGmailCompose("Voice Service Inquiry", [
+            ["Name", name],
+            ["Phone", mobile],
+            ["Email", email],
+            ["Campaign type", campaignType],
+            ["Volume", volume],
+        ]);
     };
 
     if (submitted) return (
@@ -75,15 +61,10 @@ export default function VoiceLeadForm() {
             <div className="w-20 h-20 bg-green-100 text-green-600 rounded-full flex items-center justify-center mb-6 shadow-sm">
                 <FaCheckCircle size={40} />
             </div>
-            <h3 className="text-2xl font-extrabold text-slate-800 mb-2">Quote Requested!</h3>
+            <h3 className="text-2xl font-extrabold text-slate-800 mb-2">Email Draft Ready</h3>
             <p className="text-slate-600 mb-6 max-w-xs">
-                We've received your request for <strong>{campaignType}</strong> services. Our team will contact you shortly at <strong className="text-slate-900">{mobile}</strong>.
+                Gmail compose is opening with your <strong>{campaignType}</strong> details. Review the draft and press Send.
             </p>
-            {email && (
-                <div className="bg-blue-50 text-blue-700 px-4 py-2 rounded-lg text-sm font-medium mb-6">
-                    Confirmation email sent to {email}
-                </div>
-            )}
             <button
                 onClick={() => { setSubmitted(false); setName(""); setMobile(""); }}
                 className="text-sm font-bold text-blue-600 hover:text-blue-700 hover:underline transition-colors"
@@ -180,17 +161,12 @@ export default function VoiceLeadForm() {
 
                 <button
                     onClick={submit}
-                    disabled={isSubmitting}
                     className="w-full mt-6 py-3.5 bg-gradient-to-r from-blue-600 to-cyan-600 text-white font-bold rounded-xl shadow-lg shadow-blue-200/50 hover:shadow-xl hover:shadow-blue-300/50 hover:-translate-y-0.5 active:translate-y-0 transition-all disabled:opacity-70 disabled:cursor-not-allowed flex items-center justify-center gap-2 group/btn"
                 >
-                    {isSubmitting ? (
-                        <><FaSpinner className="animate-spin" /> Sending...</>
-                    ) : (
-                        <>
-                            <span className="text-sm">Request Strategy & Pricing</span>
-                            <FaPaperPlane className="group-hover/btn:translate-x-1 transition-transform text-sm" />
-                        </>
-                    )}
+                    <>
+                        <span className="text-sm">Request Strategy & Pricing</span>
+                        <FaPaperPlane className="group-hover/btn:translate-x-1 transition-transform text-sm" />
+                    </>
                 </button>
 
                 <p className="text-[10px] text-slate-400 text-center mt-3 flex items-center justify-center gap-1.5 opacity-80">

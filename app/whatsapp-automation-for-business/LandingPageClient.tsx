@@ -28,6 +28,7 @@ import {
   Zap,
 } from "lucide-react";
 import styles from "./landing.module.css";
+import { openGmailCompose } from "../../lib/gmail-compose";
 
 type BillingPlan = "monthly" | "quarterly" | "yearly";
 
@@ -227,9 +228,7 @@ export default function LandingPageClient() {
   const [activeVideo, setActiveVideo] = useState<{ title: string; src: string } | null>(null);
   const [trialPlan, setTrialPlan] = useState<"Basic" | "Growth" | "Pro" | null>(null);
   const [trialData, setTrialData] = useState({ name: "", phone: "", company: "", email: "", employees: "" });
-  const [trialStatus, setTrialStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
-  const [trialError, setTrialError] = useState("");
-  const [status, setStatus] = useState<{ kind: "idle" | "loading" | "success" | "error"; message: string }>({ kind: "idle", message: "" });
+  const [trialSendReminder, setTrialSendReminder] = useState(false);
   const [formData, setFormData] = useState({ name: "", business: "", phone: "", email: "", message: "", website: "" });
 
   useEffect(() => {
@@ -258,37 +257,20 @@ export default function LandingPageClient() {
     };
   }, [trialPlan]);
 
-  const submitTrial = async (event: FormEvent<HTMLFormElement>) => {
+  const submitTrial = (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     if (!trialPlan) return;
-    setTrialStatus("loading");
-    setTrialError("");
-    try {
-      const response = await fetch("/api/contact", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          name: trialData.name,
-          phone: trialData.phone,
-          email: trialData.email,
-          company: trialData.company,
-          employees: trialData.employees,
-          plan: trialPlan,
-          price: `₹ ${planCopy[trialPlan][billingPlan]} / ${billingPlan}`,
-          message: `14-day trial request for ${trialPlan} plan (₹ ${planCopy[trialPlan][billingPlan]} / ${billingPlan}). Company: ${trialData.company}. Number of employees: ${trialData.employees}.`,
-        }),
-      });
-      const result = await response.json();
-      if (!response.ok || !result.success) {
-        setTrialError(result.error || "Unable to submit your request. Please try again.");
-        setTrialStatus("error");
-        return;
-      }
-      setTrialStatus("success");
-    } catch {
-      setTrialError("Network error. Please check your connection and try again.");
-      setTrialStatus("error");
-    }
+    openGmailCompose(`14-Day Trial Request: ${trialPlan}`, [
+      ["Name", trialData.name],
+      ["Phone", trialData.phone],
+      ["Email", trialData.email],
+      ["Company", trialData.company],
+      ["Number of employees", trialData.employees],
+      ["Plan", trialPlan],
+      ["Price", `₹ ${planCopy[trialPlan][billingPlan]} / ${billingPlan}`],
+    ]);
+    setTrialData({ name: "", phone: "", company: "", email: "", employees: "" });
+    setTrialSendReminder(true);
   };
 
 
@@ -447,7 +429,7 @@ export default function LandingPageClient() {
           </div>
           </Reveal>
           
-          <div className={styles.pricingGrid}>{(["Basic", "Growth", "Pro", "Enterprise"] as const).map((planName, index) => { const popular = planName === "Growth"; return <Reveal key={planName} delay={index * 90}><article className={`${styles.planCard} ${popular ? styles.popularPlan : ""}`}>{popular && <span className={styles.popularBadge}>Most Popular</span>}<div className={styles.planTop}><div className={styles.planName}><span>{planName === "Growth" ? <Sparkles size={16} /> : planName === "Pro" ? <BarChart3 size={16} /> : <Workflow size={16} />}</span>{planName}</div><div className={styles.planPrice}><span>₹ </span>{planCopy[planName][billingPlan]}<small>{planName === "Enterprise" ? "Custom engagement" : "/mo (+taxes)"}</small></div><button type="button" onClick={() => { if (planName === "Enterprise") { document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" }); } else { setTrialPlan(planName); setTrialData({ name: "", phone: "", company: "", email: "", employees: "" }); setTrialStatus("idle"); } }} className={`${styles.planButton} ${planName === "Growth" ? styles.planGreen : planName === "Pro" ? styles.planBlue : planName === "Enterprise" ? styles.planDark : ""}`}>{planName === "Enterprise" ? "Get In Touch" : "Try 14-Day Trial*"}</button>{planName !== "Enterprise" && <small className={styles.noCard}>No credit card required</small>}</div><div className={styles.planBlock}><h4>Per Template Message Charges</h4><ul className={styles.chargeList}><li><span>Marketing</span><b>{planName === "Enterprise" ? "Custom" : "₹ 0.99"}</b></li><li><span>Utility</span><b>₹ 0.15</b></li><li><span>Authentication</span><b>₹ 0.15</b></li><li><span>Service</span><b>Unlimited Free</b></li></ul></div><div className={styles.planBlock}><h4>{featureSets[planName].title}</h4><ul className={styles.checkList}>{featureSets[planName].bullets.map(item => <li key={item}><Check size={14} />{item}</li>)}</ul></div><div className={styles.planBlock + " " + styles.lastPlanBlock}><ul className={styles.checkList}>{featureSets[planName].capacity.map(item => <li key={item}><Check size={14} />{item}</li>)}</ul></div></article></Reveal> })}</div></div></section>
+          <div className={styles.pricingGrid}>{(["Basic", "Growth", "Pro", "Enterprise"] as const).map((planName, index) => { const popular = planName === "Growth"; return <Reveal key={planName} delay={index * 90}><article className={`${styles.planCard} ${popular ? styles.popularPlan : ""}`}>{popular && <span className={styles.popularBadge}>Most Popular</span>}<div className={styles.planTop}><div className={styles.planName}><span>{planName === "Growth" ? <Sparkles size={16} /> : planName === "Pro" ? <BarChart3 size={16} /> : <Workflow size={16} />}</span>{planName}</div><div className={styles.planPrice}><span>₹ </span>{planCopy[planName][billingPlan]}<small>{planName === "Enterprise" ? "Custom engagement" : "/mo (+taxes)"}</small></div><button type="button" onClick={() => { if (planName === "Enterprise") { document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" }); } else { setTrialPlan(planName); setTrialSendReminder(false); setTrialData({ name: "", phone: "", company: "", email: "", employees: "" }); } }} className={`${styles.planButton} ${planName === "Growth" ? styles.planGreen : planName === "Pro" ? styles.planBlue : planName === "Enterprise" ? styles.planDark : ""}`}>{planName === "Enterprise" ? "Get In Touch" : "Try 14-Day Trial*"}</button>{planName !== "Enterprise" && <small className={styles.noCard}>No credit card required</small>}</div><div className={styles.planBlock}><h4>Per Template Message Charges</h4><ul className={styles.chargeList}><li><span>Marketing</span><b>{planName === "Enterprise" ? "Custom" : "₹ 0.99"}</b></li><li><span>Utility</span><b>₹ 0.15</b></li><li><span>Authentication</span><b>₹ 0.15</b></li><li><span>Service</span><b>Unlimited Free</b></li></ul></div><div className={styles.planBlock}><h4>{featureSets[planName].title}</h4><ul className={styles.checkList}>{featureSets[planName].bullets.map(item => <li key={item}><Check size={14} />{item}</li>)}</ul></div><div className={styles.planBlock + " " + styles.lastPlanBlock}><ul className={styles.checkList}>{featureSets[planName].capacity.map(item => <li key={item}><Check size={14} />{item}</li>)}</ul></div></article></Reveal> })}</div></div></section>
 
       <section className={styles.section + " " + styles.faqSection} id="faq"><div className={styles.container}><Reveal className={styles.faqIntro}><span className={styles.eyebrow}><MessageSquareText size={14} /> FREQUENTLY ASKED QUESTIONS</span><h2>Got Questions?<br /><mark>We’ve Got Answers.</mark></h2><p>Find quick answers to common questions about our WhatsApp Automation & Business API services.</p>
       </Reveal><div className={styles.faqGrid}><div>{faqs.slice(0, 5).map((faq, index) => <FaqItem key={faq.question} faq={faq} index={index} activeFaq={activeFaq} setActiveFaq={setActiveFaq} />)}</div><div>{faqs.slice(5).map((faq, index) => <FaqItem key={faq.question} faq={faq} index={index + 5} activeFaq={activeFaq} setActiveFaq={setActiveFaq} />)}</div></div></div></section>
@@ -456,9 +438,10 @@ export default function LandingPageClient() {
       {trialPlan && <div className={styles.trialModalBackdrop} role="dialog" aria-modal="true" aria-labelledby="trial-modal-title" onMouseDown={(event) => { if (event.target === event.currentTarget) setTrialPlan(null); }}>
         <section className={styles.trialModal}>
           <button type="button" className={styles.trialClose} onClick={() => setTrialPlan(null)} aria-label="Close trial form"><X size={20} /></button>
-          {trialStatus === "success" ? <div className={styles.trialSuccess}><span className={styles.trialIcon}><Check size={24} /></span><h2 id="trial-modal-title">Request received</h2><p>Thanks, {trialData.name}. Our team will contact you about your {trialPlan} 14-day trial.</p><button type="button" className={styles.trialSubmit} onClick={() => setTrialPlan(null)}>Done</button></div> : <>
+          <>
             <span className={styles.trialEyebrow}><Sparkles size={14} /> 14-DAY FREE TRIAL</span>
             <h2 id="trial-modal-title">Start your {trialPlan} trial</h2>
+            {trialSendReminder && <p role="status" className="rounded-lg bg-green-50 p-3 text-center text-sm font-semibold text-green-700">Your email draft is ready. Please review it and press Send from your email account to submit your trial request.</p>}
             <p className={styles.trialDescription}>Share a few details and our team will help you get started.</p>
             <div className={styles.trialSelectedPlan}><span><b>{trialPlan}</b><small>Selected plan</small></span><strong>₹ {planCopy[trialPlan][billingPlan]}<small> / {billingPlan} (+taxes)</small></strong></div>
             <form className={styles.trialForm} onSubmit={submitTrial}>
@@ -467,11 +450,10 @@ export default function LandingPageClient() {
               <label>Company name<input autoComplete="organization" value={trialData.company} onChange={(event) => setTrialData({ ...trialData, company: event.target.value })} placeholder="Your company" /></label>
               <label>Email address<input required type="email" autoComplete="email" value={trialData.email} onChange={(event) => setTrialData({ ...trialData, email: event.target.value })} placeholder="you@company.com" /></label>
               <label>Number of employees<select required value={trialData.employees} onChange={(event) => setTrialData({ ...trialData, employees: event.target.value })}><option value="" disabled>Select team size</option><option>1-10</option><option>11-50</option><option>51-200</option><option>201-500</option><option>501+</option></select></label>
-              {trialStatus === "error" && <p className={styles.trialError} role="alert">{trialError}</p>}
-              <button className={styles.trialSubmit} type="submit" disabled={trialStatus === "loading"}>{trialStatus === "loading" ? "Sending request…" : <>Request my free trial <ArrowRight size={17} /></>}</button>
+              <button className={styles.trialSubmit} type="submit">Request my free trial <ArrowRight size={17} /></button>
               <small className={styles.trialFootnote}>No credit card required. Your details stay private.</small>
             </form>
-          </>}
+          </>
         </section>
       </div>}
 
