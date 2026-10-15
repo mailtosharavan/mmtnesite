@@ -16,8 +16,10 @@ export function openGmailCompose(subject: string, fields: Array<[string, string 
   const isMobile = window.matchMedia("(max-width: 767px)").matches;
   const width = Math.min(720, window.screen.availWidth);
   const height = Math.min(760, window.screen.availHeight);
-  const left = Math.max(0, window.screen.availLeft + window.screen.availWidth - width);
-  const top = Math.max(0, window.screen.availTop + window.screen.availHeight - height);
+  
+  const left = Math.max(0, window.screen.availWidth - width);
+  const top = Math.max(0, window.screen.availHeight - height);
+
   const features = isMobile
     ? "popup=no"
     : `popup=yes,width=${width},height=${height},left=${left},top=${top}`;
