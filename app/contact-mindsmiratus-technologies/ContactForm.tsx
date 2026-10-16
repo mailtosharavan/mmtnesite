@@ -9,7 +9,7 @@ export default function ContactForm() {
   const [formData, setFormData] = useState({ name: "", email: "", phone: "", message: "", captcha: "" });
   const [errors, setErrors] = useState<{ [key: string]: string }>({});
   const [captchaNumbers, setCaptchaNumbers] = useState<{ a: number; b: number } | null>(null);
-  const [sendReminder, setSendReminder] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState<"idle" | "success" | "error">("idle");
 
 
   useEffect(() => {
@@ -35,7 +35,7 @@ export default function ContactForm() {
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
     setErrors({ ...errors, [e.target.name]: "" });
-    setSendReminder(false);
+    setSubmitStatus("idle");
   };
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
@@ -49,7 +49,7 @@ export default function ContactForm() {
     ]);
     setFormData({ name: "", email: "", phone: "", message: "", captcha: "" });
     setCaptchaNumbers({ a: Math.floor(Math.random() * 10) + 1, b: Math.floor(Math.random() * 10) + 1 });
-    setSendReminder(true);
+    setSubmitStatus("success");
   };
 
   return (
@@ -100,7 +100,7 @@ export default function ContactForm() {
         <div className="absolute inset-0 bg-gradient-to-br from-[#EAF3FF] via-white to-transparent opacity-70 pointer-events-none rounded-2xl" />
 
         <div className="relative z-10 space-y-6">
-            {sendReminder && <p role="status" className="rounded-lg bg-blue-50 p-3 text-center text-sm font-semibold text-[#005fb0]">Your email draft is ready. Please review it and press Send from your email account to submit your inquiry.</p>}
+            {submitStatus === "success" && <p role="status" className="rounded-lg bg-blue-50 p-3 text-center text-sm font-semibold text-[#005fb0]">Your email draft is ready. Review it in your email app and press Send to submit your inquiry.</p>}
             {/* Name Field */}
             <div className="relative">
               <User className="absolute left-3 top-4 text-[#0078D7]" />

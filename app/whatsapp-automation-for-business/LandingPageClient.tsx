@@ -441,7 +441,7 @@ export default function LandingPageClient() {
           <>
             <span className={styles.trialEyebrow}><Sparkles size={14} /> 14-DAY FREE TRIAL</span>
             <h2 id="trial-modal-title">Start your {trialPlan} trial</h2>
-            {trialSendReminder && <p role="status" className="rounded-lg bg-green-50 p-3 text-center text-sm font-semibold text-green-700">Your email draft is ready. Please review it and press Send from your email account to submit your trial request.</p>}
+            {trialSendReminder && <p role="status" className="rounded-lg bg-green-50 p-3 text-center text-sm font-semibold text-green-700">Your email draft is ready. Review it in your email app and press Send to submit your trial request.</p>}
             <p className={styles.trialDescription}>Share a few details and our team will help you get started.</p>
             <div className={styles.trialSelectedPlan}><span><b>{trialPlan}</b><small>Selected plan</small></span><strong>₹ {planCopy[trialPlan][billingPlan]}<small> / {billingPlan} (+taxes)</small></strong></div>
             <form className={styles.trialForm} onSubmit={submitTrial}>
